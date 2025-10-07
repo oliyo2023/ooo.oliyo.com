@@ -8,7 +8,7 @@ export default function App({ Component }: PageProps) {
         <title>ooo.oliyo.com</title>
         <link rel="stylesheet" href="/styles.css" />
       </head>
-      <body>
+      <body style="background-image: url(/background.svg); background-size: cover; background-repeat: no-repeat;">
         <Component />
       </body>
     </html>

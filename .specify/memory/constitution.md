@@ -1,50 +1,52 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+- Version change: None → 1.0.0 (initial constitution)
+- Modified principles: None (initial creation)
+- Added sections: All sections (Core Principles, Development Standards, Quality Assurance, Governance)
+- Removed sections: None
+- Templates requiring updates: ✅ plan-template.md, ✅ spec-template.md, ✅ tasks-template.md (all aligned with web development principles)
+- Follow-up TODOs: None
+-->
+
+# ooo.oliyo.com Constitution
+<!-- Fresh web application using Deno, Preact, and Tailwind CSS -->
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
+### I. Modern Web Standards
 <!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+Every component MUST follow Fresh framework patterns and modern web standards. Components must be server-side rendered by default, client-side interactivity via islands only when necessary. Clear purpose required for each island - no interactive components without specific user interaction needs.
 
-### [PRINCIPLE_2_NAME]
+### II. TypeScript-First Development
 <!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+All code MUST be written in TypeScript with strict type checking enabled. Fresh routes, islands, and components must have proper type definitions. Props interfaces must be explicitly defined for all components. No implicit `any` types allowed without explicit justification.
 
-### [PRINCIPLE_3_NAME]
+### III. Responsive Design (NON-NEGOTIABLE)
 <!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+All UI components MUST be mobile-first responsive using Tailwind CSS responsive utilities. Every page must be tested and functional on mobile, tablet, and desktop viewports. Breakpoints must follow Tailwind's standard: sm (640px), md (768px), lg (1024px), xl (1280px).
 
-### [PRINCIPLE_4_NAME]
+### IV. Performance-First
 <!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+Focus areas requiring performance optimization: Initial page load MUST be under 2 seconds, Island JavaScript bundles MUST be code-split by functionality, Images MUST be optimized and served in modern formats. Core Web Vitals targets: LCP < 2.5s, FID < 100ms, CLS < 0.1.
 
-### [PRINCIPLE_5_NAME]
+### V. SEO & Accessibility
 <!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+All pages MUST have proper meta tags, semantic HTML structure, and ARIA labels where appropriate. Color contrast MUST meet WCAG AA standards (4.5:1 for normal text). All interactive elements MUST be keyboard navigable. Structured data must be implemented for content pages.
 
-## [SECTION_2_NAME]
+## Development Standards
 <!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+Code must follow Fresh conventions with routes in `routes/`, islands in `islands/`, and static assets in `static/`. All components must use Preact hooks correctly with proper dependency arrays. State management must use @preact/signals for shared state, local useState for component-specific state. CSS must use Tailwind utility classes, custom CSS only for animations or complex layouts.
 
-## [SECTION_3_NAME]
+## Quality Assurance
 <!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+All changes must pass `deno task check` (formatting, linting, type checking) before commit. New features must include manual testing on mobile and desktop viewports. Visual regression testing recommended for UI changes. Security review required for any user input handling or data processing features.
 
 ## Governance
 <!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+This constitution supersedes all other development practices and guides all technical decisions. Amendments require proposal in a pull request with clear rationale, team approval, and migration plan for existing code. All pull requests must verify compliance with these principles. When complexity conflicts with principles, complexity must be explicitly justified in documentation. Use `.specify/memory/constitution.md` for runtime development guidance.
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
+**Version**: 1.0.0 | **Ratified**: 2025-10-07 | **Last Amended**: 2025-10-07
 <!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
