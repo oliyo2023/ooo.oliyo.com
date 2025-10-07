@@ -79,6 +79,8 @@ SEARCH_RESULTS_PER_PAGE=20
 - 确保 `SESSION_SECRET` 是一个强随机字符串
 - 构建命令使用 `npm run build`，它会自动安装 Deno
 - 输出目录设置为 `_fresh`
+- 构建脚本会自动提供构建时所需的环境变量
+- 运行时环境变量在 Pages 项目设置中配置（用于生产环境）
 
 #### 3. 配置 D1 数据库
 

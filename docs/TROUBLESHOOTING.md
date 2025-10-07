@@ -11,7 +11,16 @@
 - 确保项目根目录有 `package.json` 和 `build.sh` 文件
 - 检查构建脚本是否有执行权限
 
-### 2. 构建失败：权限错误
+### 2. 构建失败：环境变量缺失
+
+**问题**：构建时出现 `MissingEnvVarsError`。
+
+**解决方案**：
+- 构建脚本已经内置了构建时所需的环境变量
+- 确保使用最新版本的 `build.sh` 脚本
+- 如果问题仍然存在，检查是否所有必需的环境变量都在构建脚本中设置
+
+### 3. 构建失败：权限错误
 
 **问题**：构建脚本没有执行权限。
 
@@ -26,7 +35,7 @@ git commit -m "fix: add execute permission to build script"
 git push
 ```
 
-### 3. 数据库连接失败
+### 4. 数据库连接失败
 
 **问题**：应用无法连接到 D1 数据库。
 
@@ -45,7 +54,7 @@ git push
    wrangler d1 execute blog-db --file=./migrations/001_init.sql --remote
    ```
 
-### 4. 环境变量错误
+### 5. 环境变量错误
 
 **问题**：应用启动时缺少必要的环境变量。
 
@@ -65,7 +74,7 @@ POSTS_PER_PAGE=10
 SEARCH_RESULTS_PER_PAGE=20
 ```
 
-### 5. 静态资源 404
+### 6. 静态资源 404
 
 **问题**：CSS、JS 文件无法加载。
 
@@ -79,7 +88,7 @@ SEARCH_RESULTS_PER_PAGE=20
    ls -la _fresh/static/
    ```
 
-### 6. 路由问题
+### 7. 路由问题
 
 **问题**：页面刷新后 404。
 
@@ -88,7 +97,7 @@ SEARCH_RESULTS_PER_PAGE=20
 2. 检查 `functions/_middleware.js` 文件
 3. 确保 Fresh 应用正确处理所有路由
 
-### 7. 构建超时
+### 8. 构建超时
 
 **问题**：构建过程超时。
 

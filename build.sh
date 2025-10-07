@@ -11,6 +11,18 @@ echo "🚀 开始构建 Fresh 应用..."
 export DENO_INSTALL="/tmp/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# 为构建过程提供必要的环境变量
+export DATABASE_PATH="d1"
+export SESSION_SECRET="build-session-secret-not-used-in-build"
+export DEV_MODE="true"
+export APP_NAME="Fresh Blog"
+export APP_URL="https://localhost:8000"
+export BCRYPT_ROUNDS="12"
+export UPLOAD_MAX_SIZE="10485760"
+export UPLOAD_ALLOWED_TYPES="image/jpeg,image/png,image/gif,image/webp"
+export POSTS_PER_PAGE="10"
+export SEARCH_RESULTS_PER_PAGE="20"
+
 # 安装 Deno 到临时目录
 echo "📦 安装 Deno..."
 curl -fsSL https://deno.land/install.sh | sh -s -- --install-dir=/tmp/.deno
