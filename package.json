@@ -1,0 +1,21 @@
+{
+  "name": "ooo-oliyo-com",
+  "version": "1.0.0",
+  "description": "Fresh blog powered by Cloudflare Pages",
+  "scripts": {
+    "build": "./build.sh",
+    "deploy": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "fresh",
+    "blog",
+    "cloudflare",
+    "pages",
+    "deno"
+  ],
+  "author": "oliyo2023",
+  "license": "MIT"
+}

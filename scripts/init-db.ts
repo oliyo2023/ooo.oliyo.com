@@ -160,7 +160,9 @@ db.execute(`
 
 console.log("数据库初始化完成！");
 console.log(`数据库文件位置: ${DB_PATH}`);
-console.log("请运行 'deno run --allow-read --allow-write scripts/create-admin.ts' 创建管理员用户。");
+console.log(
+  "请运行 'deno run --allow-read --allow-write scripts/create-admin.ts' 创建管理员用户。",
+);
 
 // 关闭数据库连接
 db.close();

@@ -1,12 +1,13 @@
 # Fresh Blog Quick Start Guide
 
-**Date**: 2025-10-07
-**Feature**: Blog system for Fresh framework
-**Scale**: Medium (100-1000 posts)
+**Date**: 2025-10-07 **Feature**: Blog system for Fresh framework **Scale**:
+Medium (100-1000 posts)
 
 ## Overview
 
-This guide provides step-by-step instructions for setting up and running the Fresh blog system. The implementation follows Fresh framework patterns and uses SQLite for data persistence with full-text search capabilities.
+This guide provides step-by-step instructions for setting up and running the
+Fresh blog system. The implementation follows Fresh framework patterns and uses
+SQLite for data persistence with full-text search capabilities.
 
 ## Prerequisites
 
@@ -61,6 +62,7 @@ The blog will be available at `http://localhost:8000`
 ## Access Points
 
 ### Public Access
+
 - **Blog Home**: `http://localhost:8000/` - List of published posts
 - **Individual Posts**: `http://localhost:8000/blog/{post-slug}`
 - **Category Pages**: `http://localhost:8000/blog/category/{category-name}`
@@ -68,6 +70,7 @@ The blog will be available at `http://localhost:8000`
 - **Search**: `http://localhost:8000/search?q=your-query`
 
 ### Admin Access
+
 - **Admin Login**: `http://localhost:8000/admin/login`
 - **Admin Dashboard**: `http://localhost:8000/admin/dashboard`
 - **Post Management**: `http://localhost:8000/admin/posts`
@@ -90,11 +93,13 @@ The blog will be available at `http://localhost:8000`
 
 ### Managing Categories and Tags
 
-Categories and tags are automatically created when you assign them to posts. You can manage them through the post editing interface.
+Categories and tags are automatically created when you assign them to posts. You
+can manage them through the post editing interface.
 
 ### Using the Rich Text Editor
 
 The rich text editor supports:
+
 - **Text Formatting**: Bold, italic, underline, strikethrough
 - **Headings**: H1, H2, H3, H4, H5, H6
 - **Lists**: Bulleted and numbered lists
@@ -108,12 +113,14 @@ The rich text editor supports:
 ## Key Features
 
 ### Search Functionality
+
 - Full-text search across post titles and content
 - Relevance ranking for search results
 - Fast search responses (< 1 second)
 - Search result pagination
 
 ### SEO Optimization
+
 - Clean URLs with post slugs
 - Meta tags for all pages
 - Semantic HTML structure
@@ -121,12 +128,14 @@ The rich text editor supports:
 - Sitemap generation
 
 ### Mobile Responsiveness
+
 - Mobile-first responsive design
 - Touch-friendly interface
 - Optimized for all screen sizes
 - Fast loading on mobile networks
 
 ### Performance
+
 - Server-side rendering for fast initial loads
 - Code splitting for JavaScript
 - Optimized images and media
@@ -166,6 +175,7 @@ deno run --allow-read --allow-write scripts/migrate-db.ts
 ### Content Management
 
 All content management is done through the web interface:
+
 - Create and edit posts
 - Manage categories and tags
 - Upload images and media
@@ -207,21 +217,25 @@ All content management is done through the web interface:
 ### Common Issues
 
 **Database connection errors**:
+
 - Ensure the database file exists in `data/blog.db`
 - Check file permissions on the database directory
 - Verify DATABASE_PATH in `.env` file
 
 **Admin login issues**:
+
 - Verify admin user exists in database
 - Check session secret is set in `.env`
 - Clear browser cookies and try again
 
 **Image upload issues**:
+
 - Ensure `static/uploads/` directory exists and is writable
 - Check file size limits
 - Verify supported image formats
 
 **Search not working**:
+
 - Rebuild search index: `deno run scripts/rebuild-search.ts`
 - Check FTS5 is enabled in SQLite
 - Verify posts are published (not draft)
@@ -254,4 +268,6 @@ For production deployment:
 5. Optimize for production performance
 6. Test thoroughly before going live
 
-This quick start guide should get you up and running with the Fresh blog system. The implementation is designed to be scalable and maintainable while following Fresh framework best practices.
+This quick start guide should get you up and running with the Fresh blog system.
+The implementation is designed to be scalable and maintainable while following
+Fresh framework best practices.

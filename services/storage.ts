@@ -24,7 +24,10 @@ export function closeDb(): void {
 }
 
 // 数据库查询辅助函数
-export function queryOne<T = any>(sql: string, params: any[] = []): T | undefined {
+export function queryOne<T = any>(
+  sql: string,
+  params: any[] = [],
+): T | undefined {
   const db = getDb();
   try {
     const result = db.query(sql, params);
@@ -81,7 +84,7 @@ export interface PaginationOptions {
   page: number;
   limit: number;
   orderBy?: string;
-  orderDirection?: 'ASC' | 'DESC';
+  orderDirection?: "ASC" | "DESC";
 }
 
 export interface PaginationResult<T> {
@@ -98,15 +101,17 @@ export function paginateQuery<T>(
   baseQuery: string,
   countQuery: string,
   params: any[] = [],
-  options: PaginationOptions
+  options: PaginationOptions,
 ): PaginationResult<T> {
-  const { page, limit, orderBy = 'created_at', orderDirection = 'DESC' } = options;
+  const { page, limit, orderBy = "created_at", orderDirection = "DESC" } =
+    options;
 
   // 计算偏移量
   const offset = (page - 1) * limit;
 
   // 添加排序和分页
-  const query = `${baseQuery} ORDER BY ${orderBy} ${orderDirection} LIMIT ? OFFSET ?`;
+  const query =
+    `${baseQuery} ORDER BY ${orderBy} ${orderDirection} LIMIT ? OFFSET ?`;
   const finalParams = [...params, limit, offset];
 
   // 执行查询
@@ -125,6 +130,6 @@ export function paginateQuery<T>(
     limit,
     totalPages,
     hasNext: page < totalPages,
-    hasPrev: page > 1
+    hasPrev: page > 1,
   };
 }

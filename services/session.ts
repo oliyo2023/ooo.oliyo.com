@@ -3,7 +3,8 @@
 import { Session } from "$fresh/session.ts";
 import type { SessionData } from "../types/admin.ts";
 
-const SESSION_SECRET = Deno.env.get("SESSION_SECRET") || "change-this-in-production";
+const SESSION_SECRET = Deno.env.get("SESSION_SECRET") ||
+  "change-this-in-production";
 
 // 创建会话实例
 export const session = new Session<SessionData>({
@@ -35,13 +36,15 @@ export function requireAuth() {
 // 创建会话
 export async function createSession(
   req: Request,
-  userData: SessionData
+  userData: SessionData,
 ): Promise<Response> {
   return session.set(req, userData);
 }
 
 // 获取会话
-export async function getSession(req: Request): Promise<SessionData | undefined> {
+export async function getSession(
+  req: Request,
+): Promise<SessionData | undefined> {
   return await session.get(req);
 }
 
@@ -55,6 +58,6 @@ export async function updateLastLogin(userId: number): Promise<void> {
   const { execute } = await import("./storage.ts");
   execute(
     "UPDATE admin_users SET last_login = CURRENT_TIMESTAMP WHERE id = ?",
-    [userId]
+    [userId],
   );
 }

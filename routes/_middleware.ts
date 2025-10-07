@@ -20,13 +20,15 @@ export const errorHandler: MiddlewareHandler = async (req, ctx) => {
 
     // 根据错误类型返回适当的响应
     if (error instanceof Error) {
-      if (error.message.includes("not found") || error.message.includes("404")) {
+      if (
+        error.message.includes("not found") || error.message.includes("404")
+      ) {
         return new Response(
           renderNotFoundPage(error.message),
           {
             status: 404,
-            headers: { "Content-Type": "text/html; charset=utf-8" }
-          }
+            headers: { "Content-Type": "text/html; charset=utf-8" },
+          },
         );
       }
     }
@@ -36,8 +38,8 @@ export const errorHandler: MiddlewareHandler = async (req, ctx) => {
       renderServerErrorPage("服务器内部错误，请稍后重试。"),
       {
         status: 500,
-        headers: { "Content-Type": "text/html; charset=utf-8" }
-      }
+        headers: { "Content-Type": "text/html; charset=utf-8" },
+      },
     );
   }
 };
@@ -120,3 +122,9 @@ export const securityHeaders: MiddlewareHandler = async (req, ctx) => {
 
   return resp;
 };
+
+// 默认导出的处理器，按顺序应用中间件链
+export const handler: MiddlewareHandler[] = [
+  securityHeaders,
+  errorHandler,
+];

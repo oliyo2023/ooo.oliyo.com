@@ -12,19 +12,23 @@ async function createAdminUser() {
   try {
     await Deno.stat(DB_PATH);
   } catch {
-    console.error("错误: 数据库文件不存在。请先运行 'deno run --allow-read --allow-write scripts/init-db.ts'。");
+    console.error(
+      "错误: 数据库文件不存在。请先运行 'deno run --allow-read --allow-write scripts/init-db.ts'。",
+    );
     Deno.exit(1);
   }
 
   const db = new DB(DB_PATH);
 
   // 检查是否已存在管理员用户
-  const existingAdmin = db.query("SELECT COUNT(*) as count FROM admin_users")[0] as { count: number };
+  const existingAdmin = db.query(
+    "SELECT COUNT(*) as count FROM admin_users",
+  )[0] as { count: number };
 
   if (existingAdmin.count > 0) {
     console.log("已存在管理员用户。");
     const shouldContinue = prompt("是否要创建新的管理员用户？(y/N): ");
-    if (shouldContinue?.toLowerCase() !== 'y') {
+    if (shouldContinue?.toLowerCase() !== "y") {
       db.close();
       return;
     }
@@ -72,7 +76,7 @@ async function createAdminUser() {
     // 插入管理员用户
     db.execute(
       "INSERT INTO admin_users (username, email, password_hash, name) VALUES (?, ?, ?, ?)",
-      [username, email, passwordHash, name]
+      [username, email, passwordHash, name],
     );
 
     console.log("管理员用户创建成功！");
@@ -80,7 +84,6 @@ async function createAdminUser() {
     console.log(`邮箱: ${email}`);
     console.log(`显示名称: ${name}`);
     console.log("\n现在您可以使用这些凭据登录管理面板。");
-
   } catch (error) {
     console.error("创建管理员用户失败:", error.message);
     Deno.exit(1);

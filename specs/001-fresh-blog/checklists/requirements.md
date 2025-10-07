@@ -1,8 +1,7 @@
 # Specification Quality Checklist: Fresh Blog
 
-**Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2025-10-07
-**Feature**: [spec.md](spec.md)
+**Purpose**: Validate specification completeness and quality before proceeding
+to planning **Created**: 2025-10-07 **Feature**: [spec.md](spec.md)
 
 ## Content Quality
 
@@ -31,4 +30,5 @@
 
 ## Notes
 
-- Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`
+- Items marked incomplete require spec updates before `/speckit.clarify` or
+  `/speckit.plan`

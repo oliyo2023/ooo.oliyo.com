@@ -4,20 +4,23 @@ description: "Fresh博客功能实现的完整任务列表"
 
 # Fresh博客任务列表
 
-**输入**: 来自 `/specs/001-fresh-blog/` 的设计文档
-**先决条件**: plan.md（必需）、spec.md（用户故事所需）、research.md、data-model.md、quickstart.md
+**输入**: 来自 `/specs/001-fresh-blog/` 的设计文档 **先决条件**:
+plan.md（必需）、spec.md（用户故事所需）、research.md、data-model.md、quickstart.md
 
 **测试**: 测试是可选的 - 未在功能规范中明确要求。仅手动测试。
 
 **组织**: 任务按用户故事分组，以便独立实现和测试每个故事。
 
 ## 格式: `[ID] [P?] [Story] 描述`
+
 - **[P]**: 可以并行运行（不同文件，无依赖关系）
 - **[Story]**: 此任务属于哪个用户故事（例如，US1、US2、US3）
 - 在描述中包含确切的文件路径
 
 ## 路径约定
-- **Fresh Web应用**: 仓库根目录的 routes/、islands/、components/、services/、types/
+
+- **Fresh Web应用**: 仓库根目录的
+  routes/、islands/、components/、services/、types/
 - **静态资源**: static/ 用于上传和样式
 - **数据库**: data/ 目录用于SQLite数据库
 
@@ -27,7 +30,8 @@ description: "Fresh博客功能实现的完整任务列表"
 
 **目标**: 项目初始化和基本结构
 
-- [ ] T001 根据Fresh结构创建项目目录（routes/、islands/、components/、services/、types/、static/uploads/、data/）
+- [ ] T001
+      根据Fresh结构创建项目目录（routes/、islands/、components/、services/、types/、static/uploads/、data/）
 - [ ] T002 在deno.json中添加SQLite依赖项以支持数据库功能
 - [ ] T003 [P] 在scripts/init-db.ts中配置数据库初始化脚本
 - [ ] T004 [P] 在scripts/create-admin.ts中创建管理员用户创建脚本
@@ -56,14 +60,16 @@ description: "Fresh博客功能实现的完整任务列表"
 
 **目标**: 用户可以访问博客并按反向时间顺序阅读已发布的文章，带有分页功能
 
-**独立测试**: 在数据库中创建示例文章并验证它们在主博客页面和个人文章页面上正确显示
+**独立测试**:
+在数据库中创建示例文章并验证它们在主博客页面和个人文章页面上正确显示
 
 ### 用户故事1的实现
 
 - [ ] T012 [US1] 在services/blog.ts中创建BlogPost服务层用于数据访问
 - [ ] T013 [US1] 在routes/index.tsx中实现带分页的博客文章列表
 - [ ] T014 [US1] 在routes/blog/[slug].tsx中创建个人博客文章页面
-- [ ] T015 [US1] [P] 在components/BlogPostCard.tsx中创建用于文章预览的BlogPostCard组件
+- [ ] T015 [US1] [P]
+      在components/BlogPostCard.tsx中创建用于文章预览的BlogPostCard组件
 - [ ] T016 [US1] [P] 在components/Pagination.tsx中创建分页组件
 - [ ] T017 [US1] 在islands/BlogPost.tsx中实现用于内容显示的博客文章岛屿
 - [ ] T018 [US1] 为博客文章添加SEO元标签和结构化数据
@@ -78,7 +84,8 @@ description: "Fresh博客功能实现的完整任务列表"
 
 **目标**: 用户可以按关键词搜索博客文章并按类别或标签过滤
 
-**独立测试**: 创建具有不同关键词、类别和标签的文章，然后验证搜索和过滤功能返回正确结果
+**独立测试**:
+创建具有不同关键词、类别和标签的文章，然后验证搜索和过滤功能返回正确结果
 
 ### 用户故事2的实现
 
@@ -108,6 +115,7 @@ description: "Fresh博客功能实现的完整任务列表"
 ### 用户故事3的实现
 
 #### 身份验证基础设施
+
 - [ ] T033 [US3] 在services/auth.ts中创建身份验证服务
 - [ ] T034 [US3] 在islands/AdminAuth.tsx中实现用于登录功能的AdminAuth岛屿
 - [ ] T035 [US3] 在routes/admin/login.tsx中创建管理员登录页面
@@ -115,6 +123,7 @@ description: "Fresh博客功能实现的完整任务列表"
 - [ ] T037 [US3] 实现用于管理员路由保护的会话中间件
 
 #### 管理员文章管理
+
 - [ ] T038 [US3] 在routes/admin/posts/index.tsx中创建管理员文章列表页面
 - [ ] T039 [US3] 在routes/admin/posts/new.tsx中实现创建新文章页面
 - [ ] T040 [US3] 在routes/admin/posts/[id].tsx中创建编辑文章页面
@@ -243,8 +252,8 @@ description: "Fresh博客功能实现的完整任务列表"
 
 ---
 
-**总任务数**: 60个任务
-**按用户故事的任务**:
+**总任务数**: 60个任务 **按用户故事的任务**:
+
 - 用户故事1（P1）: 9个任务
 - 用户故事2（P2）: 12个任务
 - 用户故事3（P3）: 16个任务
@@ -252,5 +261,5 @@ description: "Fresh博客功能实现的完整任务列表"
 - 基础: 6个任务
 - 优化: 12个任务
 
-**并行机会**: 24个任务标记为[P]用于并行执行
-**MVP范围**: 用户故事1（包括设置和基础共20个任务）
+**并行机会**: 24个任务标记为[P]用于并行执行 **MVP范围**:
+用户故事1（包括设置和基础共20个任务）

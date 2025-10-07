@@ -1,8 +1,7 @@
 # Data Model: Fresh Blog
 
-**Date**: 2025-10-07
-**Storage**: SQLite with FTS5 extension
-**Scale**: Medium (100-1000 posts)
+**Date**: 2025-10-07 **Storage**: SQLite with FTS5 extension **Scale**: Medium
+(100-1000 posts)
 
 ## Core Entities
 
@@ -10,26 +9,27 @@
 
 ```typescript
 interface BlogPost {
-  id: number;                    // Primary key
-  title: string;                 // Post title (required, unique)
-  slug: string;                  // URL-friendly identifier (unique)
-  content: string;               // Rich text HTML content
-  excerpt: string;               // Short description for listings
-  status: PostStatus;            // draft | published
-  author_id: number;             // Foreign key to admin users
-  published_at?: Date;           // Publication timestamp
-  created_at: Date;              // Creation timestamp
-  updated_at: Date;              // Last update timestamp
-  deleted_at?: Date;             // Soft deletion timestamp
+  id: number; // Primary key
+  title: string; // Post title (required, unique)
+  slug: string; // URL-friendly identifier (unique)
+  content: string; // Rich text HTML content
+  excerpt: string; // Short description for listings
+  status: PostStatus; // draft | published
+  author_id: number; // Foreign key to admin users
+  published_at?: Date; // Publication timestamp
+  created_at: Date; // Creation timestamp
+  updated_at: Date; // Last update timestamp
+  deleted_at?: Date; // Soft deletion timestamp
 }
 
 enum PostStatus {
-  DRAFT = 'draft',
-  PUBLISHED = 'published'
+  DRAFT = "draft",
+  PUBLISHED = "published",
 }
 ```
 
 **Validation Rules**:
+
 - Title: Required, unique, max 200 characters
 - Slug: Auto-generated from title, unique, max 200 characters
 - Content: Required for published posts
@@ -39,15 +39,16 @@ enum PostStatus {
 
 ```typescript
 interface Category {
-  id: number;                    // Primary key
-  name: string;                  // Category name (required, unique)
-  slug: string;                  // URL-friendly identifier (unique)
-  description?: string;          // Category description
-  created_at: Date;              // Creation timestamp
+  id: number; // Primary key
+  name: string; // Category name (required, unique)
+  slug: string; // URL-friendly identifier (unique)
+  description?: string; // Category description
+  created_at: Date; // Creation timestamp
 }
 ```
 
 **Validation Rules**:
+
 - Name: Required, unique, max 100 characters
 - Slug: Auto-generated from name, unique, max 100 characters
 
@@ -55,14 +56,15 @@ interface Category {
 
 ```typescript
 interface Tag {
-  id: number;                    // Primary key
-  name: string;                  // Tag name (required, unique)
-  slug: string;                  // URL-friendly identifier (unique)
-  created_at: Date;              // Creation timestamp
+  id: number; // Primary key
+  name: string; // Tag name (required, unique)
+  slug: string; // URL-friendly identifier (unique)
+  created_at: Date; // Creation timestamp
 }
 ```
 
 **Validation Rules**:
+
 - Name: Required, unique, max 50 characters
 - Slug: Auto-generated from name, unique, max 50 characters
 
@@ -70,17 +72,18 @@ interface Tag {
 
 ```typescript
 interface AdminUser {
-  id: number;                    // Primary key
-  username: string;              // Login username (required, unique)
-  email: string;                 // Email address (required, unique)
-  password_hash: string;         // Bcrypt hash (required)
-  name: string;                  // Display name (required)
-  created_at: Date;              // Creation timestamp
-  last_login?: Date;             // Last successful login
+  id: number; // Primary key
+  username: string; // Login username (required, unique)
+  email: string; // Email address (required, unique)
+  password_hash: string; // Bcrypt hash (required)
+  name: string; // Display name (required)
+  created_at: Date; // Creation timestamp
+  last_login?: Date; // Last successful login
 }
 ```
 
 **Validation Rules**:
+
 - Username: Required, unique, 3-50 characters, alphanumeric + underscore
 - Email: Required, unique, valid email format
 - Password: Min 8 characters when creating/updating
@@ -92,9 +95,9 @@ interface AdminUser {
 
 ```typescript
 interface PostCategory {
-  post_id: number;               // Foreign key to posts
-  category_id: number;           // Foreign key to categories
-  created_at: Date;              // Assignment timestamp
+  post_id: number; // Foreign key to posts
+  category_id: number; // Foreign key to categories
+  created_at: Date; // Assignment timestamp
 }
 ```
 
@@ -102,9 +105,9 @@ interface PostCategory {
 
 ```typescript
 interface PostTag {
-  post_id: number;               // Foreign key to posts
-  tag_id: number;                // Foreign key to tags
-  created_at: Date;              // Assignment timestamp
+  post_id: number; // Foreign key to posts
+  tag_id: number; // Foreign key to tags
+  created_at: Date; // Assignment timestamp
 }
 ```
 
@@ -236,17 +239,22 @@ deleted → draft (restore)
 
 ### Business Rules
 
-1. **Unique Constraints**: Title and slug must be unique across all posts (including soft-deleted)
+1. **Unique Constraints**: Title and slug must be unique across all posts
+   (including soft-deleted)
 2. **Publication Logic**: Post can only be published if it has title and content
 3. **Slug Generation**: Auto-generated from title, ensures URL-friendly format
 4. **Search Index**: Automatically maintained via database triggers
-5. **Soft Deletion**: Deleted posts remain in database but excluded from public queries
-6. **Category/Tag Assignment**: Only published posts can be assigned categories/tags
-7. **Admin Authentication**: Password stored as bcrypt hash, never stored in plain text
+5. **Soft Deletion**: Deleted posts remain in database but excluded from public
+   queries
+6. **Category/Tag Assignment**: Only published posts can be assigned
+   categories/tags
+7. **Admin Authentication**: Password stored as bcrypt hash, never stored in
+   plain text
 
 ## Data Access Patterns
 
 ### Public Blog Queries
+
 - List published posts with pagination
 - Get single published post by slug
 - Search published posts with FTS5
@@ -254,6 +262,7 @@ deleted → draft (restore)
 - Get category/tag details with post counts
 
 ### Admin Queries
+
 - Full CRUD operations on posts (including drafts)
 - Category and tag management
 - Admin user authentication

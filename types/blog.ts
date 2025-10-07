@@ -1,8 +1,8 @@
 // 博客相关的类型定义
 
 export enum PostStatus {
-  DRAFT = 'draft',
-  PUBLISHED = 'published'
+  DRAFT = "draft",
+  PUBLISHED = "published",
 }
 
 export interface BlogPost {

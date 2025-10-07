@@ -15,7 +15,7 @@ export default function Layout({
   title = "Fresh Blog",
   description = "基于Fresh框架的现代化博客系统",
   children,
-  showSearch = true
+  showSearch = true,
 }: LayoutProps): JSX.Element {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">

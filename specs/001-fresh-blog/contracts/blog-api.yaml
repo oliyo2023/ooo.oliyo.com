@@ -47,7 +47,7 @@ paths:
             type: string
           description: Filter by tag slug
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -57,13 +57,13 @@ paths:
                   posts:
                     type: array
                     items:
-                      $ref: '#/components/schemas/PostSummary'
+                      $ref: "#/components/schemas/PostSummary"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                    $ref: "#/components/schemas/Pagination"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /posts/{slug}:
     get:
@@ -79,16 +79,16 @@ paths:
             type: string
           description: Post slug (URL-friendly identifier)
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostDetail'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                $ref: "#/components/schemas/PostDetail"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /search:
     get:
@@ -120,7 +120,7 @@ paths:
             maximum: 50
           description: Number of results per page
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -130,16 +130,16 @@ paths:
                   posts:
                     type: array
                     items:
-                      $ref: '#/components/schemas/PostSummary'
+                      $ref: "#/components/schemas/PostSummary"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
+                    $ref: "#/components/schemas/Pagination"
                   query:
                     type: string
                     description: Original search query
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /categories:
     get:
@@ -148,16 +148,16 @@ paths:
       tags:
         - Public
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Category'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                  $ref: "#/components/schemas/Category"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /tags:
     get:
@@ -166,16 +166,16 @@ paths:
       tags:
         - Public
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
                 type: array
                 items:
-                  $ref: '#/components/schemas/Tag'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                  $ref: "#/components/schemas/Tag"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   # Admin endpoints
   /admin/auth/login:
@@ -201,7 +201,7 @@ paths:
                   type: string
                   description: Admin password
       responses:
-        '200':
+        "200":
           description: Successful login
           content:
             application/json:
@@ -212,16 +212,16 @@ paths:
                     type: boolean
                     example: true
                   user:
-                    $ref: '#/components/schemas/AdminUser'
+                    $ref: "#/components/schemas/AdminUser"
                   token:
                     type: string
                     description: Session token
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /admin/auth/logout:
     post:
@@ -232,7 +232,7 @@ paths:
       security:
         - sessionAuth: []
       responses:
-        '200':
+        "200":
           description: Successful logout
           content:
             application/json:
@@ -242,10 +242,10 @@ paths:
                   success:
                     type: boolean
                     example: true
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /admin/posts:
     get:
@@ -276,7 +276,7 @@ paths:
             enum: [draft, published, deleted]
           description: Filter by post status
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
@@ -286,13 +286,13 @@ paths:
                   posts:
                     type: array
                     items:
-                      $ref: '#/components/schemas/PostAdmin'
+                      $ref: "#/components/schemas/PostAdmin"
                   pagination:
-                    $ref: '#/components/schemas/Pagination'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                    $ref: "#/components/schemas/Pagination"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
     post:
       summary: Create new post
@@ -306,20 +306,20 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PostCreateRequest'
+              $ref: "#/components/schemas/PostCreateRequest"
       responses:
-        '201':
+        "201":
           description: Post created successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostAdmin'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                $ref: "#/components/schemas/PostAdmin"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
   /admin/posts/{id}:
     get:
@@ -337,18 +337,18 @@ paths:
             type: integer
           description: Post ID
       responses:
-        '200':
+        "200":
           description: Successful response
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostAdminDetail'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                $ref: "#/components/schemas/PostAdminDetail"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
     put:
       summary: Update post
@@ -369,22 +369,22 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PostUpdateRequest'
+              $ref: "#/components/schemas/PostUpdateRequest"
       responses:
-        '200':
+        "200":
           description: Post updated successfully
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PostAdmin'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+                $ref: "#/components/schemas/PostAdmin"
+        "400":
+          $ref: "#/components/responses/BadRequest"
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
     delete:
       summary: Delete post
@@ -401,7 +401,7 @@ paths:
             type: integer
           description: Post ID
       responses:
-        '200':
+        "200":
           description: Post deleted successfully
           content:
             application/json:
@@ -411,12 +411,12 @@ paths:
                   success:
                     type: boolean
                     example: true
-        '404':
-          $ref: '#/components/responses/NotFound'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-        '500':
-          $ref: '#/components/responses/InternalServerError'
+        "404":
+          $ref: "#/components/responses/NotFound"
+        "401":
+          $ref: "#/components/responses/Unauthorized"
+        "500":
+          $ref: "#/components/responses/InternalServerError"
 
 components:
   schemas:
@@ -463,7 +463,7 @@ components:
 
     PostDetail:
       allOf:
-        - $ref: '#/components/schemas/PostSummary'
+        - $ref: "#/components/schemas/PostSummary"
         - type: object
           properties:
             content:
@@ -506,17 +506,17 @@ components:
 
     PostAdminDetail:
       allOf:
-        - $ref: '#/components/schemas/PostAdmin'
+        - $ref: "#/components/schemas/PostAdmin"
         - type: object
           properties:
             categories:
               type: array
               items:
-                $ref: '#/components/schemas/Category'
+                $ref: "#/components/schemas/Category"
             tags:
               type: array
               items:
-                $ref: '#/components/schemas/Tag'
+                $ref: "#/components/schemas/Tag"
 
     PostCreateRequest:
       type: object
