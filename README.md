@@ -91,6 +91,7 @@ wrangler r2 bucket create blog-uploads
 ### 📚 详细文档
 
 - [完整部署指南](docs/CLOUDFLARE_DEPLOYMENT.md)
+- [故障排除指南](docs/TROUBLESHOOTING.md)
 - [Cloudflare Pages 文档](https://developers.cloudflare.com/pages/)
 - [D1 数据库文档](https://developers.cloudflare.com/d1/)
 
@@ -107,6 +108,9 @@ wrangler r2 bucket create blog-uploads
 ├── docs/              # 文档
 ├── static/            # 静态资源
 ├── functions/         # Cloudflare Functions（Pages）
+├── public/            # 公共资源（headers 等）
+├── build.sh           # Cloudflare Pages 构建脚本
+├── package.json       # Node.js 构建配置
 ├── worker-entry.ts    # Cloudflare Workers 入口点
 ├── wrangler.toml      # Cloudflare Workers 配置
 ├── .github/workflows/ # GitHub Actions（自动部署）

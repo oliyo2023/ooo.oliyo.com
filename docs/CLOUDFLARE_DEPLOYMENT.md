@@ -54,23 +54,31 @@
 在 Pages 设置中配置：
 
 **构建配置**：
-- **构建命令**: `deno task build`
+- **构建命令**: `npm run build`
 - **构建输出目录**: `_fresh`
 - **Root目录**: `/`（默认）
+- **Node.js 版本**: `18`（或更高版本）
 
-**环境变量**：
+**说明**：构建脚本会自动安装 Deno 并构建 Fresh 应用
+
+**环境变量**（在 Pages 项目设置中配置）：
 ```env
 DATABASE_PATH=d1
-SESSION_SECRET=your-secure-secret-here
+SESSION_SECRET=your-very-secure-random-string-here-change-this
 DEV_MODE=false
 APP_NAME=Fresh Blog
-APP_URL=https://your-domain.pages.dev
+APP_URL=https://ooo-oliyo-com.pages.dev
 BCRYPT_ROUNDS=12
 UPLOAD_MAX_SIZE=10485760
 UPLOAD_ALLOWED_TYPES=image/jpeg,image/png,image/gif,image/webp
 POSTS_PER_PAGE=10
 SEARCH_RESULTS_PER_PAGE=20
 ```
+
+**重要提醒**：
+- 确保 `SESSION_SECRET` 是一个强随机字符串
+- 构建命令使用 `npm run build`，它会自动安装 Deno
+- 输出目录设置为 `_fresh`
 
 #### 3. 配置 D1 数据库
 
