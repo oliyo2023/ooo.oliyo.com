@@ -91,6 +91,7 @@ wrangler r2 bucket create blog-uploads
 ### 📚 详细文档
 
 - [完整部署指南](docs/CLOUDFLARE_DEPLOYMENT.md)
+- [Fresh 架构说明](docs/FRESH_ARCHITECTURE.md)
 - [部署检查清单](docs/DEPLOYMENT_CHECKLIST.md)
 - [故障排除指南](docs/TROUBLESHOOTING.md)
 - [Cloudflare Pages 文档](https://developers.cloudflare.com/pages/)

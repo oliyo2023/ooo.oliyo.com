@@ -31,14 +31,17 @@ curl -fsSL https://deno.land/install.sh | sh -s -- --install-dir=/tmp/.deno
 echo "✅ 验证 Deno 安装..."
 /tmp/.deno/bin/deno --version
 
-# 复制静态文件到输出目录
-echo "📁 复制静态文件..."
-mkdir -p _fresh
-cp -r static/* _fresh/ 2>/dev/null || true
-
 # 构建应用
 echo "🔨 构建 Fresh 应用..."
 /tmp/.deno/bin/deno task build
+
+# 复制必要的文件到输出目录
+echo "📁 复制运行时文件..."
+mkdir -p _fresh
+cp -r static/* _fresh/ 2>/dev/null || true
+cp public/_headers _fresh/ 2>/dev/null || true
+
+# Functions 目录已经包含了独立的 _worker.js，无需其他依赖
 
 # 验证构建结果
 echo "🔍 验证构建结果..."
