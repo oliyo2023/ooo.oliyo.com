@@ -2,21 +2,24 @@
 /// <reference lib="deno.ns" />
 
 // Cloudflare Workers 入口点
-import { manifest } from "./fresh.gen.ts";
-import { start } from "$fresh/server.ts";
+import manifest from "./fresh.gen.ts";
+import { createHandler } from "$fresh/server.ts";
 import { defineConfig } from "$fresh/server.ts";
 import tailwind from "$fresh/plugins/tailwind.ts";
+
+// 扩展 globalThis 类型
+declare global {
+  // deno-lint-ignore no-var
+  var cloudflare: { env: any } | undefined;
+}
 
 // Workers 环境配置
 const config = defineConfig({
   plugins: [tailwind()],
 });
 
-// 获取环境变量
-const env = globalThis.cloudflare?.env || {};
-
-// 启动 Fresh 应用
-const handle = await start(manifest, config);
+// 创建 Fresh handler
+const handler = await createHandler(manifest, config);
 
 // 导出 Workers fetch handler
 export default {
@@ -25,6 +28,6 @@ export default {
     globalThis.cloudflare = { env };
 
     // 处理请求
-    return handle(request);
+    return handler(request);
   },
 };
