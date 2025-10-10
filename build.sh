@@ -1,22 +1,23 @@
 #!/bin/bash
 
 # Cloudflare Pages 构建脚本
-# 安装 Deno 并构建 Fresh 应用
+# 为 Fresh 应用生成 Cloudflare Pages 兼容的构建输出
 
 set -e
 
-echo "🚀 开始构建 Fresh 应用..."
+echo "🚀 开始构建 Fresh 应用 for Cloudflare Pages..."
+echo "=================================================="
 
 # 设置环境变量
 export DENO_INSTALL="/tmp/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
-# 为构建过程提供必要的环境变量
+# 为构建过程提供必要的环境变量（这些在运行时会被 Cloudflare 环境变量覆盖）
 export DATABASE_PATH="d1"
 export SESSION_SECRET="build-session-secret-not-used-in-build"
-export DEV_MODE="true"
+export DEV_MODE="false"
 export APP_NAME="Fresh Blog"
-export APP_URL="https://localhost:8000"
+export APP_URL="https://ooo.oliyo.com"
 export BCRYPT_ROUNDS="12"
 export UPLOAD_MAX_SIZE="10485760"
 export UPLOAD_ALLOWED_TYPES="image/jpeg,image/png,image/gif,image/webp"
@@ -24,33 +25,105 @@ export POSTS_PER_PAGE="10"
 export SEARCH_RESULTS_PER_PAGE="20"
 
 # 安装 Deno 到临时目录
+echo ""
 echo "📦 安装 Deno..."
-curl -fsSL https://deno.land/install.sh | sh -s -- --install-dir=/tmp/.deno
+if [ ! -f "/tmp/.deno/bin/deno" ]; then
+  curl -fsSL https://deno.land/install.sh | sh -s -- --install-dir=/tmp/.deno
+else
+  echo "✅ Deno 已经安装"
+fi
 
 # 验证 Deno 安装
+echo ""
 echo "✅ 验证 Deno 安装..."
 /tmp/.deno/bin/deno --version
 
-# 构建应用
+# 生成 Fresh manifest
+echo ""
+echo "📋 生成 Fresh manifest..."
+/tmp/.deno/bin/deno task manifest || {
+  echo "⚠️  Manifest 生成失败，尝试继续构建..."
+}
+
+# 构建 Fresh 应用（生成 _fresh 目录）
+echo ""
 echo "🔨 构建 Fresh 应用..."
 /tmp/.deno/bin/deno task build
 
-# 复制必要的文件到输出目录
-echo "📁 复制运行时文件..."
-mkdir -p _fresh
-cp -r static/* _fresh/ 2>/dev/null || true
-cp public/_headers _fresh/ 2>/dev/null || true
+# 检查 _fresh 目录
+if [ ! -d "_fresh" ]; then
+  echo "❌ 错误: _fresh 目录未生成"
+  echo "Fresh 构建失败，请检查构建日志"
+  exit 1
+fi
 
-# Functions 目录已经包含了独立的 _worker.js，无需其他依赖
+echo ""
+echo "📦 _fresh 目录内容:"
+ls -lah _fresh/ | head -15
 
-# 验证构建结果
+# 复制静态资源到 _fresh
+echo ""
+echo "📁 复制静态资源..."
+if [ -d "static" ]; then
+  mkdir -p _fresh/static
+  cp -r static/* _fresh/static/ 2>/dev/null || true
+  echo "✅ 静态文件已复制"
+fi
+
+# 复制 _headers 文件
+if [ -f "public/_headers" ]; then
+  cp public/_headers _fresh/ 2>/dev/null || true
+  echo "✅ _headers 文件已复制"
+fi
+
+# 复制或生成 functions/_worker.js 到 _fresh
+echo ""
+echo "🔧 处理 Worker 入口文件..."
+
+# 检查 _fresh 目录是否已经有 _worker.js（由 Fresh 生成）
+if [ -f "_fresh/_worker.js" ]; then
+  echo "✅ Fresh 已生成 _worker.js"
+else
+  echo "⚠️  Fresh 未生成 _worker.js，使用自定义 worker"
+  # 复制根目录的 _worker.js 到 _fresh
+  if [ -f "_worker.js" ]; then
+    cp _worker.js _fresh/
+    echo "✅ 已复制 _worker.js 到 _fresh/"
+  else
+    echo "❌ 错误: 找不到 _worker.js 文件"
+    exit 1
+  fi
+fi
+
+# 验证最终构建结果
+echo ""
 echo "🔍 验证构建结果..."
+echo "=================================================="
+
 if [ -d "_fresh" ]; then
   echo "✅ 构建目录存在: _fresh/"
-  ls -la _fresh/ | head -10
+  echo ""
+  echo "📊 构建输出统计:"
+  echo "   文件总数: $(find _fresh -type f | wc -l)"
+  echo "   目录总数: $(find _fresh -type d | wc -l)"
+  
+  if [ -f "_fresh/_worker.js" ]; then
+    echo "   ✅ _worker.js 存在"
+    echo "   大小: $(du -h _fresh/_worker.js | cut -f1)"
+  else
+    echo "   ❌ 警告: _worker.js 不存在"
+  fi
+  
+  echo ""
+  echo "📁 _fresh 目录结构:"
+  ls -lah _fresh/ | head -20
 else
   echo "❌ 构建失败: _fresh 目录不存在"
   exit 1
 fi
 
-echo "✅ 构建完成!"
+echo ""
+echo "✅ 构建完成！"
+echo "=================================================="
+echo "📤 输出目录: _fresh/"
+echo "🌐 可以部署到 Cloudflare Pages 了"

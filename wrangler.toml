@@ -24,7 +24,7 @@ preview_id = "your-preview-kv-namespace-id"
 [[d1_databases]]
 binding = "DB"
 database_name = "blog-db"
-database_id = "a7c5ed5e-654e-41ae-8343-aa3e0d4f0ba0"
+database_id = "bf945618-69d3-469d-b55b-61cd0ebb5ea9"
 
 # R2 存储配置（用于文件上传）
 [[r2_buckets]]

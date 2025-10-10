@@ -1,0 +1,115 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 主背景渐变 -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#050515;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#0d1a3a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:0.9" />
+    </linearGradient>
+    
+    <!-- 顶部光晕渐变 -->
+    <radialGradient id="topGlow" cx="50%" cy="0%" r="65%">
+      <stop offset="0%" style="stop-color:#ffd780;stop-opacity:0.35" />
+      <stop offset="65%" style="stop-color:#ffd780;stop-opacity:0" />
+      <stop offset="100%" style="stop-color:#ffd780;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- 中央光环渐变 -->
+    <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#ffd780;stop-opacity:0.3" />
+      <stop offset="50%" style="stop-color:#b8860b;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:0" />
+    </radialGradient>
+    
+    <!-- 几何图案渐变 -->
+    <linearGradient id="geometricGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffd780;stop-opacity:0.4" />
+      <stop offset="100%" style="stop-color:#b8860b;stop-opacity:0.2" />
+    </linearGradient>
+    
+    <!-- 模糊滤镜 -->
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+    </filter>
+    
+    <!-- 光晕滤镜 -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 主背景 -->
+  <rect width="1920" height="1080" fill="url(#bgGradient)" />
+  
+  <!-- 顶部光晕 -->
+  <ellipse cx="960" cy="0" rx="960" ry="540" fill="url(#topGlow)" />
+  
+  <!-- 中央光环背景 -->
+  <circle cx="960" cy="540" r="300" fill="url(#centerGlow)" filter="url(#blur)" />
+  
+  <!-- 外层圆形光环 -->
+  <circle cx="960" cy="540" r="300" fill="none" stroke="#ffd780" stroke-width="2" stroke-opacity="0.2" />
+  
+  <!-- 中层圆形光环 -->
+  <circle cx="960" cy="540" r="210" fill="none" stroke="#ffd780" stroke-width="3" stroke-opacity="0.3" />
+  
+  <!-- 内层圆形光环 -->
+  <circle cx="960" cy="540" r="120" fill="none" stroke="#b8860b" stroke-width="1" stroke-opacity="0.4" />
+  
+  <!-- 八卦符号装饰 -->
+  <g transform="translate(960, 540)" opacity="0.15">
+    <!-- 八卦外圆 -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#ffd780" stroke-width="2" />
+    
+    <!-- 八卦符号简化版 -->
+    <path d="M -40,0 L -20,0 M 20,0 L 40,0" stroke="#ffd780" stroke-width="3" />
+    <circle cx="-30" cy="-20" r="3" fill="#ffd780" />
+    <circle cx="30" cy="-20" r="3" fill="#ffd780" />
+    <path d="M -30,-10 L -30,10 M 30,-10 L 30,10" stroke="#ffd780" stroke-width="2" />
+  </g>
+  
+  <!-- 装饰性几何图案 -->
+  <g opacity="0.1">
+    <!-- 左上角装饰 -->
+    <path d="M 100,100 L 200,100 L 150,50 Z" fill="url(#geometricGradient)" />
+    <circle cx="150" cy="150" r="30" fill="none" stroke="#ffd780" stroke-width="1" />
+    
+    <!-- 右上角装饰 -->
+    <path d="M 1720,100 L 1820,100 L 1770,50 Z" fill="url(#geometricGradient)" />
+    <circle cx="1770" cy="150" r="30" fill="none" stroke="#ffd780" stroke-width="1" />
+    
+    <!-- 左下角装饰 -->
+    <path d="M 100,980 L 200,980 L 150,1030 Z" fill="url(#geometricGradient)" />
+    <circle cx="150" cy="930" r="30" fill="none" stroke="#ffd780" stroke-width="1" />
+    
+    <!-- 右下角装饰 -->
+    <path d="M 1720,980 L 1820,980 L 1770,1030 Z" fill="url(#geometricGradient)" />
+    <circle cx="1770" cy="930" r="30" fill="none" stroke="#ffd780" stroke-width="1" />
+  </g>
+  
+  <!-- 星星点缀 -->
+  <g opacity="0.6">
+    <circle cx="200" cy="200" r="1" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="1720" cy="200" r="1" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="200" cy="880" r="1" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="1720" cy="880" r="1" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="500" cy="300" r="1.5" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="1420" cy="300" r="1.5" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="500" cy="780" r="1.5" fill="#ffd780" filter="url(#glow)" />
+    <circle cx="1420" cy="780" r="1.5" fill="#ffd780" filter="url(#glow)" />
+  </g>
+  
+  <!-- 流动光线效果 -->
+  <g opacity="0.2">
+    <path d="M 0,540 Q 480,400 960,540 T 1920,540" fill="none" stroke="#ffd780" stroke-width="1" filter="url(#blur)" />
+    <path d="M 0,600 Q 480,460 960,600 T 1920,600" fill="none" stroke="#ffd780" stroke-width="0.5" filter="url(#blur)" />
+    <path d="M 0,480 Q 480,340 960,480 T 1920,480" fill="none" stroke="#ffd780" stroke-width="0.5" filter="url(#blur)" />
+  </g>
+  
+  <!-- 前景雾气效果 -->
+  <rect width="1920" height="1080" fill="white" opacity="0.02" filter="url(#blur)" />
+</svg>

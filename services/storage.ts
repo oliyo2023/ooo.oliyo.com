@@ -11,6 +11,7 @@ let dbInstance: DB | null = null;
 export function getDb(): DB {
   if (!dbInstance) {
     dbInstance = new DB(DB_PATH);
+    dbInstance.execute("PRAGMA foreign_keys = ON");
   }
   return dbInstance;
 }
@@ -30,8 +31,8 @@ export function queryOne<T = any>(
 ): T | undefined {
   const db = getDb();
   try {
-    const result = db.query(sql, params);
-    return result.length > 0 ? result[0] as T : undefined;
+    const result = db.queryEntries<T>(sql, params);
+    return result.length > 0 ? result[0] : undefined;
   } catch (error) {
     console.error("查询错误:", error);
     throw error;
@@ -41,8 +42,8 @@ export function queryOne<T = any>(
 export function queryMany<T = any>(sql: string, params: any[] = []): T[] {
   const db = getDb();
   try {
-    const result = db.query(sql, params);
-    return result as T[];
+    const result = db.queryEntries<T>(sql, params);
+    return result;
   } catch (error) {
     console.error("查询错误:", error);
     throw error;

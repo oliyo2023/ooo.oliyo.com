@@ -6,8 +6,18 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $_middleware from "./routes/_middleware.ts";
 import * as $api_joke from "./routes/api/joke.ts";
+import * as $en_app from "./routes/en/_app.tsx";
+import * as $en_index from "./routes/en/index.tsx";
+import * as $en_login from "./routes/en/login.tsx";
+import * as $en_privacy from "./routes/en/privacy.tsx";
+import * as $en_register from "./routes/en/register.tsx";
+import * as $en_terms from "./routes/en/terms.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $login from "./routes/login.tsx";
+import * as $privacy from "./routes/privacy.tsx";
+import * as $register from "./routes/register.tsx";
+import * as $terms from "./routes/terms.tsx";
 import * as $Counter from "./islands/Counter.tsx";
 import type { Manifest } from "$fresh/server.ts";
 
@@ -17,8 +27,18 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/_middleware.ts": $_middleware,
     "./routes/api/joke.ts": $api_joke,
+    "./routes/en/_app.tsx": $en_app,
+    "./routes/en/index.tsx": $en_index,
+    "./routes/en/login.tsx": $en_login,
+    "./routes/en/privacy.tsx": $en_privacy,
+    "./routes/en/register.tsx": $en_register,
+    "./routes/en/terms.tsx": $en_terms,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
+    "./routes/login.tsx": $login,
+    "./routes/privacy.tsx": $privacy,
+    "./routes/register.tsx": $register,
+    "./routes/terms.tsx": $terms,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
