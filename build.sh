@@ -76,6 +76,13 @@ if [ -f "public/_headers" ]; then
   echo "✅ _headers 文件已复制"
 fi
 
+if [ -f "_worker.js" ]; then
+  cp _worker.js _fresh/_worker.js 2>/dev/null || true
+  echo "✅ _worker.js 已复制"
+else
+  echo "⚠️  警告: 根目录缺少 _worker.js"
+fi
+
 # Fresh 1.7+ 不需要自定义 _worker.js
 # Cloudflare Pages 会自动使用 Fresh 的内置机制
 echo ""
