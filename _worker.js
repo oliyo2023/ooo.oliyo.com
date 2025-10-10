@@ -45,7 +45,7 @@ export default {
 
       // 动态导入 Fresh 应用
       // 这里使用动态导入，因为 Fresh 需要先设置环境
-      const { manifest } = await import('./fresh.gen.ts');
+      const { manifest } = await import('../fresh.gen.ts');
       const { start } = await import('$fresh/server.ts');
       const { defineConfig } = await import('$fresh/server.ts');
       const tailwind = (await import('$fresh/plugins/tailwind.ts')).default;

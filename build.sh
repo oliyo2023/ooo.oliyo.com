@@ -83,13 +83,6 @@ else
   echo "⚠️  警告: 根目录缺少 _worker.js"
 fi
 
-if [ -f "fresh.gen.ts" ]; then
-  cp fresh.gen.ts _fresh/fresh.gen.ts 2>/dev/null || true
-  echo "✅ fresh.gen.ts 已复制"
-else
-  echo "⚠️  警告: 缺少 fresh.gen.ts"
-fi
-
 # Fresh 1.7+ 不需要自定义 _worker.js
 # Cloudflare Pages 会自动使用 Fresh 的内置机制
 echo ""
