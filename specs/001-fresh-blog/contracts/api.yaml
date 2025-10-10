@@ -1,0 +1,1020 @@
+openapi: 3.0.3
+info:
+  title: Fresh Blog API
+  description: RESTful API for the Fresh Blog content management system
+  version: 1.0.0
+  contact:
+    name: Fresh Blog Team
+  license:
+    name: MIT
+
+servers:
+  - url: http://localhost:8000/api
+    description: Development server
+  - url: https://blog.example.com/api
+    description: Production server
+
+paths:
+  # Public Blog Endpoints
+  /posts:
+    get:
+      summary: Get published blog posts
+      description: Retrieve paginated list of published posts with optional filtering
+      tags:
+        - Public
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number for pagination
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 10
+          description: Number of posts per page
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+            default: en
+          description: Language code (e.g., en, zh, es)
+        - name: category
+          in: query
+          schema:
+            type: string
+          description: Filter by category slug
+        - name: tag
+          in: query
+          schema:
+            type: string
+          description: Filter by tag slug
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PostSummary'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  filters:
+                    type: object
+                    properties:
+                      language:
+                        type: string
+                      category:
+                        type: string
+                      tag:
+                        type: string
+
+  /posts/{slug}:
+    get:
+      summary: Get single blog post
+      description: Retrieve a single published blog post by slug and language
+      tags:
+        - Public
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema:
+            type: string
+          description: Post slug
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+            default: en
+          description: Language code
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostDetail'
+        '404':
+          description: Post not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /search:
+    get:
+      summary: Search blog posts
+      description: Full-text search across published blog posts
+      tags:
+        - Public
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema:
+            type: string
+            minLength: 2
+          description: Search query
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+            default: en
+          description: Language code
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+          description: Page number for pagination
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 50
+            default: 10
+          description: Number of results per page
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/PostSummary'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  search:
+                    type: object
+                    properties:
+                      query:
+                        type: string
+                      language:
+                        type: string
+                      total_results:
+                        type: integer
+
+  /categories:
+    get:
+      summary: Get categories
+      description: Retrieve list of categories with post counts
+      tags:
+        - Public
+      parameters:
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+            default: en
+          description: Language code
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Category'
+
+  /tags:
+    get:
+      summary: Get tags
+      description: Retrieve list of tags with post counts
+      tags:
+        - Public
+      parameters:
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+            default: en
+          description: Language code
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Tag'
+
+  # Authentication Endpoints
+  /auth/login:
+    post:
+      summary: Admin login
+      description: Authenticate admin user and create session
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - username
+                - password
+              properties:
+                username:
+                  type: string
+                  minLength: 3
+                  maxLength: 50
+                password:
+                  type: string
+                  minLength: 8
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  user:
+                    $ref: '#/components/schemas/AdminUser'
+                  session_token:
+                    type: string
+                  expires_at:
+                    type: string
+                    format: date-time
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /auth/logout:
+    post:
+      summary: Admin logout
+      description: Invalidate admin session
+      tags:
+        - Authentication
+      security:
+        - SessionAuth: []
+      responses:
+        '200':
+          description: Successful logout
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /auth/me:
+    get:
+      summary: Get current admin user
+      description: Retrieve information about the currently authenticated admin
+      tags:
+        - Authentication
+      security:
+        - SessionAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminUser'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # Admin Post Management
+  /admin/posts:
+    get:
+      summary: Get all posts (admin)
+      description: Retrieve all posts including drafts, with admin options
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 20
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: [draft, published, deleted]
+        - name: language
+          in: query
+          schema:
+            type: string
+            pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+        - name: search
+          in: query
+          schema:
+            type: string
+            description: Search in title and content
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  posts:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/AdminPostSummary'
+                  pagination:
+                    $ref: '#/components/schemas/Pagination'
+                  filters:
+                    type: object
+        '401':
+          description: Unauthorized
+
+    post:
+      summary: Create new post
+      description: Create a new blog post
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreatePostRequest'
+      responses:
+        '201':
+          description: Post created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPostDetail'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationError'
+        '401':
+          description: Unauthorized
+
+  /admin/posts/{id}:
+    get:
+      summary: Get post (admin)
+      description: Retrieve a specific post with full details
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPostDetail'
+        '404':
+          description: Post not found
+        '401':
+          description: Unauthorized
+
+    put:
+      summary: Update post
+      description: Update an existing blog post
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdatePostRequest'
+      responses:
+        '200':
+          description: Post updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPostDetail'
+        '400':
+          description: Validation error
+        '404':
+          description: Post not found
+        '401':
+          description: Unauthorized
+
+    delete:
+      summary: Delete post
+      description: Soft delete a blog post
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Post deleted successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        '404':
+          description: Post not found
+        '401':
+          description: Unauthorized
+
+  /admin/posts/{id}/publish:
+    post:
+      summary: Publish post
+      description: Change post status to published
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Post published successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPostDetail'
+        '404':
+          description: Post not found
+        '401':
+          description: Unauthorized
+
+  /admin/posts/{id}/unpublish:
+    post:
+      summary: Unpublish post
+      description: Change post status to draft
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Post unpublished successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminPostDetail'
+        '404':
+          description: Post not found
+        '401':
+          description: Unauthorized
+
+  # Admin Category Management
+  /admin/categories:
+    get:
+      summary: Get categories (admin)
+      description: Retrieve all categories with management options
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: language
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdminCategory'
+        '401':
+          description: Unauthorized
+
+    post:
+      summary: Create category
+      description: Create a new category
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCategoryRequest'
+      responses:
+        '201':
+          description: Category created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminCategory'
+        '400':
+          description: Validation error
+        '401':
+          description: Unauthorized
+
+  # Admin Tag Management
+  /admin/tags:
+    get:
+      summary: Get tags (admin)
+      description: Retrieve all tags with management options
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      parameters:
+        - name: language
+          in: query
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AdminTag'
+        '401':
+          description: Unauthorized
+
+    post:
+      summary: Create tag
+      description: Create a new tag
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTagRequest'
+      responses:
+        '201':
+          description: Tag created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AdminTag'
+        '400':
+          description: Validation error
+        '401':
+          description: Unauthorized
+
+  # File Upload
+  /admin/upload:
+    post:
+      summary: Upload file
+      description: Upload media files for blog content
+      tags:
+        - Admin
+      security:
+        - SessionAuth: []
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              required:
+                - file
+              properties:
+                file:
+                  type: string
+                  format: binary
+                type:
+                  type: string
+                  enum: [image, document]
+                  default: image
+      responses:
+        '200':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  file:
+                    type: object
+                    properties:
+                      url:
+                        type: string
+                      filename:
+                        type: string
+                      size:
+                        type: integer
+                      type:
+                        type: string
+        '400':
+          description: Invalid file or upload error
+        '401':
+          description: Unauthorized
+        '413':
+          description: File too large
+
+components:
+  schemas:
+    PostSummary:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        title:
+          type: string
+        slug:
+          type: string
+        excerpt:
+          type: string
+        published_at:
+          type: string
+          format: date-time
+        language:
+          type: string
+        author:
+          type: object
+          properties:
+            name:
+              type: string
+        categories:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              slug:
+                type: string
+        tags:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              slug:
+                type: string
+
+    PostDetail:
+      allOf:
+        - $ref: '#/components/schemas/PostSummary'
+        - type: object
+          properties:
+            content:
+              type: string
+            updated_at:
+              type: string
+              format: date-time
+            reading_time:
+              type: integer
+              description: Estimated reading time in minutes
+
+    AdminPostSummary:
+      allOf:
+        - $ref: '#/components/schemas/PostSummary'
+        - type: object
+          properties:
+            status:
+              type: string
+              enum: [draft, published]
+            created_at:
+              type: string
+              format: date-time
+            updated_at:
+              type: string
+              format: date-time
+            deleted_at:
+              type: string
+              format: date-time
+              nullable: true
+
+    AdminPostDetail:
+      allOf:
+        - $ref: '#/components/schemas/AdminPostSummary'
+        - type: object
+          properties:
+            content:
+              type: string
+            category_ids:
+              type: array
+              items:
+                type: string
+                format: uuid
+            tag_ids:
+              type: array
+              items:
+                type: string
+                format: uuid
+
+    CreatePostRequest:
+      type: object
+      required:
+        - title
+        - content
+        - language
+      properties:
+        title:
+          type: string
+          maxLength: 200
+        content:
+          type: string
+        excerpt:
+          type: string
+          maxLength: 500
+        language:
+          type: string
+          pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+        status:
+          type: string
+          enum: [draft, published]
+          default: draft
+        category_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+        tag_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+
+    UpdatePostRequest:
+      type: object
+      properties:
+        title:
+          type: string
+          maxLength: 200
+        content:
+          type: string
+        excerpt:
+          type: string
+          maxLength: 500
+        language:
+          type: string
+          pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+        category_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+        tag_ids:
+          type: array
+          items:
+            type: string
+            format: uuid
+
+    Category:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        slug:
+          type: string
+        description:
+          type: string
+        language:
+          type: string
+        post_count:
+          type: integer
+
+    AdminCategory:
+      allOf:
+        - $ref: '#/components/schemas/Category'
+        - type: object
+          properties:
+            created_at:
+              type: string
+              format: date-time
+
+    CreateCategoryRequest:
+      type: object
+      required:
+        - name
+        - language
+      properties:
+        name:
+          type: string
+          maxLength: 100
+        description:
+          type: string
+        language:
+          type: string
+          pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+
+    Tag:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        slug:
+          type: string
+        language:
+          type: string
+        post_count:
+          type: integer
+
+    AdminTag:
+      allOf:
+        - $ref: '#/components/schemas/Tag'
+        - type: object
+          properties:
+            created_at:
+              type: string
+              format: date-time
+
+    CreateTagRequest:
+      type: object
+      required:
+        - name
+        - language
+      properties:
+        name:
+          type: string
+          maxLength: 50
+        language:
+          type: string
+          pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+
+    AdminUser:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        username:
+          type: string
+        email:
+          type: string
+        name:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        last_login:
+          type: string
+          format: date-time
+          nullable: true
+
+    Pagination:
+      type: object
+      properties:
+        current_page:
+          type: integer
+        total_pages:
+          type: integer
+        total_items:
+          type: integer
+        items_per_page:
+          type: integer
+        has_next:
+          type: boolean
+        has_previous:
+          type: boolean
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        code:
+          type: string
+
+    ValidationError:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        validation_errors:
+          type: object
+          additionalProperties:
+            type: array
+            items:
+              type: string
+
+  securitySchemes:
+    SessionAuth:
+      type: apiKey
+      in: cookie
+      name: session_token
+
+  parameters:
+    LanguageParam:
+      name: language
+      in: query
+      schema:
+        type: string
+        pattern: '^[a-z]{2}(-[A-Z]{2})?$'
+        default: en
+      description: Language code
+
+tags:
+  - name: Public
+    description: Public blog endpoints
+  - name: Authentication
+    description: Admin authentication
+  - name: Admin
+    description: Admin management endpoints

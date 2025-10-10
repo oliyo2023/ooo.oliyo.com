@@ -1,265 +1,276 @@
 ---
-description: "Fresh博客功能实现的完整任务列表"
+description: "Task list for Fresh Blog feature implementation with PostgreSQL, Docker, and multi-language support"
 ---
 
-# Fresh博客任务列表
+# Tasks: Fresh Blog
 
-**输入**: 来自 `/specs/001-fresh-blog/` 的设计文档 **先决条件**:
-plan.md（必需）、spec.md（用户故事所需）、research.md、data-model.md、quickstart.md
+**Input**: Design documents from `/specs/001-fresh-blog/` **Prerequisites**:
+plan.md (required), spec.md (required for user stories), research.md,
+data-model.md, contracts/
 
-**测试**: 测试是可选的 - 未在功能规范中明确要求。仅手动测试。
+**Tests**: Manual testing only - no automated tests explicitly requested in specification
 
-**组织**: 任务按用户故事分组，以便独立实现和测试每个故事。
+**Organization**: Tasks are grouped by user story to enable independent
+implementation and testing of each story.
 
-## 格式: `[ID] [P?] [Story] 描述`
+## Format: `[ID] [P?] [Story] Description`
 
-- **[P]**: 可以并行运行（不同文件，无依赖关系）
-- **[Story]**: 此任务属于哪个用户故事（例如，US1、US2、US3）
-- 在描述中包含确切的文件路径
+- **[P]**: Can run in parallel (different files, no dependencies)
+- **[Story]**: Which user story this task belongs to (e.g., US1, US2, US3)
+- Include exact file paths in descriptions
 
-## 路径约定
+## Path Conventions
 
-- **Fresh Web应用**: 仓库根目录的
-  routes/、islands/、components/、services/、types/
-- **静态资源**: static/ 用于上传和样式
-- **数据库**: data/ 目录用于SQLite数据库
-
----
-
-## 第一阶段: 设置（共享基础设施）
-
-**目标**: 项目初始化和基本结构
-
-- [ ] T001
-      根据Fresh结构创建项目目录（routes/、islands/、components/、services/、types/、static/uploads/、data/）
-- [ ] T002 在deno.json中添加SQLite依赖项以支持数据库功能
-- [ ] T003 [P] 在scripts/init-db.ts中配置数据库初始化脚本
-- [ ] T004 [P] 在scripts/create-admin.ts中创建管理员用户创建脚本
-- [ ] T005 创建包含数据库和会话配置的.env模板文件
+- **Fresh Web App**: routes/, islands/, components/, services/, types/ at repository root
+- **Static Assets**: static/ for uploads and styles
+- **Database**: PostgreSQL in separate Docker container
+- **Docker**: docker-compose.yml, Dockerfile, Dockerfile.postgres
 
 ---
 
-## 第二阶段: 基础（阻塞先决条件）
+## Phase 1: Setup (Shared Infrastructure)
 
-**目标**: 在任何用户故事可以开始之前必须完成的核心基础设施
+**Purpose**: Project initialization and Docker environment setup
 
-**⚠️ 关键**: 在此阶段完成之前不能开始任何用户故事工作
-
-- [ ] T006 使用所有表、索引和FTS5触发器设置SQLite数据库架构
-- [ ] T007 [P] 在types/blog.ts和types/admin.ts中为所有实体创建TypeScript接口
-- [ ] T008 [P] 在services/storage.ts中实现数据库连接和查询工具
-- [ ] T009 [P] 在routes/_middleware.ts中创建用于错误处理的基础Fresh路由中间件
-- [ ] T010 设置管理员身份验证的会话管理配置
-- [ ] T011 在components/中创建基本布局组件（header、footer、navigation）
-
-**检查点**: 基础准备就绪 - 现在可以开始用户故事实现
+- [ ] T001 Create Fresh project structure (routes/, islands/, components/, services/, types/, static/uploads/, scripts/)
+- [ ] T002 Initialize Deno project with Fresh, Preact, Tailwind CSS dependencies in deno.json
+- [ ] T003 [P] Create docker-compose.yml with app and PostgreSQL services
+- [ ] T004 [P] Create Dockerfile for application container
+- [ ] T005 [P] Create Dockerfile.postgres for PostgreSQL container
+- [ ] T006 [P] Configure database initialization script in scripts/init-db.ts
+- [ ] T007 [P] Create admin user creation script in scripts/create-admin.ts
+- [ ] T008 Create .env template with PostgreSQL and multi-language configuration
 
 ---
 
-## 第三阶段: 用户故事1 - 阅读博客文章（优先级: P1）🎯 MVP
+## Phase 2: Foundational (Blocking Prerequisites)
 
-**目标**: 用户可以访问博客并按反向时间顺序阅读已发布的文章，带有分页功能
+**Purpose**: Core infrastructure that MUST be complete before ANY user story can be implemented
 
-**独立测试**:
-在数据库中创建示例文章并验证它们在主博客页面和个人文章页面上正确显示
+**⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-### 用户故事1的实现
+- [ ] T009 Setup PostgreSQL database schema with all tables, indexes, and triggers from data-model.md
+- [ ] T010 [P] Create TypeScript interfaces for all entities in types/blog.ts and types/admin.ts
+- [ ] T011 [P] Implement database connection and query utilities in services/database.ts
+- [ ] T012 [P] Create base Fresh middleware for error handling in routes/_middleware.ts
+- [ ] T013 Setup session management configuration for admin authentication
+- [ ] T014 [P] Create internationalization utilities in utils/i18n.ts for multi-language support
+- [ ] T015 [P] Create basic layout components (header, footer, navigation) in components/layout/
+- [ ] T016 [P] Create validation utilities in utils/validation.ts
 
-- [ ] T012 [US1] 在services/blog.ts中创建BlogPost服务层用于数据访问
-- [ ] T013 [US1] 在routes/index.tsx中实现带分页的博客文章列表
-- [ ] T014 [US1] 在routes/blog/[slug].tsx中创建个人博客文章页面
-- [ ] T015 [US1] [P]
-      在components/BlogPostCard.tsx中创建用于文章预览的BlogPostCard组件
-- [ ] T016 [US1] [P] 在components/Pagination.tsx中创建分页组件
-- [ ] T017 [US1] 在islands/BlogPost.tsx中实现用于内容显示的博客文章岛屿
-- [ ] T018 [US1] 为博客文章添加SEO元标签和结构化数据
-- [ ] T019 [US1] 处理不存在的博客文章的404错误
-- [ ] T020 [US1] 为移动/平板/桌面视口添加响应式设计测试
-
-**检查点**: 此时，用户故事1应完全功能正常并可独立测试
+**Checkpoint**: Foundation ready - user story implementation can now begin in parallel
 
 ---
 
-## 第四阶段: 用户故事2 - 搜索和过滤文章（优先级: P2）
+## Phase 3: User Story 1 - Read Blog Posts (Priority: P1) 🎯 MVP
 
-**目标**: 用户可以按关键词搜索博客文章并按类别或标签过滤
+**Goal**: Users can visit the blog and read published articles in reverse chronological order with pagination
 
-**独立测试**:
-创建具有不同关键词、类别和标签的文章，然后验证搜索和过滤功能返回正确结果
+**Independent Test**: Create sample posts in database and verify they appear correctly on main blog page and individual post pages
 
-### 用户故事2的实现
+### Implementation for User Story 1
 
-- [ ] T021 [US2] 在services/blog.ts中使用FTS5搜索功能扩展BlogPost服务
-- [ ] T022 [US2] 在services/search.ts中创建用于查询处理的搜索服务
-- [ ] T023 [US2] 在routes/search.tsx中实现搜索结果页面
-- [ ] T024 [US2] 在islands/SearchForm.tsx中创建用于搜索功能的SearchForm岛屿
-- [ ] T025 [US2] [P] 在routes/blog/category/[name].tsx中创建类别过滤
-- [ ] T026 [US2] [P] 在routes/blog/tag/[name].tsx中创建标签过滤
-- [ ] T027 [US2] [P] 在components/CategoryFilter.tsx中创建CategoryFilter组件
-- [ ] T028 [US2] [P] 在components/TagFilter.tsx中创建TagFilter组件
-- [ ] T029 [US2] 添加类别列表API端点和页面
-- [ ] T030 [US2] 添加标签列表API端点和页面
-- [ ] T031 [US2] 将搜索和过滤组件与主博客布局集成
-- [ ] T032 [US2] 优雅地处理空搜索结果
+- [ ] T017 [US1] Create BlogPost service layer for data access in services/blog.ts
+- [ ] T018 [US1] Implement blog post listing with pagination in routes/index.tsx
+- [ ] T019 [US1] Create individual blog post page in routes/blog/[slug].tsx
+- [ ] T020 [US1] [P] Create BlogPostCard component for article previews in components/BlogPostCard.tsx
+- [ ] T021 [US1] [P] Create Pagination component in components/Pagination.tsx
+- [ ] T022 [US1] [P] Create language selector component in components/LanguageSelector.tsx
+- [ ] T023 [US1] [P] Create blog post island for content display in islands/BlogPost.tsx
+- [ ] T024 [US1] Add SEO meta tags and structured data for blog posts
+- [ ] T025 [US1] Handle 404 errors for non-existent blog posts
+- [ ] T026 [US1] Add responsive design testing for mobile/tablet/desktop viewports
+- [ ] T027 [US1] Implement multi-language URL routing (/{lang}/blog)
 
-**检查点**: 此时，用户故事1和2都应该独立工作
+**Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
 ---
 
-## 第五阶段: 用户故事3 - 管理员文章管理（优先级: P3）
+## Phase 4: User Story 2 - Search and Filter Posts (Priority: P2)
 
-**目标**: 博客管理员可以创建、编辑和发布具有富文本格式的博客文章
+**Goal**: Users can search blog posts by keywords and filter by categories or tags
 
-**独立测试**: 以管理员身份登录并对博客文章执行创建、编辑、发布和删除操作
+**Independent Test**: Create posts with different keywords, categories, and tags, then verify search and filter functionality returns correct results
 
-### 用户故事3的实现
+### Implementation for User Story 2
 
-#### 身份验证基础设施
+- [ ] T028 [US2] Extend BlogPost service with PostgreSQL full-text search in services/blog.ts
+- [ ] T029 [US2] Create search service for query processing in services/search.ts
+- [ ] T030 [US2] Implement search results page in routes/search.tsx
+- [ ] T031 [US2] Create SearchForm island for search functionality in islands/SearchForm.tsx
+- [ ] T032 [US2] [P] Create category filtering in routes/blog/category/[slug].tsx
+- [ ] T033 [US2] [P] Create tag filtering in routes/blog/tag/[slug].tsx
+- [ ] T034 [US2] [P] Create CategoryFilter component in components/CategoryFilter.tsx
+- [ ] T035 [US2] [P] Create TagFilter component in components/TagFilter.tsx
+- [ ] T036 [US2] Add category list API endpoint and page in routes/api/categories.ts
+- [ ] T037 [US2] Add tag list API endpoint and page in routes/api/tags.ts
+- [ ] T038 [US2] Integrate search and filter components with main blog layout
+- [ ] T039 [US2] Handle empty search results gracefully
+- [ ] T040 [US2] Implement multi-language search functionality
 
-- [ ] T033 [US3] 在services/auth.ts中创建身份验证服务
-- [ ] T034 [US3] 在islands/AdminAuth.tsx中实现用于登录功能的AdminAuth岛屿
-- [ ] T035 [US3] 在routes/admin/login.tsx中创建管理员登录页面
-- [ ] T036 [US3] 在routes/admin/dashboard.tsx中创建管理员仪表板
-- [ ] T037 [US3] 实现用于管理员路由保护的会话中间件
-
-#### 管理员文章管理
-
-- [ ] T038 [US3] 在routes/admin/posts/index.tsx中创建管理员文章列表页面
-- [ ] T039 [US3] 在routes/admin/posts/new.tsx中实现创建新文章页面
-- [ ] T040 [US3] 在routes/admin/posts/[id].tsx中创建编辑文章页面
-- [ ] T041 [US3] [P] 在islands/RichTextEditor.tsx中创建RichTextEditor岛屿
-- [ ] T042 [US3] 在routes/admin/api/中实现管理员API端点
-- [ ] T043 [US3] 在static/uploads/中添加图像文件上传功能
-- [ ] T044 [US3] 创建用于文章管理表单的管理员组件
-- [ ] T045 [US3] 实现软删除功能
-- [ ] T046 [US3] 添加草稿/发布状态管理
-- [ ] T047 [US3] 创建类别和标签管理界面
-- [ ] T048 [US3] 添加管理员内容验证和错误处理
-
-**检查点**: 所有用户故事现在应该独立功能正常
+**Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
 ---
 
-## 第六阶段: 优化和跨领域关注点
+## Phase 5: User Story 3 - Admin Post Management (Priority: P3)
 
-**目标**: 影响多个用户故事的改进
+**Goal**: Blog administrators can create, edit, and publish blog posts with rich text formatting
 
-- [ ] T049 [P] 添加性能优化（图像优化、缓存）
-- [ ] T050 实现全面的错误处理和用户友好的错误页面
-- [ ] T051 添加可访问性改进（ARIA标签、键盘导航）
-- [ ] T052 [P] 为SEO创建站点地图生成
-- [ ] T053 为博客文章添加RSS源功能
-- [ ] T054 实现数据库备份和恢复脚本
-- [ ] T055 为管理员仪表板添加分析和统计跟踪
-- [ ] T056 在README.md中创建全面文档
-- [ ] T057 [P] 为业务逻辑服务添加单元测试
-- [ ] T058 安全加固（输入验证、CSRF保护）
-- [ ] T059 运行quickstart.md中的完整手动测试清单
-- [ ] T060 为目标指标进行性能测试和优化
+**Independent Test**: Log in as an admin and perform create, edit, publish, and delete operations on blog posts
 
----
+#### Authentication Infrastructure
 
-## 依赖关系和执行顺序
+- [ ] T041 [US3] Create authentication service in services/auth.ts
+- [ ] T042 [US3] Implement AdminAuth island for login functionality in islands/AdminAuth.tsx
+- [ ] T043 [US3] Create admin login page in routes/admin/login.tsx
+- [ ] T044 [US3] Create admin dashboard in routes/admin/dashboard.tsx
+- [ ] T045 [US3] Implement session middleware for admin route protection
 
-### 阶段依赖关系
+#### Admin Post Management
 
-- **设置（第一阶段）**: 无依赖关系 - 可以立即开始
-- **基础（第二阶段）**: 依赖于设置完成 - 阻塞所有用户故事
-- **用户故事（第三阶段+）**: 都依赖于基础阶段完成
-  - 然后用户故事可以并行进行（如果有人员配备）
-  - 或按优先级顺序进行（P1 → P2 → P3）
-- **优化（最后阶段）**: 依赖于所有所需用户故事完成
+- [ ] T046 [US3] Create admin post list page in routes/admin/posts/index.tsx
+- [ ] T047 [US3] Implement create new post page in routes/admin/posts/new.tsx
+- [ ] T048 [US3] Create edit post page in routes/admin/posts/[id].tsx
+- [ ] T049 [US3] [P] Create TipTap WYSIWYG editor island in islands/RichTextEditor.tsx
+- [ ] T050 [US3] Implement admin API endpoints in routes/admin/api/posts.ts
+- [ ] T051 [US3] Implement admin API for authentication in routes/admin/api/auth.ts
+- [ ] T052 [US3] Add image file upload functionality in static/uploads/
+- [ ] T053 [US3] Create admin components for post management forms
+- [ ] T054 [US3] Implement soft delete functionality
+- [ ] T055 [US3] Add draft/publish status management
+- [ ] T056 [US3] Create category and tag management interface
+- [ ] T057 [US3] Add multi-language post management
+- [ ] T058 [US3] Add admin content validation and error handling
 
-### 用户故事依赖关系
-
-- **用户故事1（P1）**: 可以在基础完成后开始 - 不依赖于其他故事
-- **用户故事2（P2）**: 可以在基础完成后开始 - 与US1集成进行过滤但可独立测试
-- **用户故事3（P3）**: 可以在基础完成后开始 - 管理US1/US2消费的内容但可独立测试
-
-### 每个用户故事内部
-
-- 服务层在UI组件之前
-- 核心功能在集成之前
-- 在转到下一个故事之前独立测试验证
-- 在转到下一个优先级之前每个故事完成
-
-### 并行机会
-
-- 所有标记为[P]的设置任务可以并行运行
-- 所有标记为[P]的基础任务可以在第二阶段内并行运行
-- 一旦基础阶段完成，所有用户故事都可以并行开始（如果团队容量允许）
-- 标记为[P]的组件任务在每个故事内可以并行运行
-- 不同用户故事可以由不同团队成员并行工作
+**Checkpoint**: All user stories should now be independently functional
 
 ---
 
-## 并行示例: 用户故事1
+## Phase 6: Polish & Cross-Cutting Concerns
+
+**Purpose**: Improvements that affect multiple user stories
+
+- [ ] T059 [P] Add performance optimization (image optimization, caching)
+- [ ] T060 Implement comprehensive error handling and user-friendly error pages
+- [ ] T061 Add accessibility improvements (WCAG AA compliance, ARIA labels, keyboard navigation)
+- [ ] T062 [P] Create sitemap generation for SEO
+- [ ] T063 Add RSS feed functionality for blog posts
+- [ ] T064 Implement database backup and restore scripts
+- [ ] T065 Add analytics and statistics tracking for admin dashboard
+- [ ] T066 Create comprehensive documentation in README.md
+- [ ] T067 [P] Add unit tests for business logic services
+- [ ] T068 Security hardening (input validation, CSRF protection)
+- [ ] T069 Run complete manual testing checklist from quickstart.md
+- [ ] T070 Performance testing and optimization for target metrics
+
+---
+
+## Dependencies & Execution Order
+
+### Phase Dependencies
+
+- **Setup (Phase 1)**: No dependencies - can start immediately
+- **Foundational (Phase 2)**: Depends on Setup completion - BLOCKS all user stories
+- **User Stories (Phase 3+)**: All depend on Foundational phase completion
+  - User stories can then proceed in parallel (if staffed)
+  - Or sequentially in priority order (P1 → P2 → P3)
+- **Polish (Final Phase)**: Depends on all desired user stories being complete
+
+### User Story Dependencies
+
+- **User Story 1 (P1)**: Can start after Foundational (Phase 2) - No dependencies on other stories
+- **User Story 2 (P2)**: Can start after Foundational (Phase 2) - May integrate with US1 but should be independently testable
+- **User Story 3 (P3)**: Can start after Foundational (Phase 2) - Manages content consumed by US1/US2 but should be independently testable
+
+### Within Each User Story
+
+- Services before UI components
+- Core functionality before integration
+- Story complete before moving to next priority
+
+### Parallel Opportunities
+
+- All Setup tasks marked [P] can run in parallel
+- All Foundational tasks marked [P] can run in parallel (within Phase 2)
+- Once Foundational phase completes, all user stories can start in parallel (if team capacity allows)
+- All components marked [P] within a story can run in parallel
+- Different user stories can be worked on in parallel by different team members
+
+---
+
+## Parallel Example: User Story 1
 
 ```bash
-# 一起启动用户故事1的所有UI组件:
-任务: "在components/BlogPostCard.tsx中创建用于文章预览的BlogPostCard组件"
-任务: "在components/Pagination.tsx中创建分页组件"
-任务: "在islands/BlogPost.tsx中实现用于内容显示的博客文章岛屿"
+# Launch all UI components for User Story 1 together:
+Task: "Create BlogPostCard component for article previews in components/BlogPostCard.tsx"
+Task: "Create Pagination component in components/Pagination.tsx"
+Task: "Create LanguageSelector component in components/LanguageSelector.tsx"
+Task: "Create blog post island for content display in islands/BlogPost.tsx"
 ```
 
 ---
 
-## 实现策略
+## Implementation Strategy
 
-### 首先MVP（仅用户故事1）
+### MVP First (User Story 1 Only)
 
-1. 完成第一阶段: 设置
-2. 完成第二阶段: 基础（关键 - 阻塞所有故事）
-3. 完成第三阶段: 用户故事1
-4. **停止并验证**: 使用示例内容独立测试用户故事1
-5. 部署/演示基本博客功能
+1. Complete Phase 1: Setup
+2. Complete Phase 2: Foundational (CRITICAL - blocks all stories)
+3. Complete Phase 3: User Story 1
+4. **STOP and VALIDATE**: Test User Story 1 independently with sample content
+5. Deploy/demo basic blog functionality
 
-### 增量交付
+### Incremental Delivery
 
-1. 完成设置 + 基础 → 基础准备就绪
-2. 添加用户故事1 → 独立测试 → 部署/演示（MVP博客阅读）
-3. 添加用户故事2 → 独立测试 → 部署/演示（搜索和过滤）
-4. 添加用户故事3 → 独立测试 → 部署/演示（完整博客系统）
-5. 完成第六阶段: 优化 → 生产就绪系统
+1. Complete Setup + Foundational → Foundation ready
+2. Add User Story 1 → Test independently → Deploy/Demo (MVP blog reading)
+3. Add User Story 2 → Test independently → Deploy/Demo (search and filtering)
+4. Add User Story 3 → Test independently → Deploy/Demo (complete blog system)
+5. Complete Phase 6: Polish → Production ready system
 
-### 并行团队策略
+### Parallel Team Strategy
 
-有多个开发人员时：
+With multiple developers:
 
-1. 团队一起完成设置 + 基础
-2. 一旦基础完成：
-   - 开发人员A: 用户故事1（博客阅读功能）
-   - 开发人员B: 用户故事2（搜索和过滤）
-   - 开发人员C: 用户故事3（管理员管理）
-3. 故事完成并独立集成
-4. 团队一起在第六阶段优化和优化工作
-
----
-
-## 备注
-
-- [P] 任务 = 不同文件，无依赖关系
-- [Story] 标签将任务映射到特定用户故事以实现可追溯性
-- 每个用户故事应独立完成和可测试
-- 每个用户故事完成后需要手动测试
-- 每个任务或逻辑组后提交
-- 在任何检查点停止以独立验证故事
-- 必须始终遵循Fresh框架模式
-- 所有文件都需要TypeScript严格模式
-- 强制要求移动优先响应式设计
-- 性能目标: <2s页面加载，<1s搜索
-- 避免: 模糊任务，同文件冲突，破坏独立性的跨故事依赖
+1. Team completes Setup + Foundational together
+2. Once Foundational is done:
+   - Developer A: User Story 1 (blog reading functionality)
+   - Developer B: User Story 2 (search and filtering)
+   - Developer C: User Story 3 (admin management)
+3. Stories complete and integrate independently
+4. Team works together on Phase 6 polish and optimization
 
 ---
 
-**总任务数**: 60个任务 **按用户故事的任务**:
+## Notes
 
-- 用户故事1（P1）: 9个任务
-- 用户故事2（P2）: 12个任务
-- 用户故事3（P3）: 16个任务
-- 设置: 5个任务
-- 基础: 6个任务
-- 优化: 12个任务
+- [P] tasks = different files, no dependencies
+- [Story] label maps task to specific user story for traceability
+- Each user story should be independently completable and testable
+- Manual testing required after each user story completion
+- Commit after each task or logical group
+- Stop at any checkpoint to validate story independently
+- Fresh framework patterns must always be followed
+- TypeScript strict mode required for all files
+- Mobile-first responsive design is mandatory (NON-NEGOTIABLE)
+- Performance targets: <2s page load, <1s search
+- Multi-language support required for all public features
+- Docker deployment architecture must be maintained
+- PostgreSQL is the only supported database
+- WCAG AA accessibility compliance required
+- Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
 
-**并行机会**: 24个任务标记为[P]用于并行执行 **MVP范围**:
-用户故事1（包括设置和基础共20个任务）
+---
+
+**Total Tasks**: 70 tasks **Tasks by User Story**:
+
+- User Story 1 (P1): 11 tasks
+- User Story 2 (P2): 13 tasks
+- User Story 3 (P3): 18 tasks
+- Setup: 8 tasks
+- Foundational: 8 tasks
+- Polish: 12 tasks
+
+**Parallel Opportunities**: 31 tasks marked [P] for parallel execution
+
+**MVP Scope**: User Story 1 (including setup and foundational = 27 tasks)

@@ -115,6 +115,16 @@ performing create, edit, publish, and delete operations on blog posts.
 - **FR-009**: System MUST validate post titles are not empty and are unique
 - **FR-010**: System MUST provide simple username/password with session-based
   authentication for accessing admin features
+- **FR-012**: System MUST be deployable using Docker containers for consistent
+  environments and easy scaling
+- **FR-013**: System MUST store images and media files on local filesystem within
+  the container for simplicity and direct access
+- **FR-014**: System MUST use PostgreSQL as the database for robust data management
+  and ACID compliance
+- **FR-015**: System MUST support multi-language internationalization (>=3 languages)
+  for blog content and user interface
+- **FR-016**: Admin interface MUST provide WYSIWYG editor for intuitive content
+  creation and formatting
 
 ### Key Entities
 
@@ -127,6 +137,14 @@ performing create, edit, publish, and delete operations on blog posts.
   content
 
 ## Clarifications
+
+### Session 2025-10-10
+
+- Q: 部署环境平台选择 → A: Docker 容器部署
+- Q: 图片和媒体文件存储方案 → A: 本地文件系统存储在容器内
+- Q: 数据库选择 → A: PostgreSQL（功能丰富，需要单独容器）
+- Q: 国际化支持需求 → A: 多语言支持（>=3种语言）
+- Q: 富文本编辑器实现 → A: WYSIWYG 所见即所得编辑器
 
 ### Session 2025-10-07
 
