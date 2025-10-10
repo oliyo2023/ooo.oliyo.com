@@ -55,11 +55,11 @@ else
 fi
 
 # 检查 fresh.gen.ts
-if [ ! -f "_fresh/fresh.gen.ts" ] && [ ! -f "fresh.gen.ts" ]; then
-  echo "❌ 错误: fresh.gen.ts 不存在"
+if [ ! -f "_fresh/fresh.gen.ts" ]; then
+  echo "❌ 错误: _fresh/fresh.gen.ts 不存在"
   ERRORS=$((ERRORS + 1))
 else
-  echo "✅ fresh.gen.ts 存在"
+  echo "✅ _fresh/fresh.gen.ts 存在"
 fi
 
 # 检查静态文件
