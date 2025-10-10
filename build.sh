@@ -76,24 +76,10 @@ if [ -f "public/_headers" ]; then
   echo "✅ _headers 文件已复制"
 fi
 
-# 复制或生成 functions/_worker.js 到 _fresh
+# Fresh 1.7+ 不需要自定义 _worker.js
+# Cloudflare Pages 会自动使用 Fresh 的内置机制
 echo ""
-echo "🔧 处理 Worker 入口文件..."
-
-# 检查 _fresh 目录是否已经有 _worker.js（由 Fresh 生成）
-if [ -f "_fresh/_worker.js" ]; then
-  echo "✅ Fresh 已生成 _worker.js"
-else
-  echo "⚠️  Fresh 未生成 _worker.js，使用自定义 worker"
-  # 复制根目录的 _worker.js 到 _fresh
-  if [ -f "_worker.js" ]; then
-    cp _worker.js _fresh/
-    echo "✅ 已复制 _worker.js 到 _fresh/"
-  else
-    echo "❌ 错误: 找不到 _worker.js 文件"
-    exit 1
-  fi
-fi
+echo "✅ Fresh 1.7+ 使用内置 Cloudflare Pages 支持"
 
 # 验证最终构建结果
 echo ""
@@ -107,11 +93,12 @@ if [ -d "_fresh" ]; then
   echo "   文件总数: $(find _fresh -type f | wc -l)"
   echo "   目录总数: $(find _fresh -type d | wc -l)"
   
-  if [ -f "_fresh/_worker.js" ]; then
-    echo "   ✅ _worker.js 存在"
-    echo "   大小: $(du -h _fresh/_worker.js | cut -f1)"
+  if [ -f "_fresh/main.js" ]; then
+    echo "   ✅ main.js 存在 (Fresh 主文件)"
+    echo "   大小: $(du -h _fresh/main.js | cut -f1)"
   else
-    echo "   ❌ 警告: _worker.js 不存在"
+    echo "   ❌ 错误: main.js 不存在"
+    exit 1
   fi
   
   echo ""
