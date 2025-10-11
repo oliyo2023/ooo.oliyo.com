@@ -19,7 +19,7 @@ import * as $privacy from "./routes/privacy.tsx";
 import * as $register from "./routes/register.tsx";
 import * as $terms from "./routes/terms.tsx";
 import * as $Counter from "./islands/Counter.tsx";
-import type { Manifest } from "$fresh/server.ts";
+import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {

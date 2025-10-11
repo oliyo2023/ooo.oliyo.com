@@ -1,25 +1,26 @@
-import { Head } from "$fresh/runtime.ts";
 import LocaleNav from "../components/LocaleNav.tsx";
+
+export const head = (
+  <>
+    <title>东方命理 · AI 八字算命平台</title>
+    <meta name="description" content="输入生辰八字，生成专属命盘与行运指引，AI 加持的国风命理体验。" />
+    <meta property="og:title" content="东方命理 · AI 八字算命平台" />
+    <meta property="og:description" content="输入生辰八字，生成专属命盘与行运指引，AI 加持的国风命理体验。" />
+    <meta property="og:url" content="https://ooo.oliyo.com/" />
+  </>
+);
 
 export default function Home() {
   return (
-    <>
-      <Head>
-        <title>东方命理 · AI 八字算命平台</title>
-        <meta name="description" content="输入生辰八字，生成专属命盘与行运指引，AI 加持的国风命理体验。" />
-        <meta property="og:title" content="东方命理 · AI 八字算命平台" />
-        <meta property="og:description" content="输入生辰八字，生成专属命盘与行运指引，AI 加持的国风命理体验。" />
-        <meta property="og:url" content="https://ooo.oliyo.com/" />
-      </Head>
-      <main class="relative min-h-screen bg-[#0f0b1a] text-slate-100">
-        <LocaleNav locale="zh" />
-        <div class="absolute inset-0 -z-10">
-          <div class="h-full w-full bg-gradient-to-br from-[#1a152e] via-[#241f42] to-[#7e3bff] opacity-90" />
-          <div class="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_top,_rgba(126,59,255,0.35),_transparent_65%)]" />
-          <div class="absolute inset-0 backdrop-blur-sm" />
-          <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/20" />
-          <div class="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/30" />
-        </div>
+    <main class="relative min-h-screen bg-[#0f0b1a] text-slate-100">
+      <LocaleNav locale="zh" />
+      <div class="absolute inset-0 -z-10">
+        <div class="h-full w-full bg-gradient-to-br from-[#1a152e] via-[#241f42] to-[#7e3bff] opacity-90" />
+        <div class="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(circle_at_top,_rgba(126,59,255,0.35),_transparent_65%)]" />
+        <div class="absolute inset-0 backdrop-blur-sm" />
+        <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/20" />
+        <div class="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/30" />
+      </div>
       <section class="px-6 pt-28 pb-20 sm:px-10">
         <div class="mx-auto max-w-4xl text-center">
           <span class="inline-flex items-center justify-center rounded-full border border-purple-400/50 bg-white/5 px-4 py-1 text-xs font-medium tracking-[0.35em] text-purple-200 uppercase">
@@ -103,6 +104,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  </>
   );
 }
