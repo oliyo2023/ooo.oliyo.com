@@ -1,0 +1,22 @@
+{
+  "build_id": "e7d5ec177d405e6c79684ca180dc34748deb4150",
+  "files": {
+    "main.js": [
+      "chunk-7KZRW4CE.js"
+    ],
+    "deserializer.js": [],
+    "signals.js": [
+      "chunk-5TIVV7D3.js",
+      "chunk-7KZRW4CE.js"
+    ],
+    "island-counter.js": [
+      "chunk-5TIVV7D3.js",
+      "chunk-7KZRW4CE.js"
+    ],
+    "chunk-5TIVV7D3.js": [
+      "chunk-7KZRW4CE.js"
+    ],
+    "chunk-7KZRW4CE.js": [],
+    "metafile.json": []
+  }
+}

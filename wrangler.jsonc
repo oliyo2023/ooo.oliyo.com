@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ooo-oliyo-com",
+  "compatibility_date": "2024-09-23",
+  "compatibility_flags": ["nodejs_compat"],
+  "pages_build_output_dir": ".vercel/output/static",
+  "assets": {
+    "directory": "./public",
+    "binding": "STATIC_ASSETS"
+  },
+  "vars": {
+    "NEXT_PUBLIC_APP_URL": "https://ooo.oliyo.com"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ooo-oliyo-com-db",
+      "database_id": "your-database-id"
+    }
+  ]
+}

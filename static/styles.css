@@ -14,7 +14,7 @@
       radial-gradient(circle at 20% 50%, rgba(126, 59, 255, 0.15) 0%, transparent 20%),
       radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.1) 0%, transparent 25%);
     min-height: 100vh;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
   }
 
   .mystic-card {

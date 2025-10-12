@@ -1,5 +1,3 @@
-import { JSX } from "preact";
-
 type Locale = "zh" | "en";
 
 interface LocaleNavProps {
@@ -38,22 +36,36 @@ const textMap: Record<Locale, {
   },
 };
 
-export default function LocaleNav({ locale }: LocaleNavProps): JSX.Element {
+export default function LocaleNav({ locale }: LocaleNavProps) {
   const t = textMap[locale];
   return (
-    <header class="relative z-10 flex flex-col gap-3 px-6 pt-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-      <a class="inline-flex items-center gap-2 text-sm font-semibold text-amber-100 transition hover:text-white" href={t.homeHref}>
-        <span class="h-8 w-8 rounded-full bg-white/10 text-center leading-8 text-amber-200">∞</span>
+    <header className="relative z-10 flex flex-col gap-3 px-6 pt-8 sm:flex-row sm:items-center sm:justify-between sm:px-10">
+      <a
+        className="inline-flex items-center gap-2 text-sm font-semibold text-[#f1eeff] transition hover:text-white"
+        href={t.homeHref}
+      >
+        <span className="h-8 w-8 rounded-full bg-gradient-to-br from-[#8b3cff] to-[#5220a3] text-center leading-8 text-[#f1eeff] shadow-[0_10px_25px_rgba(168,100,255,0.3)]">
+          ☯
+        </span>
         <span>{t.brand}</span>
       </a>
-      <div class="flex flex-wrap items-center gap-3 text-sm text-amber-100">
-        <a class="rounded-full border border-amber-300/40 px-4 py-2 transition hover:bg-white/10" href={t.loginHref}>
+      <div className="flex flex-wrap items-center gap-3 text-sm text-[#f1eeff]">
+        <a
+          className="rounded-full border border-[rgba(189,140,255,0.4)] px-4 py-2 transition hover:bg-[rgba(168,100,255,0.1)]"
+          href={t.loginHref}
+        >
           {t.loginLabel}
         </a>
-        <a class="rounded-full border border-amber-300/40 px-4 py-2 transition hover:bg-white/10" href={t.registerHref}>
+        <a
+          className="rounded-full border border-[rgba(189,140,255,0.4)] px-4 py-2 transition hover:bg-[rgba(168,100,255,0.1)]"
+          href={t.registerHref}
+        >
           {t.registerLabel}
         </a>
-        <a class="rounded-full border border-amber-300/40 px-4 py-2 transition hover:bg-white/10" href={t.toggleHref}>
+        <a
+          className="rounded-full border border-[rgba(189,140,255,0.4)] px-4 py-2 transition hover:bg-[rgba(168,100,255,0.1)]"
+          href={t.toggleHref}
+        >
           {t.toggleLabel}
         </a>
       </div>

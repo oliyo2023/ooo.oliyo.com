@@ -1,7 +1,11 @@
 name = "ooo-oliyo-com"
-main = "worker-entry.ts"
+main = "worker-entry.js"
 compatibility_date = "2024-01-01"
 compatibility_flags = ["nodejs_compat"]
+
+# Workers 配置
+[build]
+command = "deno task build-workers"
 
 # 环境变量配置
 [env.production.vars]
@@ -14,32 +18,38 @@ APP_NAME = "Fresh Blog (Staging)"
 APP_URL = "https://staging.ooo.oliyo.com"
 DEV_MODE = "false"
 
-# KV 存储配置（用于数据库替代）
-[[kv_namespaces]]
-binding = "BLOG_DB"
-id = "your-kv-namespace-id"
-preview_id = "your-preview-kv-namespace-id"
-
 # D1 数据库配置
 [[d1_databases]]
 binding = "DB"
 database_name = "blog-db"
 database_id = "bf945618-69d3-469d-b55b-61cd0ebb5ea9"
 
+# KV 存储配置（用于缓存和会话）
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-cache-namespace-id"
+preview_id = "your-preview-cache-namespace-id"
+
 # R2 存储配置（用于文件上传）
 [[r2_buckets]]
 binding = "UPLOADS"
 bucket_name = "blog-uploads"
 
-# Workers 配置
-[build]
-command = "deno task build"
-
-
-[vars]
 # 默认环境变量
+[vars]
 BCRYPT_ROUNDS = "12"
 UPLOAD_MAX_SIZE = "10485760"
 UPLOAD_ALLOWED_TYPES = "image/jpeg,image/png,image/gif,image/webp"
 POSTS_PER_PAGE = "10"
 SEARCH_RESULTS_PER_PAGE = "20"
+
+# Workers 自定义域名和路由配置
+[env.production]
+routes = [
+  { pattern = "ooo.oliyo.com/*", zone_name = "ooo.oliyo.com" }
+]
+
+[env.staging]
+routes = [
+  { pattern = "staging.ooo.oliyo.com/*", zone_name = "ooo.oliyo.com" }
+]

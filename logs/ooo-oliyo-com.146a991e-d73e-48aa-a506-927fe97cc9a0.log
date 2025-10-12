@@ -1,0 +1,1225 @@
+2025-10-11T00:34:41.741362Z	Cloning repository...
+2025-10-11T00:34:42.397508Z	From https://github.com/oliyo2023/ooo.oliyo.com
+2025-10-11T00:34:42.397965Z	 * branch            91eabb254eb535a454666ddab6be4334deaf6264 -> FETCH_HEAD
+2025-10-11T00:34:42.398069Z	
+2025-10-11T00:34:42.428838Z	HEAD is now at 91eabb2 ``` build(deno): 降级 fresh 框架版本至 1.6.1
+2025-10-11T00:34:42.429298Z	
+2025-10-11T00:34:42.508217Z	
+2025-10-11T00:34:42.508637Z	Using v2 root directory strategy
+2025-10-11T00:34:42.530864Z	Success: Finished cloning repository files
+2025-10-11T00:34:44.253599Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-10-11T00:34:44.254268Z	
+2025-10-11T00:34:44.256233Z	Found wrangler.toml file. Reading build configuration...
+2025-10-11T00:34:45.356183Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2025-10-11T00:34:45.422877Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-11T00:34:45.423512Z	Installing project dependencies: npm install --progress=false
+2025-10-11T00:34:46.588268Z	
+2025-10-11T00:34:46.588483Z	up to date, audited 1 package in 779ms
+2025-10-11T00:34:46.589095Z	
+2025-10-11T00:34:46.589236Z	found 0 vulnerabilities
+2025-10-11T00:34:46.608904Z	Executing user command: ./build.sh
+2025-10-11T00:34:46.615595Z	🚀 开始构建 Fresh 应用 for Cloudflare Pages...
+2025-10-11T00:34:46.615853Z	==================================================
+2025-10-11T00:34:46.616001Z	
+2025-10-11T00:34:46.616149Z	📦 安装 Deno...
+2025-10-11T00:34:47.404034Z	#=#=#                                                                         ##############################                                            42.7%######################################################################## 100.0%
+2025-10-11T00:34:47.409052Z	Archive:  /tmp/.deno/bin/deno.zip
+2025-10-11T00:34:48.330226Z	  inflating: /tmp/.deno/bin/deno     
+2025-10-11T00:34:48.336073Z	Deno was installed successfully to /tmp/.deno/bin/deno
+2025-10-11T00:34:48.336407Z	Run 'deno --help' to get started
+2025-10-11T00:34:48.33655Z	
+2025-10-11T00:34:48.336619Z	Stuck? Join our Discord https://discord.gg/deno
+2025-10-11T00:34:48.336978Z	
+2025-10-11T00:34:48.337407Z	✅ 验证 Deno 安装...
+2025-10-11T00:34:48.349381Z	deno 2.5.4 (stable, release, x86_64-unknown-linux-gnu)
+2025-10-11T00:34:48.349548Z	v8 14.0.365.5-rusty
+2025-10-11T00:34:48.349633Z	typescript 5.9.2
+2025-10-11T00:34:48.35088Z	
+2025-10-11T00:34:48.351028Z	📋 生成 Fresh manifest...
+2025-10-11T00:34:48.366068Z	[0m[32mDownload[0m https://registry.npmjs.org/tailwindcss
+2025-10-11T00:34:48.861269Z	[0m[32mDownload[0m https://registry.npmjs.org/@alloc%2fquick-lru
+2025-10-11T00:34:48.861631Z	[0m[32mDownload[0m https://registry.npmjs.org/arg
+2025-10-11T00:34:48.861802Z	[0m[32mDownload[0m https://registry.npmjs.org/chokidar
+2025-10-11T00:34:48.861917Z	[0m[32mDownload[0m https://registry.npmjs.org/didyoumean
+2025-10-11T00:34:48.862028Z	[0m[32mDownload[0m https://registry.npmjs.org/dlv
+2025-10-11T00:34:48.862351Z	[0m[32mDownload[0m https://registry.npmjs.org/fast-glob
+2025-10-11T00:34:48.862501Z	[0m[32mDownload[0m https://registry.npmjs.org/glob-parent
+2025-10-11T00:34:48.862589Z	[0m[32mDownload[0m https://registry.npmjs.org/is-glob
+2025-10-11T00:34:48.86266Z	[0m[32mDownload[0m https://registry.npmjs.org/jiti
+2025-10-11T00:34:48.862719Z	[0m[32mDownload[0m https://registry.npmjs.org/lilconfig
+2025-10-11T00:34:48.862856Z	[0m[32mDownload[0m https://registry.npmjs.org/micromatch
+2025-10-11T00:34:48.862951Z	[0m[32mDownload[0m https://registry.npmjs.org/normalize-path
+2025-10-11T00:34:48.863016Z	[0m[32mDownload[0m https://registry.npmjs.org/object-hash
+2025-10-11T00:34:48.863075Z	[0m[32mDownload[0m https://registry.npmjs.org/picocolors
+2025-10-11T00:34:48.863131Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss
+2025-10-11T00:34:48.863194Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-import
+2025-10-11T00:34:48.863252Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-js
+2025-10-11T00:34:48.863327Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-load-config
+2025-10-11T00:34:48.863384Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-nested
+2025-10-11T00:34:48.863457Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-selector-parser
+2025-10-11T00:34:48.863522Z	[0m[32mDownload[0m https://registry.npmjs.org/resolve
+2025-10-11T00:34:48.863589Z	[0m[32mDownload[0m https://registry.npmjs.org/sucrase
+2025-10-11T00:34:48.947867Z	[0m[32mDownload[0m https://registry.npmjs.org/anymatch
+2025-10-11T00:34:48.94808Z	[0m[32mDownload[0m https://registry.npmjs.org/braces
+2025-10-11T00:34:48.948163Z	[0m[32mDownload[0m https://registry.npmjs.org/fsevents
+2025-10-11T00:34:48.948229Z	[0m[32mDownload[0m https://registry.npmjs.org/is-binary-path
+2025-10-11T00:34:48.948332Z	[0m[32mDownload[0m https://registry.npmjs.org/readdirp
+2025-10-11T00:34:48.991485Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib%2ffs.stat
+2025-10-11T00:34:48.991782Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib%2ffs.walk
+2025-10-11T00:34:48.991941Z	[0m[32mDownload[0m https://registry.npmjs.org/merge2
+2025-10-11T00:34:49.046975Z	[0m[32mDownload[0m https://registry.npmjs.org/is-extglob
+2025-10-11T00:34:49.081749Z	[0m[32mDownload[0m https://registry.npmjs.org/picomatch
+2025-10-11T00:34:49.120259Z	[0m[32mDownload[0m https://registry.npmjs.org/nanoid
+2025-10-11T00:34:49.120484Z	[0m[32mDownload[0m https://registry.npmjs.org/source-map-js
+2025-10-11T00:34:49.171356Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-value-parser
+2025-10-11T00:34:49.171608Z	[0m[32mDownload[0m https://registry.npmjs.org/read-cache
+2025-10-11T00:34:49.225428Z	[0m[32mDownload[0m https://registry.npmjs.org/camelcase-css
+2025-10-11T00:34:49.255861Z	[0m[32mDownload[0m https://registry.npmjs.org/ts-node
+2025-10-11T00:34:49.256086Z	[0m[32mDownload[0m https://registry.npmjs.org/yaml
+2025-10-11T00:34:49.331439Z	[0m[32mDownload[0m https://registry.npmjs.org/cssesc
+2025-10-11T00:34:49.331662Z	[0m[32mDownload[0m https://registry.npmjs.org/util-deprecate
+2025-10-11T00:34:49.371431Z	[0m[32mDownload[0m https://registry.npmjs.org/is-core-module
+2025-10-11T00:34:49.371634Z	[0m[32mDownload[0m https://registry.npmjs.org/path-parse
+2025-10-11T00:34:49.371729Z	[0m[32mDownload[0m https://registry.npmjs.org/supports-preserve-symlinks-flag
+2025-10-11T00:34:49.416398Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell%2fgen-mapping
+2025-10-11T00:34:49.416604Z	[0m[32mDownload[0m https://registry.npmjs.org/commander
+2025-10-11T00:34:49.416696Z	[0m[32mDownload[0m https://registry.npmjs.org/glob
+2025-10-11T00:34:49.416777Z	[0m[32mDownload[0m https://registry.npmjs.org/lines-and-columns
+2025-10-11T00:34:49.416843Z	[0m[32mDownload[0m https://registry.npmjs.org/mz
+2025-10-11T00:34:49.41691Z	[0m[32mDownload[0m https://registry.npmjs.org/pirates
+2025-10-11T00:34:49.417072Z	[0m[32mDownload[0m https://registry.npmjs.org/ts-interface-checker
+2025-10-11T00:34:49.484063Z	[0m[32mDownload[0m https://registry.npmjs.org/fill-range
+2025-10-11T00:34:49.545164Z	[0m[32mDownload[0m https://registry.npmjs.org/binary-extensions
+2025-10-11T00:34:49.581805Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib%2ffs.scandir
+2025-10-11T00:34:49.582342Z	[0m[32mDownload[0m https://registry.npmjs.org/fastq
+2025-10-11T00:34:49.637842Z	[0m[32mDownload[0m https://registry.npmjs.org/pify
+2025-10-11T00:34:49.67169Z	[0m[32mDownload[0m https://registry.npmjs.org/hasown
+2025-10-11T00:34:49.703978Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell%2fsourcemap-codec
+2025-10-11T00:34:49.704222Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell%2ftrace-mapping
+2025-10-11T00:34:49.771711Z	[0m[32mDownload[0m https://registry.npmjs.org/foreground-child
+2025-10-11T00:34:49.771928Z	[0m[32mDownload[0m https://registry.npmjs.org/jackspeak
+2025-10-11T00:34:49.772161Z	[0m[32mDownload[0m https://registry.npmjs.org/minimatch
+2025-10-11T00:34:49.772326Z	[0m[32mDownload[0m https://registry.npmjs.org/minipass
+2025-10-11T00:34:49.772429Z	[0m[32mDownload[0m https://registry.npmjs.org/package-json-from-dist
+2025-10-11T00:34:49.772599Z	[0m[32mDownload[0m https://registry.npmjs.org/path-scurry
+2025-10-11T00:34:49.821Z	[0m[32mDownload[0m https://registry.npmjs.org/any-promise
+2025-10-11T00:34:49.821198Z	[0m[32mDownload[0m https://registry.npmjs.org/object-assign
+2025-10-11T00:34:49.821441Z	[0m[32mDownload[0m https://registry.npmjs.org/thenify-all
+2025-10-11T00:34:49.861461Z	[0m[32mDownload[0m https://registry.npmjs.org/to-regex-range
+2025-10-11T00:34:49.904394Z	[0m[32mDownload[0m https://registry.npmjs.org/run-parallel
+2025-10-11T00:34:49.937032Z	[0m[32mDownload[0m https://registry.npmjs.org/reusify
+2025-10-11T00:34:49.969481Z	[0m[32mDownload[0m https://registry.npmjs.org/function-bind
+2025-10-11T00:34:50.000179Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell%2fresolve-uri
+2025-10-11T00:34:50.056143Z	[0m[32mDownload[0m https://registry.npmjs.org/cross-spawn
+2025-10-11T00:34:50.056357Z	[0m[32mDownload[0m https://registry.npmjs.org/signal-exit
+2025-10-11T00:34:50.090582Z	[0m[32mDownload[0m https://registry.npmjs.org/@isaacs%2fcliui
+2025-10-11T00:34:50.090901Z	[0m[32mDownload[0m https://registry.npmjs.org/@pkgjs%2fparseargs
+2025-10-11T00:34:50.170846Z	[0m[32mDownload[0m https://registry.npmjs.org/brace-expansion
+2025-10-11T00:34:50.221273Z	[0m[32mDownload[0m https://registry.npmjs.org/lru-cache
+2025-10-11T00:34:50.26737Z	[0m[32mDownload[0m https://registry.npmjs.org/thenify
+2025-10-11T00:34:50.298999Z	[0m[32mDownload[0m https://registry.npmjs.org/is-number
+2025-10-11T00:34:50.332649Z	[0m[32mDownload[0m https://registry.npmjs.org/queue-microtask
+2025-10-11T00:34:50.365692Z	[0m[32mDownload[0m https://registry.npmjs.org/path-key
+2025-10-11T00:34:50.365927Z	[0m[32mDownload[0m https://registry.npmjs.org/shebang-command
+2025-10-11T00:34:50.366034Z	[0m[32mDownload[0m https://registry.npmjs.org/which
+2025-10-11T00:34:50.419583Z	[0m[32mDownload[0m https://registry.npmjs.org/string-width
+2025-10-11T00:34:50.419839Z	[0m[32mDownload[0m https://registry.npmjs.org/strip-ansi
+2025-10-11T00:34:50.419934Z	[0m[32mDownload[0m https://registry.npmjs.org/wrap-ansi
+2025-10-11T00:34:50.464575Z	[0m[32mDownload[0m https://registry.npmjs.org/balanced-match
+2025-10-11T00:34:50.502719Z	[0m[32mDownload[0m https://registry.npmjs.org/shebang-regex
+2025-10-11T00:34:50.558216Z	[0m[32mDownload[0m https://registry.npmjs.org/isexe
+2025-10-11T00:34:50.591066Z	[0m[32mDownload[0m https://registry.npmjs.org/eastasianwidth
+2025-10-11T00:34:50.591298Z	[0m[32mDownload[0m https://registry.npmjs.org/emoji-regex
+2025-10-11T00:34:50.628994Z	[0m[32mDownload[0m https://registry.npmjs.org/is-fullwidth-code-point
+2025-10-11T00:34:50.66412Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-regex
+2025-10-11T00:34:50.746666Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-styles
+2025-10-11T00:34:50.814219Z	[0m[32mDownload[0m https://registry.npmjs.org/color-convert
+2025-10-11T00:34:50.842856Z	[0m[32mDownload[0m https://registry.npmjs.org/color-name
+2025-10-11T00:34:50.88531Z	[0m[32mDownload[0m https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.1.tgz
+2025-10-11T00:34:50.88557Z	[0m[32mDownload[0m https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz
+2025-10-11T00:34:50.885713Z	[0m[32mDownload[0m https://registry.npmjs.org/chokidar/-/chokidar-3.6.0.tgz
+2025-10-11T00:34:50.885899Z	[0m[32mDownload[0m https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz
+2025-10-11T00:34:50.886036Z	[0m[32mDownload[0m https://registry.npmjs.org/fast-glob/-/fast-glob-3.3.3.tgz
+2025-10-11T00:34:50.886183Z	[0m[32mDownload[0m https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz
+2025-10-11T00:34:50.886312Z	[0m[32mDownload[0m https://registry.npmjs.org/micromatch/-/micromatch-4.0.8.tgz
+2025-10-11T00:34:50.886435Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss/-/postcss-8.5.6.tgz
+2025-10-11T00:34:50.88655Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-nested/-/postcss-nested-6.2.0.tgz
+2025-10-11T00:34:50.886672Z	[0m[32mDownload[0m https://registry.npmjs.org/resolve/-/resolve-1.22.10.tgz
+2025-10-11T00:34:50.886822Z	[0m[32mDownload[0m https://registry.npmjs.org/object-hash/-/object-hash-3.0.0.tgz
+2025-10-11T00:34:50.886933Z	[0m[32mDownload[0m https://registry.npmjs.org/picocolors/-/picocolors-1.1.1.tgz
+2025-10-11T00:34:50.887036Z	[0m[32mDownload[0m https://registry.npmjs.org/dlv/-/dlv-1.1.3.tgz
+2025-10-11T00:34:50.887167Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-js/-/postcss-js-4.1.0.tgz
+2025-10-11T00:34:50.887425Z	[0m[32mDownload[0m https://registry.npmjs.org/sucrase/-/sucrase-3.35.0.tgz
+2025-10-11T00:34:50.887688Z	[0m[32mDownload[0m https://registry.npmjs.org/@alloc/quick-lru/-/quick-lru-5.2.0.tgz
+2025-10-11T00:34:50.887942Z	[0m[32mDownload[0m https://registry.npmjs.org/lilconfig/-/lilconfig-2.1.0.tgz
+2025-10-11T00:34:50.888078Z	[0m[32mDownload[0m https://registry.npmjs.org/arg/-/arg-5.0.2.tgz
+2025-10-11T00:34:50.8882Z	[0m[32mDownload[0m https://registry.npmjs.org/glob-parent/-/glob-parent-6.0.2.tgz
+2025-10-11T00:34:50.888341Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-import/-/postcss-import-15.1.0.tgz
+2025-10-11T00:34:50.888502Z	[0m[32mDownload[0m https://registry.npmjs.org/didyoumean/-/didyoumean-1.2.2.tgz
+2025-10-11T00:34:50.888674Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-selector-parser/-/postcss-selector-parser-6.1.2.tgz
+2025-10-11T00:34:50.888826Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-load-config/-/postcss-load-config-4.0.2.tgz
+2025-10-11T00:34:50.88899Z	[0m[32mDownload[0m https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz
+2025-10-11T00:34:50.889144Z	[0m[32mDownload[0m https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz
+2025-10-11T00:34:50.889268Z	[0m[32mDownload[0m https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz
+2025-10-11T00:34:50.889388Z	[0m[32mDownload[0m https://registry.npmjs.org/braces/-/braces-3.0.3.tgz
+2025-10-11T00:34:50.889494Z	[0m[32mDownload[0m https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz
+2025-10-11T00:34:50.889592Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib/fs.walk/-/fs.walk-1.2.8.tgz
+2025-10-11T00:34:50.889909Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib/fs.stat/-/fs.stat-2.0.5.tgz
+2025-10-11T00:34:50.89004Z	[0m[32mDownload[0m https://registry.npmjs.org/merge2/-/merge2-1.4.1.tgz
+2025-10-11T00:34:50.890146Z	[0m[32mDownload[0m https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz
+2025-10-11T00:34:50.89025Z	[0m[32mDownload[0m https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz
+2025-10-11T00:34:50.890349Z	[0m[32mDownload[0m https://registry.npmjs.org/nanoid/-/nanoid-3.3.11.tgz
+2025-10-11T00:34:50.890444Z	[0m[32mDownload[0m https://registry.npmjs.org/source-map-js/-/source-map-js-1.2.1.tgz
+2025-10-11T00:34:50.890553Z	[0m[32mDownload[0m https://registry.npmjs.org/is-core-module/-/is-core-module-2.16.1.tgz
+2025-10-11T00:34:50.890657Z	[0m[32mDownload[0m https://registry.npmjs.org/path-parse/-/path-parse-1.0.7.tgz
+2025-10-11T00:34:50.890845Z	[0m[32mDownload[0m https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz
+2025-10-11T00:34:50.890972Z	[0m[32mDownload[0m https://registry.npmjs.org/camelcase-css/-/camelcase-css-2.0.1.tgz
+2025-10-11T00:34:50.89109Z	[0m[32mDownload[0m https://registry.npmjs.org/pirates/-/pirates-4.0.7.tgz
+2025-10-11T00:34:50.891197Z	[0m[32mDownload[0m https://registry.npmjs.org/ts-interface-checker/-/ts-interface-checker-0.1.13.tgz
+2025-10-11T00:34:50.891296Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell/gen-mapping/-/gen-mapping-0.3.13.tgz
+2025-10-11T00:34:50.891371Z	[0m[32mDownload[0m https://registry.npmjs.org/commander/-/commander-4.1.1.tgz
+2025-10-11T00:34:50.891454Z	[0m[32mDownload[0m https://registry.npmjs.org/glob/-/glob-10.4.5.tgz
+2025-10-11T00:34:50.891546Z	[0m[32mDownload[0m https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz
+2025-10-11T00:34:50.891654Z	[0m[32mDownload[0m https://registry.npmjs.org/mz/-/mz-2.7.0.tgz
+2025-10-11T00:34:50.891772Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-value-parser/-/postcss-value-parser-4.2.0.tgz
+2025-10-11T00:34:50.891872Z	[0m[32mDownload[0m https://registry.npmjs.org/read-cache/-/read-cache-1.0.0.tgz
+2025-10-11T00:34:50.891984Z	[0m[32mDownload[0m https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz
+2025-10-11T00:34:50.892083Z	[0m[32mDownload[0m https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz
+2025-10-11T00:34:50.892188Z	[0m[32mDownload[0m https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.3.tgz
+2025-10-11T00:34:50.892293Z	[0m[32mDownload[0m https://registry.npmjs.org/yaml/-/yaml-2.8.1.tgz
+2025-10-11T00:34:50.89239Z	[0m[32mDownload[0m https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz
+2025-10-11T00:34:50.892483Z	[0m[32mDownload[0m https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz
+2025-10-11T00:34:50.892564Z	[0m[32mDownload[0m https://registry.npmjs.org/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz
+2025-10-11T00:34:50.892649Z	[0m[32mDownload[0m https://registry.npmjs.org/fastq/-/fastq-1.19.1.tgz
+2025-10-11T00:34:50.892748Z	[0m[32mDownload[0m https://registry.npmjs.org/hasown/-/hasown-2.0.2.tgz
+2025-10-11T00:34:50.892843Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell/sourcemap-codec/-/sourcemap-codec-1.5.5.tgz
+2025-10-11T00:34:50.893095Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell/trace-mapping/-/trace-mapping-0.3.31.tgz
+2025-10-11T00:34:50.893212Z	[0m[32mDownload[0m https://registry.npmjs.org/minipass/-/minipass-7.1.2.tgz
+2025-10-11T00:34:50.893332Z	[0m[32mDownload[0m https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz
+2025-10-11T00:34:50.893417Z	[0m[32mDownload[0m https://registry.npmjs.org/minimatch/-/minimatch-9.0.5.tgz
+2025-10-11T00:34:50.893478Z	[0m[32mDownload[0m https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz
+2025-10-11T00:34:50.893541Z	[0m[32mDownload[0m https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz
+2025-10-11T00:34:50.8936Z	[0m[32mDownload[0m https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz
+2025-10-11T00:34:50.893658Z	[0m[32mDownload[0m https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz
+2025-10-11T00:34:50.893714Z	[0m[32mDownload[0m https://registry.npmjs.org/any-promise/-/any-promise-1.3.0.tgz
+2025-10-11T00:34:50.893799Z	[0m[32mDownload[0m https://registry.npmjs.org/thenify-all/-/thenify-all-1.6.0.tgz
+2025-10-11T00:34:50.893865Z	[0m[32mDownload[0m https://registry.npmjs.org/pify/-/pify-2.3.0.tgz
+2025-10-11T00:34:50.89394Z	[0m[32mDownload[0m https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz
+2025-10-11T00:34:50.893996Z	[0m[32mDownload[0m https://registry.npmjs.org/run-parallel/-/run-parallel-1.2.0.tgz
+2025-10-11T00:34:50.894057Z	[0m[32mDownload[0m https://registry.npmjs.org/reusify/-/reusify-1.1.0.tgz
+2025-10-11T00:34:50.894113Z	[0m[32mDownload[0m https://registry.npmjs.org/function-bind/-/function-bind-1.1.2.tgz
+2025-10-11T00:34:50.894172Z	[0m[32mDownload[0m https://registry.npmjs.org/@jridgewell/resolve-uri/-/resolve-uri-3.1.2.tgz
+2025-10-11T00:34:50.894232Z	[0m[32mDownload[0m https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz
+2025-10-11T00:34:50.894287Z	[0m[32mDownload[0m https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.2.tgz
+2025-10-11T00:34:50.894345Z	[0m[32mDownload[0m https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz
+2025-10-11T00:34:50.894409Z	[0m[32mDownload[0m https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz
+2025-10-11T00:34:50.894463Z	[0m[32mDownload[0m https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz
+2025-10-11T00:34:50.894517Z	[0m[32mDownload[0m https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz
+2025-10-11T00:34:50.894572Z	[0m[32mDownload[0m https://registry.npmjs.org/thenify/-/thenify-3.3.1.tgz
+2025-10-11T00:34:50.894629Z	[0m[32mDownload[0m https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz
+2025-10-11T00:34:50.894689Z	[0m[32mDownload[0m https://registry.npmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz
+2025-10-11T00:34:50.894762Z	[0m[32mDownload[0m https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz
+2025-10-11T00:34:50.89483Z	[0m[32mDownload[0m https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz
+2025-10-11T00:34:50.894919Z	[0m[32mDownload[0m https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.1.2.tgz
+2025-10-11T00:34:50.894982Z	[0m[32mDownload[0m https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz
+2025-10-11T00:34:50.895044Z	[0m[32mDownload[0m https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz
+2025-10-11T00:34:50.895103Z	[0m[32mDownload[0m https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz
+2025-10-11T00:34:50.895161Z	[0m[32mDownload[0m https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz
+2025-10-11T00:34:50.895216Z	[0m[32mDownload[0m https://registry.npmjs.org/which/-/which-2.0.2.tgz
+2025-10-11T00:34:50.895277Z	[0m[32mDownload[0m https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz
+2025-10-11T00:34:50.895332Z	[0m[32mDownload[0m https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz
+2025-10-11T00:34:50.895387Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz
+2025-10-11T00:34:50.895441Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz
+2025-10-11T00:34:50.895508Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz
+2025-10-11T00:34:50.895568Z	[0m[32mDownload[0m https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz
+2025-10-11T00:34:50.895635Z	[0m[32mDownload[0m https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz
+2025-10-11T00:34:50.895695Z	[0m[32mDownload[0m https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz
+2025-10-11T00:34:50.895773Z	[0m[32mDownload[0m https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz
+2025-10-11T00:34:50.895843Z	[0m[32mDownload[0m https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz
+2025-10-11T00:34:50.89591Z	[0m[32mDownload[0m https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz
+2025-10-11T00:34:50.895966Z	[0m[32mDownload[0m https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz
+2025-10-11T00:34:50.896026Z	[0m[32mDownload[0m https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz
+2025-10-11T00:34:50.89608Z	[0m[32mDownload[0m https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz
+2025-10-11T00:34:50.948107Z	[0m[32mInitialize[0m glob-parent@6.0.2
+2025-10-11T00:34:50.951194Z	[0m[32mInitialize[0m micromatch@4.0.8
+2025-10-11T00:34:50.952328Z	[0m[32mInitialize[0m normalize-path@3.0.0
+2025-10-11T00:34:50.964535Z	[0m[32mInitialize[0m postcss-nested@6.2.0
+2025-10-11T00:34:50.965932Z	[0m[32mInitialize[0m chokidar@3.6.0
+2025-10-11T00:34:50.9686Z	[0m[32mInitialize[0m braces@3.0.3
+2025-10-11T00:34:50.969512Z	[0m[32mInitialize[0m camelcase-css@2.0.1
+2025-10-11T00:34:50.971129Z	[0m[32mInitialize[0m ts-interface-checker@0.1.13
+2025-10-11T00:34:50.97209Z	[0m[32mInitialize[0m postcss@8.5.6
+2025-10-11T00:34:50.972788Z	[0m[32mInitialize[0m glob-parent@5.1.2
+2025-10-11T00:34:50.973562Z	[0m[32mInitialize[0m resolve@1.22.10
+2025-10-11T00:34:50.97632Z	[0m[32mInitialize[0m arg@5.0.2
+2025-10-11T00:34:50.976777Z	[0m[32mInitialize[0m commander@4.1.1
+2025-10-11T00:34:50.978029Z	[0m[32mInitialize[0m postcss-import@15.1.0
+2025-10-11T00:34:50.979021Z	[0m[32mInitialize[0m postcss-load-config@4.0.2
+2025-10-11T00:34:50.980129Z	[0m[32mInitialize[0m lilconfig@2.1.0
+2025-10-11T00:34:50.981247Z	[0m[32mInitialize[0m didyoumean@1.2.2
+2025-10-11T00:34:50.982191Z	[0m[32mInitialize[0m picocolors@1.1.1
+2025-10-11T00:34:50.98378Z	[0m[32mInitialize[0m postcss-js@4.1.0
+2025-10-11T00:34:50.985413Z	[0m[32mInitialize[0m binary-extensions@2.3.0
+2025-10-11T00:34:50.985614Z	[0m[32mInitialize[0m merge2@1.4.1
+2025-10-11T00:34:50.989518Z	[0m[32mInitialize[0m source-map-js@1.2.1
+2025-10-11T00:34:50.991243Z	[0m[32mInitialize[0m nanoid@3.3.11
+2025-10-11T00:34:50.993287Z	[0m[32mInitialize[0m supports-preserve-symlinks-flag@1.0.0
+2025-10-11T00:34:50.993644Z	[0m[32mInitialize[0m pirates@4.0.7
+2025-10-11T00:34:50.993911Z	[0m[32mInitialize[0m postcss-selector-parser@6.1.2
+2025-10-11T00:34:50.995524Z	[0m[32mInitialize[0m is-fullwidth-code-point@3.0.0
+2025-10-11T00:34:50.99752Z	[0m[32mInitialize[0m object-hash@3.0.0
+2025-10-11T00:34:50.998695Z	[0m[32mInitialize[0m jackspeak@3.4.3
+2025-10-11T00:34:51.001679Z	[0m[32mInitialize[0m is-glob@4.0.3
+2025-10-11T00:34:51.002351Z	[0m[32mInitialize[0m lilconfig@3.1.3
+2025-10-11T00:34:51.004826Z	[0m[32mInitialize[0m dlv@1.1.3
+2025-10-11T00:34:51.006313Z	[0m[32mInitialize[0m run-parallel@1.2.0
+2025-10-11T00:34:51.006865Z	[0m[32mInitialize[0m is-binary-path@2.1.0
+2025-10-11T00:34:51.009031Z	[0m[32mInitialize[0m readdirp@3.6.0
+2025-10-11T00:34:51.010692Z	[0m[32mInitialize[0m path-parse@1.0.7
+2025-10-11T00:34:51.011127Z	[0m[32mInitialize[0m anymatch@3.1.3
+2025-10-11T00:34:51.011462Z	[0m[32mInitialize[0m strip-ansi@7.1.2
+2025-10-11T00:34:51.012921Z	[0m[32mInitialize[0m string-width@5.1.2
+2025-10-11T00:34:51.013901Z	[0m[32mInitialize[0m util-deprecate@1.0.2
+2025-10-11T00:34:51.014271Z	[0m[32mInitialize[0m pify@2.3.0
+2025-10-11T00:34:51.01645Z	[0m[32mInitialize[0m thenify@3.3.1
+2025-10-11T00:34:51.020246Z	[0m[32mInitialize[0m shebang-command@2.0.0
+2025-10-11T00:34:51.021085Z	[0m[32mInitialize[0m brace-expansion@2.0.2
+2025-10-11T00:34:51.025207Z	[0m[32mInitialize[0m fill-range@7.1.1
+2025-10-11T00:34:51.025701Z	[0m[32mInitialize[0m hasown@2.0.2
+2025-10-11T00:34:51.027145Z	[0m[32mInitialize[0m @nodelib/fs.walk@1.2.8
+2025-10-11T00:34:51.029133Z	[0m[32mInitialize[0m queue-microtask@1.2.3
+2025-10-11T00:34:51.029552Z	[0m[32mInitialize[0m picomatch@2.3.1
+2025-10-11T00:34:51.029829Z	[0m[32mInitialize[0m lines-and-columns@1.2.4
+2025-10-11T00:34:51.030472Z	[0m[32mInitialize[0m object-assign@4.1.1
+2025-10-11T00:34:51.033038Z	[0m[32mInitialize[0m is-core-module@2.16.1
+2025-10-11T00:34:51.035505Z	[0m[32mInitialize[0m to-regex-range@5.0.1
+2025-10-11T00:34:51.040189Z	[0m[32mInitialize[0m @nodelib/fs.stat@2.0.5
+2025-10-11T00:34:51.043586Z	[0m[32mInitialize[0m balanced-match@1.0.2
+2025-10-11T00:34:51.044763Z	[0m[32mInitialize[0m mz@2.7.0
+2025-10-11T00:34:51.045036Z	[0m[32mInitialize[0m reusify@1.1.0
+2025-10-11T00:34:51.046472Z	[0m[32mInitialize[0m path-scurry@1.11.1
+2025-10-11T00:34:51.048023Z	[0m[32mInitialize[0m path-key@3.1.1
+2025-10-11T00:34:51.050811Z	[0m[32mInitialize[0m ansi-regex@5.0.1
+2025-10-11T00:34:51.053416Z	[0m[32mInitialize[0m emoji-regex@8.0.0
+2025-10-11T00:34:51.053638Z	[0m[32mInitialize[0m string-width@4.2.3
+2025-10-11T00:34:51.053999Z	[0m[32mInitialize[0m thenify-all@1.6.0
+2025-10-11T00:34:51.055097Z	[0m[32mInitialize[0m lru-cache@10.4.3
+2025-10-11T00:34:51.055583Z	[0m[32mInitialize[0m cssesc@3.0.0
+2025-10-11T00:34:51.057653Z	[0m[32mInitialize[0m function-bind@1.1.2
+2025-10-11T00:34:51.059063Z	[0m[32mInitialize[0m cross-spawn@7.0.6
+2025-10-11T00:34:51.060649Z	[0m[32mInitialize[0m wrap-ansi@8.1.0
+2025-10-11T00:34:51.062112Z	[0m[32mInitialize[0m is-number@7.0.0
+2025-10-11T00:34:51.063408Z	[0m[32mInitialize[0m ansi-regex@6.2.2
+2025-10-11T00:34:51.065005Z	[0m[32mInitialize[0m wrap-ansi@7.0.0
+2025-10-11T00:34:51.065919Z	[0m[32mInitialize[0m read-cache@1.0.0
+2025-10-11T00:34:51.06617Z	[0m[32mInitialize[0m package-json-from-dist@1.0.1
+2025-10-11T00:34:51.067907Z	[0m[32mInitialize[0m ansi-styles@4.3.0
+2025-10-11T00:34:51.069334Z	[0m[32mInitialize[0m shebang-regex@3.0.0
+2025-10-11T00:34:51.07064Z	[0m[32mInitialize[0m eastasianwidth@0.2.0
+2025-10-11T00:34:51.070929Z	[0m[32mInitialize[0m minipass@7.1.2
+2025-10-11T00:34:51.072291Z	[0m[32mInitialize[0m fastq@1.19.1
+2025-10-11T00:34:51.075215Z	[0m[32mInitialize[0m postcss-value-parser@4.2.0
+2025-10-11T00:34:51.076595Z	[0m[32mInitialize[0m @jridgewell/sourcemap-codec@1.5.5
+2025-10-11T00:34:51.078543Z	[0m[32mInitialize[0m isexe@2.0.0
+2025-10-11T00:34:51.079333Z	[0m[32mInitialize[0m foreground-child@3.3.1
+2025-10-11T00:34:51.085001Z	[0m[32mInitialize[0m signal-exit@4.1.0
+2025-10-11T00:34:51.086872Z	[0m[32mInitialize[0m @jridgewell/resolve-uri@3.1.2
+2025-10-11T00:34:51.088554Z	[0m[32mInitialize[0m @jridgewell/trace-mapping@0.3.31
+2025-10-11T00:34:51.089972Z	[0m[32mInitialize[0m any-promise@1.3.0
+2025-10-11T00:34:51.093254Z	[0m[32mInitialize[0m color-convert@2.0.1
+2025-10-11T00:34:51.093817Z	[0m[32mInitialize[0m ansi-styles@6.2.3
+2025-10-11T00:34:51.094725Z	[0m[32mInitialize[0m which@2.0.2
+2025-10-11T00:34:51.097063Z	[0m[32mInitialize[0m color-name@1.1.4
+2025-10-11T00:34:51.098776Z	[0m[32mInitialize[0m minimatch@9.0.5
+2025-10-11T00:34:51.100104Z	[0m[32mInitialize[0m emoji-regex@9.2.2
+2025-10-11T00:34:51.100902Z	[0m[32mInitialize[0m @isaacs/cliui@8.0.2
+2025-10-11T00:34:51.104543Z	[0m[32mInitialize[0m is-extglob@2.1.1
+2025-10-11T00:34:51.106358Z	[0m[32mInitialize[0m jiti@1.21.7
+2025-10-11T00:34:51.109787Z	[0m[32mInitialize[0m @pkgjs/parseargs@0.11.0
+2025-10-11T00:34:51.110913Z	[0m[32mInitialize[0m fast-glob@3.3.3
+2025-10-11T00:34:51.117458Z	[0m[32mInitialize[0m strip-ansi@6.0.1
+2025-10-11T00:34:51.122215Z	[0m[32mInitialize[0m glob@10.4.5
+2025-10-11T00:34:51.124791Z	[0m[32mInitialize[0m yaml@2.8.1
+2025-10-11T00:34:51.128701Z	[0m[32mInitialize[0m @nodelib/fs.scandir@2.1.5
+2025-10-11T00:34:51.132775Z	[0m[32mInitialize[0m sucrase@3.35.0
+2025-10-11T00:34:51.134384Z	[0m[32mInitialize[0m @alloc/quick-lru@5.2.0
+2025-10-11T00:34:51.16354Z	[0m[32mInitialize[0m @jridgewell/gen-mapping@0.3.13
+2025-10-11T00:34:51.167285Z	[0m[32mInitialize[0m tailwindcss@3.4.1
+2025-10-11T00:34:51.177706Z	[0m[32mTask[0m [0m[36mmanifest[0m deno task cli manifest $(pwd)
+2025-10-11T00:34:51.322631Z	[0m[32mTask[0m [0m[36mcli[0m echo "import '\$fresh/src/dev/cli.ts'" | deno run --unstable -A - "manifest" "/opt/buildhome/repo"
+2025-10-11T00:34:51.331504Z	[0m[33mWarning[0m The `--unstable` flag has been removed in Deno 2.0. Use granular `--unstable-*` flags instead.
+2025-10-11T00:34:51.331814Z	Learn more at: https://docs.deno.com/runtime/manual/tools/unstable_flags
+2025-10-11T00:34:51.494822Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/cli.ts
+2025-10-11T00:34:51.900355Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/deps.ts
+2025-10-11T00:34:51.900627Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/mod.ts
+2025-10-11T00:34:51.900787Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/mod.ts
+2025-10-11T00:34:52.276558Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/mod.ts
+2025-10-11T00:34:52.276913Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/mod.ts
+2025-10-11T00:34:52.277057Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/datetime/constants.ts
+2025-10-11T00:34:52.277252Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fmt/colors.ts
+2025-10-11T00:34:52.277397Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/walk.ts
+2025-10-11T00:34:52.277522Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/flags/mod.ts
+2025-10-11T00:34:52.277626Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/mod.ts
+2025-10-11T00:34:52.277751Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/mod.ts
+2025-10-11T00:34:52.277846Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/jsonc/mod.ts
+2025-10-11T00:34:52.277915Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/mod.ts
+2025-10-11T00:34:52.277973Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/mod.ts
+2025-10-11T00:34:52.278038Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/manifest.ts
+2025-10-11T00:34:52.2781Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/error.ts
+2025-10-11T00:34:52.278154Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/context.ts
+2025-10-11T00:34:52.278218Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/deps.ts
+2025-10-11T00:34:52.278277Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/types.ts
+2025-10-11T00:34:52.278341Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/boot.ts
+2025-10-11T00:34:52.278397Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/defines.ts
+2025-10-11T00:34:52.278453Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/render.ts
+2025-10-11T00:34:52.361885Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_os.ts
+2025-10-11T00:34:52.362179Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/mod.ts
+2025-10-11T00:34:52.362342Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/basename.ts
+2025-10-11T00:34:52.362478Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/dirname.ts
+2025-10-11T00:34:52.36262Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/extname.ts
+2025-10-11T00:34:52.362798Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/format.ts
+2025-10-11T00:34:52.363074Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/from_file_url.ts
+2025-10-11T00:34:52.363227Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/is_absolute.ts
+2025-10-11T00:34:52.363359Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/join.ts
+2025-10-11T00:34:52.363486Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/normalize.ts
+2025-10-11T00:34:52.363581Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/parse.ts
+2025-10-11T00:34:52.363677Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/relative.ts
+2025-10-11T00:34:52.363797Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/resolve.ts
+2025-10-11T00:34:52.363894Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/to_file_url.ts
+2025-10-11T00:34:52.364029Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/to_namespaced_path.ts
+2025-10-11T00:34:52.364153Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/common.ts
+2025-10-11T00:34:52.364264Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/separator.ts
+2025-10-11T00:34:52.364384Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_interface.ts
+2025-10-11T00:34:52.364486Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/glob_to_regexp.ts
+2025-10-11T00:34:52.364596Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/is_glob.ts
+2025-10-11T00:34:52.364707Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/join_globs.ts
+2025-10-11T00:34:52.364826Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/normalize_glob.ts
+2025-10-11T00:34:52.364925Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/basename.ts
+2025-10-11T00:34:52.365025Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/dirname.ts
+2025-10-11T00:34:52.36512Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/extname.ts
+2025-10-11T00:34:52.36522Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/format.ts
+2025-10-11T00:34:52.365323Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/from_file_url.ts
+2025-10-11T00:34:52.36542Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/is_absolute.ts
+2025-10-11T00:34:52.365519Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/join.ts
+2025-10-11T00:34:52.365613Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/normalize.ts
+2025-10-11T00:34:52.365705Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/parse.ts
+2025-10-11T00:34:52.365848Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/relative.ts
+2025-10-11T00:34:52.365963Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/resolve.ts
+2025-10-11T00:34:52.366073Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/to_file_url.ts
+2025-10-11T00:34:52.366173Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/to_namespaced_path.ts
+2025-10-11T00:34:52.366275Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/common.ts
+2025-10-11T00:34:52.366387Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/separator.ts
+2025-10-11T00:34:52.366477Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/glob_to_regexp.ts
+2025-10-11T00:34:52.366642Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/is_glob.ts
+2025-10-11T00:34:52.366808Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/join_globs.ts
+2025-10-11T00:34:52.366956Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/normalize_glob.ts
+2025-10-11T00:34:52.367049Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/_util.ts
+2025-10-11T00:34:52.367137Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/cli/parse_args.ts
+2025-10-11T00:34:52.591686Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/cmp.ts
+2025-10-11T00:34:52.591964Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/comparator_format.ts
+2025-10-11T00:34:52.592101Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/comparator_intersects.ts
+2025-10-11T00:34:52.592239Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/comparator_max.ts
+2025-10-11T00:34:52.592324Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/comparator_min.ts
+2025-10-11T00:34:52.592504Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/compare_build.ts
+2025-10-11T00:34:52.592626Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/compare.ts
+2025-10-11T00:34:52.592777Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/constants.ts
+2025-10-11T00:34:52.592977Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/difference.ts
+2025-10-11T00:34:52.593128Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/eq.ts
+2025-10-11T00:34:52.593293Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/format.ts
+2025-10-11T00:34:52.59345Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/gt.ts
+2025-10-11T00:34:52.593584Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/gte.ts
+2025-10-11T00:34:52.593703Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/gtr.ts
+2025-10-11T00:34:52.593839Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/test_comparator.ts
+2025-10-11T00:34:52.593978Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/test_range.ts
+2025-10-11T00:34:52.594216Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/increment.ts
+2025-10-11T00:34:52.594341Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/is_semver_comparator.ts
+2025-10-11T00:34:52.594428Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/is_semver_range.ts
+2025-10-11T00:34:52.594488Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/is_semver.ts
+2025-10-11T00:34:52.594574Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/lt.ts
+2025-10-11T00:34:52.594682Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/lte.ts
+2025-10-11T00:34:52.594841Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/ltr.ts
+2025-10-11T00:34:52.594917Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/max_satisfying.ts
+2025-10-11T00:34:52.595001Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/min_satisfying.ts
+2025-10-11T00:34:52.595115Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/neq.ts
+2025-10-11T00:34:52.59522Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/outside.ts
+2025-10-11T00:34:52.595351Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/parse_comparator.ts
+2025-10-11T00:34:52.595424Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/parse_range.ts
+2025-10-11T00:34:52.595484Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/parse.ts
+2025-10-11T00:34:52.595539Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/range_format.ts
+2025-10-11T00:34:52.595594Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/range_intersects.ts
+2025-10-11T00:34:52.59565Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/range_max.ts
+2025-10-11T00:34:52.595707Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/range_min.ts
+2025-10-11T00:34:52.595802Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/rcompare.ts
+2025-10-11T00:34:52.595871Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/rsort.ts
+2025-10-11T00:34:52.595945Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/sort.ts
+2025-10-11T00:34:52.596023Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/types.ts
+2025-10-11T00:34:52.596086Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/empty_dir.ts
+2025-10-11T00:34:52.596144Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/ensure_dir.ts
+2025-10-11T00:34:52.596207Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/ensure_file.ts
+2025-10-11T00:34:52.596548Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/ensure_link.ts
+2025-10-11T00:34:52.596657Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/ensure_symlink.ts
+2025-10-11T00:34:52.59686Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/exists.ts
+2025-10-11T00:34:52.59698Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/expand_glob.ts
+2025-10-11T00:34:52.597141Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/move.ts
+2025-10-11T00:34:52.597298Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/copy.ts
+2025-10-11T00:34:52.597422Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/fs/eol.ts
+2025-10-11T00:34:52.597537Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/jsonc/parse.ts
+2025-10-11T00:34:52.5977Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_almost_equals.ts
+2025-10-11T00:34:52.597803Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_array_includes.ts
+2025-10-11T00:34:52.597912Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_equals.ts
+2025-10-11T00:34:52.598017Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_exists.ts
+2025-10-11T00:34:52.598106Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_false.ts
+2025-10-11T00:34:52.598181Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_greater_or_equal.ts
+2025-10-11T00:34:52.598277Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_greater.ts
+2025-10-11T00:34:52.598372Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_instance_of.ts
+2025-10-11T00:34:52.59847Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_is_error.ts
+2025-10-11T00:34:52.598589Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_less_or_equal.ts
+2025-10-11T00:34:52.598692Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_less.ts
+2025-10-11T00:34:52.598817Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_match.ts
+2025-10-11T00:34:52.59892Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_not_equals.ts
+2025-10-11T00:34:52.599019Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_not_instance_of.ts
+2025-10-11T00:34:52.599094Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_not_match.ts
+2025-10-11T00:34:52.59915Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_not_strict_equals.ts
+2025-10-11T00:34:52.599217Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_object_match.ts
+2025-10-11T00:34:52.599375Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_rejects.ts
+2025-10-11T00:34:52.599496Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_strict_equals.ts
+2025-10-11T00:34:52.599597Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_string_includes.ts
+2025-10-11T00:34:52.599697Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert_throws.ts
+2025-10-11T00:34:52.599832Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assert.ts
+2025-10-11T00:34:52.599952Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/assertion_error.ts
+2025-10-11T00:34:52.600036Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/equal.ts
+2025-10-11T00:34:52.600095Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/fail.ts
+2025-10-11T00:34:52.600151Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/unimplemented.ts
+2025-10-11T00:34:52.600212Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/unreachable.ts
+2025-10-11T00:34:52.600269Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/ts_morph.js
+2025-10-11T00:34:52.696059Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/init_safe_deps.ts
+2025-10-11T00:34:52.696352Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/router.ts
+2025-10-11T00:34:52.696465Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/constants.ts
+2025-10-11T00:34:52.696569Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/build_id.ts
+2025-10-11T00:34:52.696842Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/csp.ts
+2025-10-11T00:34:52.697003Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/utils.ts
+2025-10-11T00:34:52.697141Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/build/mod.ts
+2025-10-11T00:34:52.69728Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/rendering/preact_hooks.ts
+2025-10-11T00:34:52.69741Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/code_frame.ts
+2025-10-11T00:34:52.697544Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/config.ts
+2025-10-11T00:34:52.69768Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/compose.ts
+2025-10-11T00:34:52.697817Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/fs_extract.ts
+2025-10-11T00:34:52.697936Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/build/aot_snapshot.ts
+2025-10-11T00:34:52.698034Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/error_overlay.tsx
+2025-10-11T00:34:52.698211Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/constants.ts
+2025-10-11T00:34:52.698397Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/http/server.ts
+2025-10-11T00:34:52.698536Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/http/status.ts
+2025-10-11T00:34:52.698654Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/content_type.ts
+2025-10-11T00:34:52.698802Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/crypto/to_hash_string.ts
+2025-10-11T00:34:52.69891Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/regexp/escape.ts
+2025-10-11T00:34:52.699015Z	[0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.3.1
+2025-10-11T00:34:52.699129Z	[0m[32mDownload[0m https://esm.sh/@babel/helper-validator-identifier@7.22.20
+2025-10-11T00:34:52.699266Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/testing/snapshot.ts
+2025-10-11T00:34:52.699381Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0
+2025-10-11T00:34:52.699498Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/rendering/state.ts
+2025-10-11T00:34:52.699602Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/rendering/template.tsx
+2025-10-11T00:34:52.699708Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/rendering/fresh_tags.tsx
+2025-10-11T00:34:52.700097Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/basename.ts
+2025-10-11T00:34:52.700231Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/dirname.ts
+2025-10-11T00:34:52.70034Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/extname.ts
+2025-10-11T00:34:52.700452Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/format.ts
+2025-10-11T00:34:52.700557Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/from_file_url.ts
+2025-10-11T00:34:52.700664Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/is_absolute.ts
+2025-10-11T00:34:52.700806Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/join.ts
+2025-10-11T00:34:52.701099Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/normalize.ts
+2025-10-11T00:34:52.701212Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/parse.ts
+2025-10-11T00:34:52.701285Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/relative.ts
+2025-10-11T00:34:52.701469Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/resolve.ts
+2025-10-11T00:34:52.701614Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/to_file_url.ts
+2025-10-11T00:34:52.701727Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/to_namespaced_path.ts
+2025-10-11T00:34:52.70186Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/common.ts
+2025-10-11T00:34:52.701983Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/separator.ts
+2025-10-11T00:34:52.702106Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/glob_to_regexp.ts
+2025-10-11T00:34:52.702217Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/is_glob.ts
+2025-10-11T00:34:52.702509Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/join_globs.ts
+2025-10-11T00:34:52.702643Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/normalize_glob.ts
+2025-10-11T00:34:52.702865Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/common.ts
+2025-10-11T00:34:52.703052Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/basename.ts
+2025-10-11T00:34:52.703149Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/strip_trailing_separators.ts
+2025-10-11T00:34:52.703229Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/posix/_util.ts
+2025-10-11T00:34:52.70329Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/dirname.ts
+2025-10-11T00:34:52.703349Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/constants.ts
+2025-10-11T00:34:52.703412Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/assert_path.ts
+2025-10-11T00:34:52.703478Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/format.ts
+2025-10-11T00:34:52.703535Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/from_file_url.ts
+2025-10-11T00:34:52.703592Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/normalize.ts
+2025-10-11T00:34:52.703681Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/normalize_string.ts
+2025-10-11T00:34:52.703874Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/relative.ts
+2025-10-11T00:34:52.703993Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/to_file_url.ts
+2025-10-11T00:34:52.704243Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/_common/glob_to_reg_exp.ts
+2025-10-11T00:34:52.973075Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/semver/_shared.ts
+2025-10-11T00:34:53.041897Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/glob.ts
+2025-10-11T00:34:53.042196Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/_format.ts
+2025-10-11T00:34:53.042327Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/_diff.ts
+2025-10-11T00:34:53.042433Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/assert/_constants.ts
+2025-10-11T00:34:53.042616Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/common/mod.ts
+2025-10-11T00:34:53.042724Z	[0m[32mDownload[0m https://deno.land/x/code_block_writer@12.0.0/mod.ts
+2025-10-11T00:34:53.062715Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/hooks
+2025-10-11T00:34:53.063355Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/build_id.ts
+2025-10-11T00:34:53.063476Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/build/esbuild.ts
+2025-10-11T00:34:53.070175Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/Partial.tsx
+2025-10-11T00:34:53.07034Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/active_url.ts
+2025-10-11T00:34:53.097208Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/default_error_page.tsx
+2025-10-11T00:34:53.097392Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/jsx-runtime
+2025-10-11T00:34:53.097544Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/async/delay.ts
+2025-10-11T00:34:53.097788Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/parse_media_type.ts
+2025-10-11T00:34:53.097906Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/get_charset.ts
+2025-10-11T00:34:53.098095Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/format_media_type.ts
+2025-10-11T00:34:53.098174Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/_db.ts
+2025-10-11T00:34:53.098242Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/encoding/hex.ts
+2025-10-11T00:34:53.098442Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/encoding/base64.ts
+2025-10-11T00:34:53.098563Z	[0m[32mDownload[0m https://esm.sh/*preact-render-to-string@6.3.1/denonext/preact-render-to-string.mjs
+2025-10-11T00:34:53.098672Z	[0m[32mDownload[0m https://esm.sh/@babel/helper-validator-identifier@7.22.20/denonext/helper-validator-identifier.mjs
+2025-10-11T00:34:53.098832Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/denonext/preact.mjs
+2025-10-11T00:34:53.098959Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/head.ts
+2025-10-11T00:34:53.148215Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/htmlescape.ts
+2025-10-11T00:34:53.148512Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/server/serializer.ts
+2025-10-11T00:34:53.14865Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/path/windows/_util.ts
+2025-10-11T00:34:53.303756Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/common/ts_morph_common.js
+2025-10-11T00:34:53.304027Z	[0m[32mDownload[0m https://deno.land/x/code_block_writer@12.0.0/utils/string_utils.ts
+2025-10-11T00:34:53.304333Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/denonext/hooks.mjs
+2025-10-11T00:34:53.304471Z	[0m[32mDownload[0m https://deno.land/x/esbuild@v0.19.4/mod.js
+2025-10-11T00:34:53.304554Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/build/deps.ts
+2025-10-11T00:34:53.304614Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/denonext/jsx-runtime.mjs
+2025-10-11T00:34:53.304681Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/_util.ts
+2025-10-11T00:34:53.30477Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/media_types/vendor/mime-db.v1.52.0.ts
+2025-10-11T00:34:53.304851Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/encoding/_util.ts
+2025-10-11T00:34:53.304931Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/deserializer.ts
+2025-10-11T00:34:53.438132Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/common/DenoRuntime.ts
+2025-10-11T00:34:53.438364Z	[0m[32mDownload[0m https://deno.land/x/ts_morph@20.0.0/common/typescript.js
+2025-10-11T00:34:53.439505Z	[0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/mod.ts
+2025-10-11T00:34:53.439674Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/mod.ts
+2025-10-11T00:34:53.580672Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/fs/ensure_dir.ts
+2025-10-11T00:34:53.580976Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/fs/expand_glob.ts
+2025-10-11T00:34:53.581109Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/mod.ts
+2025-10-11T00:34:54.733729Z	[0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/pkg/denoflate.js
+2025-10-11T00:34:54.734175Z	[0m[32mDownload[0m https://deno.land/x/denoflate@1.2.1/pkg/denoflate_bg.wasm.js
+2025-10-11T00:34:54.734366Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/deps.ts
+2025-10-11T00:34:54.734479Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/plugin_deno_resolver.ts
+2025-10-11T00:34:54.734587Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/plugin_deno_loader.ts
+2025-10-11T00:34:54.734687Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/shared.ts
+2025-10-11T00:34:54.73482Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/fs/_util.ts
+2025-10-11T00:34:54.734918Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/fs/walk.ts
+2025-10-11T00:34:54.735058Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/_util/asserts.ts
+2025-10-11T00:34:54.735185Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/_util/os.ts
+2025-10-11T00:34:54.735291Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/win32.ts
+2025-10-11T00:34:54.735355Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/posix.ts
+2025-10-11T00:34:54.73541Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/common.ts
+2025-10-11T00:34:54.735464Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/separator.ts
+2025-10-11T00:34:54.735521Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/_interface.ts
+2025-10-11T00:34:54.735587Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/glob.ts
+2025-10-11T00:34:54.854838Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/mod.ts
+2025-10-11T00:34:54.855157Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/mod.ts
+2025-10-11T00:34:54.855271Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/jsonc/mod.ts
+2025-10-11T00:34:54.855389Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/encoding/base32.ts
+2025-10-11T00:34:54.855493Z	[0m[32mDownload[0m https://deno.land/x/importmap@0.2.1/mod.ts
+2025-10-11T00:34:54.8556Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/mod.ts
+2025-10-11T00:34:54.85578Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/loader_native.ts
+2025-10-11T00:34:54.855912Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/loader_portable.ts
+2025-10-11T00:34:54.856028Z	[0m[32mDownload[0m https://deno.land/x/esbuild_deno_loader@0.8.2/src/deno.ts
+2025-10-11T00:34:54.856144Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/_constants.ts
+2025-10-11T00:34:54.856242Z	[0m[32mDownload[0m https://deno.land/std@0.181.0/path/_util.ts
+2025-10-11T00:34:54.915591Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_os.ts
+2025-10-11T00:34:54.915876Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/win32.ts
+2025-10-11T00:34:54.916074Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/posix.ts
+2025-10-11T00:34:54.916304Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/basename.ts
+2025-10-11T00:34:54.9165Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/dirname.ts
+2025-10-11T00:34:54.91673Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/extname.ts
+2025-10-11T00:34:54.916906Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/format.ts
+2025-10-11T00:34:54.917048Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/from_file_url.ts
+2025-10-11T00:34:54.917163Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/is_absolute.ts
+2025-10-11T00:34:54.917283Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/join.ts
+2025-10-11T00:34:54.917462Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/normalize.ts
+2025-10-11T00:34:54.917636Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/parse.ts
+2025-10-11T00:34:54.917827Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/relative.ts
+2025-10-11T00:34:54.917955Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/resolve.ts
+2025-10-11T00:34:54.9181Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/to_file_url.ts
+2025-10-11T00:34:54.918224Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/to_namespaced_path.ts
+2025-10-11T00:34:54.918358Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/common.ts
+2025-10-11T00:34:54.918468Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/separator.ts
+2025-10-11T00:34:54.918571Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_interface.ts
+2025-10-11T00:34:54.918703Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/glob.ts
+2025-10-11T00:34:54.918856Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/empty_dir.ts
+2025-10-11T00:34:54.918986Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/ensure_dir.ts
+2025-10-11T00:34:54.91911Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/ensure_file.ts
+2025-10-11T00:34:54.91925Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/ensure_link.ts
+2025-10-11T00:34:54.919357Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/ensure_symlink.ts
+2025-10-11T00:34:54.919451Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/exists.ts
+2025-10-11T00:34:54.919559Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/expand_glob.ts
+2025-10-11T00:34:54.919664Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/move.ts
+2025-10-11T00:34:54.919819Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/copy.ts
+2025-10-11T00:34:54.92003Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/walk.ts
+2025-10-11T00:34:54.920129Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/eol.ts
+2025-10-11T00:34:54.920341Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/jsonc/parse.ts
+2025-10-11T00:34:54.920415Z	[0m[32mDownload[0m https://deno.land/x/importmap@0.2.1/_util.ts
+2025-10-11T00:34:54.920805Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/cache.ts
+2025-10-11T00:34:54.920996Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/deps.ts
+2025-10-11T00:34:54.921116Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/deno_dir.ts
+2025-10-11T00:34:54.921551Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/file_fetcher.ts
+2025-10-11T00:34:54.976747Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_resolve.ts
+2025-10-11T00:34:54.97703Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_normalize.ts
+2025-10-11T00:34:54.977174Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_is_absolute.ts
+2025-10-11T00:34:54.977324Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_join.ts
+2025-10-11T00:34:54.97762Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_relative.ts
+2025-10-11T00:34:54.977786Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_to_namespaced_path.ts
+2025-10-11T00:34:54.978033Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_dirname.ts
+2025-10-11T00:34:54.978178Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_basename.ts
+2025-10-11T00:34:54.978278Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_extname.ts
+2025-10-11T00:34:54.978391Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_format.ts
+2025-10-11T00:34:54.978505Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_parse.ts
+2025-10-11T00:34:54.978613Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_from_file_url.ts
+2025-10-11T00:34:54.978731Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_to_file_url.ts
+2025-10-11T00:34:54.991994Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/fs/_util.ts
+2025-10-11T00:34:54.992168Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/assert/assert.ts
+2025-10-11T00:34:54.993101Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/disk_cache.ts
+2025-10-11T00:34:54.993282Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/util.ts
+2025-10-11T00:34:54.993416Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/fs/ensure_dir.ts
+2025-10-11T00:34:54.993494Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/fmt/colors.ts
+2025-10-11T00:34:54.993589Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/hash/sha256.ts
+2025-10-11T00:34:54.993717Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/mod.ts
+2025-10-11T00:34:54.993925Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/streams/conversion.ts
+2025-10-11T00:34:54.994051Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/dirs.ts
+2025-10-11T00:34:54.994169Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/http_cache.ts
+2025-10-11T00:34:54.994276Z	[0m[32mDownload[0m https://deno.land/x/deno_cache@0.4.1/auth_tokens.ts
+2025-10-11T00:34:55.022148Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_constants.ts
+2025-10-11T00:34:55.02235Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/path/_util.ts
+2025-10-11T00:34:55.033528Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/assert/assertion_error.ts
+2025-10-11T00:34:55.041658Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/fs/_util.ts
+2025-10-11T00:34:55.047938Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/_util/os.ts
+2025-10-11T00:34:55.048118Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/win32.ts
+2025-10-11T00:34:55.048234Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/posix.ts
+2025-10-11T00:34:55.048332Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/common.ts
+2025-10-11T00:34:55.048392Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/separator.ts
+2025-10-11T00:34:55.048449Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/_interface.ts
+2025-10-11T00:34:55.048546Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/glob.ts
+2025-10-11T00:34:55.048663Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/io/buffer.ts
+2025-10-11T00:34:55.107295Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/_constants.ts
+2025-10-11T00:34:55.107568Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/path/_util.ts
+2025-10-11T00:34:55.107718Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/_util/assert.ts
+2025-10-11T00:34:55.108931Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/bytes/bytes_list.ts
+2025-10-11T00:34:55.109135Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/bytes/mod.ts
+2025-10-11T00:34:55.149521Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/bytes/equals.ts
+2025-10-11T00:34:55.184698Z	[0m[32mDownload[0m https://deno.land/x/esbuild@v0.19.4/wasm.js
+2025-10-11T00:34:55.184957Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/debug
+2025-10-11T00:34:55.258843Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/denonext/devtools.mjs
+2025-10-11T00:34:55.259166Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/denonext/debug.mjs
+2025-10-11T00:34:55.927772Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/server.ts
+2025-10-11T00:34:55.928041Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/plugins/tailwind.ts
+2025-10-11T00:34:56.224177Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/types.ts
+2025-10-11T00:34:56.266404Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/mod.ts
+2025-10-11T00:34:56.266635Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/fs/walk.ts
+2025-10-11T00:34:56.266883Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/plugins/tailwind/types.ts
+2025-10-11T00:34:56.266966Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/plugins/tailwind/compiler.ts
+2025-10-11T00:34:56.344223Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_os.ts
+2025-10-11T00:34:56.34451Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/mod.ts
+2025-10-11T00:34:56.34462Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/mod.ts
+2025-10-11T00:34:56.344778Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/basename.ts
+2025-10-11T00:34:56.344996Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/dirname.ts
+2025-10-11T00:34:56.345127Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/extname.ts
+2025-10-11T00:34:56.345247Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/format.ts
+2025-10-11T00:34:56.345364Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/from_file_url.ts
+2025-10-11T00:34:56.345494Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/is_absolute.ts
+2025-10-11T00:34:56.345609Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/join.ts
+2025-10-11T00:34:56.345719Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/normalize.ts
+2025-10-11T00:34:56.345834Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/parse.ts
+2025-10-11T00:34:56.345941Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/relative.ts
+2025-10-11T00:34:56.346047Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/resolve.ts
+2025-10-11T00:34:56.346109Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/to_file_url.ts
+2025-10-11T00:34:56.346164Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/to_namespaced_path.ts
+2025-10-11T00:34:56.346273Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/common.ts
+2025-10-11T00:34:56.346344Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/separator.ts
+2025-10-11T00:34:56.346407Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_interface.ts
+2025-10-11T00:34:56.346462Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/glob_to_regexp.ts
+2025-10-11T00:34:56.346543Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/is_glob.ts
+2025-10-11T00:34:56.346644Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/join_globs.ts
+2025-10-11T00:34:56.34678Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/normalize_glob.ts
+2025-10-11T00:34:56.347014Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/fs/_util.ts
+2025-10-11T00:34:56.55873Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/basename.ts
+2025-10-11T00:34:56.559047Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/dirname.ts
+2025-10-11T00:34:56.559196Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/extname.ts
+2025-10-11T00:34:56.559332Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/format.ts
+2025-10-11T00:34:56.559501Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/from_file_url.ts
+2025-10-11T00:34:56.559652Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/is_absolute.ts
+2025-10-11T00:34:56.559835Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/join.ts
+2025-10-11T00:34:56.559988Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/normalize.ts
+2025-10-11T00:34:56.560172Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/parse.ts
+2025-10-11T00:34:56.560302Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/relative.ts
+2025-10-11T00:34:56.560431Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/resolve.ts
+2025-10-11T00:34:56.560534Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/to_file_url.ts
+2025-10-11T00:34:56.560631Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/to_namespaced_path.ts
+2025-10-11T00:34:56.560728Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/common.ts
+2025-10-11T00:34:56.560853Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/separator.ts
+2025-10-11T00:34:56.560965Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/glob_to_regexp.ts
+2025-10-11T00:34:56.561101Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/is_glob.ts
+2025-10-11T00:34:56.561221Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/join_globs.ts
+2025-10-11T00:34:56.561335Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/normalize_glob.ts
+2025-10-11T00:34:56.561436Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/basename.ts
+2025-10-11T00:34:56.561541Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/dirname.ts
+2025-10-11T00:34:56.561658Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/extname.ts
+2025-10-11T00:34:56.561787Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/format.ts
+2025-10-11T00:34:56.561897Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/from_file_url.ts
+2025-10-11T00:34:56.561988Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/is_absolute.ts
+2025-10-11T00:34:56.56208Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/join.ts
+2025-10-11T00:34:56.562171Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/normalize.ts
+2025-10-11T00:34:56.562278Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/parse.ts
+2025-10-11T00:34:56.562373Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/relative.ts
+2025-10-11T00:34:56.562465Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/resolve.ts
+2025-10-11T00:34:56.56255Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/to_file_url.ts
+2025-10-11T00:34:56.562642Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/to_namespaced_path.ts
+2025-10-11T00:34:56.562748Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/common.ts
+2025-10-11T00:34:56.562867Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/separator.ts
+2025-10-11T00:34:56.562975Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/glob_to_regexp.ts
+2025-10-11T00:34:56.563072Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/is_glob.ts
+2025-10-11T00:34:56.563163Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/join_globs.ts
+2025-10-11T00:34:56.563261Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/normalize_glob.ts
+2025-10-11T00:34:56.563931Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/common.ts
+2025-10-11T00:34:56.564067Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano
+2025-10-11T00:34:56.564167Z	[0m[32mDownload[0m https://registry.npmjs.org/autoprefixer
+2025-10-11T00:34:56.618311Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/basename.ts
+2025-10-11T00:34:56.618657Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/constants.ts
+2025-10-11T00:34:56.618876Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/strip_trailing_separators.ts
+2025-10-11T00:34:56.619Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/windows/_util.ts
+2025-10-11T00:34:56.629016Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/dirname.ts
+2025-10-11T00:34:56.629207Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/assert_path.ts
+2025-10-11T00:34:56.629338Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/format.ts
+2025-10-11T00:34:56.644858Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/from_file_url.ts
+2025-10-11T00:34:56.646423Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/assert/assert.ts
+2025-10-11T00:34:56.646697Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/normalize.ts
+2025-10-11T00:34:56.646952Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/normalize_string.ts
+2025-10-11T00:34:56.647202Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/relative.ts
+2025-10-11T00:34:56.647369Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/to_file_url.ts
+2025-10-11T00:34:56.647648Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/_common/glob_to_reg_exp.ts
+2025-10-11T00:34:56.648889Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/path/posix/_util.ts
+2025-10-11T00:34:56.764348Z	[0m[32mDownload[0m https://deno.land/std@0.207.0/assert/assertion_error.ts
+2025-10-11T00:34:56.846816Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss/-/postcss-8.4.31.tgz
+2025-10-11T00:34:56.873851Z	[0m[32mInitialize[0m postcss@8.4.31
+2025-10-11T00:34:56.878232Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano-preset-default
+2025-10-11T00:34:56.91272Z	[0m[32mDownload[0m https://registry.npmjs.org/browserslist
+2025-10-11T00:34:56.913073Z	[0m[32mDownload[0m https://registry.npmjs.org/css-declaration-sorter
+2025-10-11T00:34:56.913183Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano-utils
+2025-10-11T00:34:56.913286Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-calc
+2025-10-11T00:34:56.913402Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-colormin
+2025-10-11T00:34:56.913512Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-convert-values
+2025-10-11T00:34:56.913622Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-comments
+2025-10-11T00:34:56.913749Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-duplicates
+2025-10-11T00:34:56.913867Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-empty
+2025-10-11T00:34:56.913997Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-overridden
+2025-10-11T00:34:56.914087Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-merge-longhand
+2025-10-11T00:34:56.914165Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-merge-rules
+2025-10-11T00:34:56.914263Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-font-values
+2025-10-11T00:34:56.914367Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-gradients
+2025-10-11T00:34:56.914456Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-params
+2025-10-11T00:34:56.914555Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-selectors
+2025-10-11T00:34:56.914659Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-charset
+2025-10-11T00:34:56.914778Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-display-values
+2025-10-11T00:34:56.914892Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-positions
+2025-10-11T00:34:56.914995Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-repeat-style
+2025-10-11T00:34:56.915088Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-string
+2025-10-11T00:34:56.915192Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-timing-functions
+2025-10-11T00:34:56.915287Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-unicode
+2025-10-11T00:34:56.915384Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-url
+2025-10-11T00:34:56.915476Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-whitespace
+2025-10-11T00:34:56.915567Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-ordered-values
+2025-10-11T00:34:56.915669Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-reduce-initial
+2025-10-11T00:34:56.915777Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-reduce-transforms
+2025-10-11T00:34:56.915887Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-svgo
+2025-10-11T00:34:56.916002Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-unique-selectors
+2025-10-11T00:34:56.978435Z	[0m[32mDownload[0m https://registry.npmjs.org/baseline-browser-mapping
+2025-10-11T00:34:56.979028Z	[0m[32mDownload[0m https://registry.npmjs.org/caniuse-lite
+2025-10-11T00:34:56.97938Z	[0m[32mDownload[0m https://registry.npmjs.org/electron-to-chromium
+2025-10-11T00:34:56.979692Z	[0m[32mDownload[0m https://registry.npmjs.org/node-releases
+2025-10-11T00:34:56.979845Z	[0m[32mDownload[0m https://registry.npmjs.org/update-browserslist-db
+2025-10-11T00:34:57.193857Z	[0m[32mDownload[0m https://registry.npmjs.org/caniuse-api
+2025-10-11T00:34:57.194079Z	[0m[32mDownload[0m https://registry.npmjs.org/colord
+2025-10-11T00:34:57.230079Z	[0m[32mDownload[0m https://registry.npmjs.org/stylehacks
+2025-10-11T00:34:57.296492Z	[0m[32mDownload[0m https://registry.npmjs.org/svgo
+2025-10-11T00:34:57.345848Z	[0m[32mDownload[0m https://registry.npmjs.org/escalade
+2025-10-11T00:34:57.368853Z	[0m[32mDownload[0m https://registry.npmjs.org/lodash.memoize
+2025-10-11T00:34:57.369078Z	[0m[32mDownload[0m https://registry.npmjs.org/lodash.uniq
+2025-10-11T00:34:57.396563Z	[0m[32mDownload[0m https://registry.npmjs.org/@trysound%2fsax
+2025-10-11T00:34:57.39688Z	[0m[32mDownload[0m https://registry.npmjs.org/css-select
+2025-10-11T00:34:57.397096Z	[0m[32mDownload[0m https://registry.npmjs.org/css-tree
+2025-10-11T00:34:57.397209Z	[0m[32mDownload[0m https://registry.npmjs.org/css-what
+2025-10-11T00:34:57.397378Z	[0m[32mDownload[0m https://registry.npmjs.org/csso
+2025-10-11T00:34:57.503006Z	[0m[32mDownload[0m https://registry.npmjs.org/boolbase
+2025-10-11T00:34:57.503307Z	[0m[32mDownload[0m https://registry.npmjs.org/domhandler
+2025-10-11T00:34:57.50341Z	[0m[32mDownload[0m https://registry.npmjs.org/domutils
+2025-10-11T00:34:57.503475Z	[0m[32mDownload[0m https://registry.npmjs.org/nth-check
+2025-10-11T00:34:57.544849Z	[0m[32mDownload[0m https://registry.npmjs.org/mdn-data
+2025-10-11T00:34:57.573126Z	[0m[32mDownload[0m https://registry.npmjs.org/domelementtype
+2025-10-11T00:34:57.599147Z	[0m[32mDownload[0m https://registry.npmjs.org/dom-serializer
+2025-10-11T00:34:57.624755Z	[0m[32mDownload[0m https://registry.npmjs.org/entities
+2025-10-11T00:34:57.7607Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano/-/cssnano-6.0.1.tgz
+2025-10-11T00:34:57.761009Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano-preset-default/-/cssnano-preset-default-6.1.2.tgz
+2025-10-11T00:34:57.76116Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-reduce-initial/-/postcss-reduce-initial-6.1.0.tgz
+2025-10-11T00:34:57.761292Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-params/-/postcss-minify-params-6.1.0.tgz
+2025-10-11T00:34:57.761408Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-merge-longhand/-/postcss-merge-longhand-6.0.5.tgz
+2025-10-11T00:34:57.761512Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-reduce-transforms/-/postcss-reduce-transforms-6.0.2.tgz
+2025-10-11T00:34:57.761615Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-comments/-/postcss-discard-comments-6.0.2.tgz
+2025-10-11T00:34:57.761834Z	[0m[32mDownload[0m https://registry.npmjs.org/browserslist/-/browserslist-4.26.3.tgz
+2025-10-11T00:34:57.761966Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-colormin/-/postcss-colormin-6.1.0.tgz
+2025-10-11T00:34:57.762091Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-repeat-style/-/postcss-normalize-repeat-style-6.0.2.tgz
+2025-10-11T00:34:57.7622Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-string/-/postcss-normalize-string-6.0.2.tgz
+2025-10-11T00:34:57.762291Z	[0m[32mDownload[0m https://registry.npmjs.org/css-declaration-sorter/-/css-declaration-sorter-7.3.0.tgz
+2025-10-11T00:34:57.762396Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-unique-selectors/-/postcss-unique-selectors-6.0.4.tgz
+2025-10-11T00:34:57.76252Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-gradients/-/postcss-minify-gradients-6.0.3.tgz
+2025-10-11T00:34:57.762626Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-empty/-/postcss-discard-empty-6.0.3.tgz
+2025-10-11T00:34:57.762814Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-charset/-/postcss-normalize-charset-6.0.2.tgz
+2025-10-11T00:34:57.762917Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-whitespace/-/postcss-normalize-whitespace-6.0.2.tgz
+2025-10-11T00:34:57.763028Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-merge-rules/-/postcss-merge-rules-6.1.1.tgz
+2025-10-11T00:34:57.763133Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-selectors/-/postcss-minify-selectors-6.0.4.tgz
+2025-10-11T00:34:57.763257Z	[0m[32mDownload[0m https://registry.npmjs.org/cssnano-utils/-/cssnano-utils-4.0.2.tgz
+2025-10-11T00:34:57.763345Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-convert-values/-/postcss-convert-values-6.1.0.tgz
+2025-10-11T00:34:57.763556Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-duplicates/-/postcss-discard-duplicates-6.0.3.tgz
+2025-10-11T00:34:57.763669Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-timing-functions/-/postcss-normalize-timing-functions-6.0.2.tgz
+2025-10-11T00:34:57.763754Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-unicode/-/postcss-normalize-unicode-6.1.0.tgz
+2025-10-11T00:34:57.763826Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-positions/-/postcss-normalize-positions-6.0.2.tgz
+2025-10-11T00:34:57.763889Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-url/-/postcss-normalize-url-6.0.2.tgz
+2025-10-11T00:34:57.764192Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-ordered-values/-/postcss-ordered-values-6.0.2.tgz
+2025-10-11T00:34:57.764294Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-normalize-display-values/-/postcss-normalize-display-values-6.0.2.tgz
+2025-10-11T00:34:57.764365Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-minify-font-values/-/postcss-minify-font-values-6.1.0.tgz
+2025-10-11T00:34:57.764428Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-calc/-/postcss-calc-9.0.1.tgz
+2025-10-11T00:34:57.764483Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-svgo/-/postcss-svgo-6.0.3.tgz
+2025-10-11T00:34:57.764544Z	[0m[32mDownload[0m https://registry.npmjs.org/postcss-discard-overridden/-/postcss-discard-overridden-6.0.2.tgz
+2025-10-11T00:34:57.764601Z	[0m[32mDownload[0m https://registry.npmjs.org/caniuse-api/-/caniuse-api-3.0.0.tgz
+2025-10-11T00:34:57.764656Z	[0m[32mDownload[0m https://registry.npmjs.org/stylehacks/-/stylehacks-6.1.1.tgz
+2025-10-11T00:34:57.764726Z	[0m[32mDownload[0m https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.8.16.tgz
+2025-10-11T00:34:57.764814Z	[0m[32mDownload[0m https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001749.tgz
+2025-10-11T00:34:57.764872Z	[0m[32mDownload[0m https://registry.npmjs.org/electron-to-chromium/-/electron-to-chromium-1.5.234.tgz
+2025-10-11T00:34:57.764951Z	[0m[32mDownload[0m https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.1.3.tgz
+2025-10-11T00:34:57.765018Z	[0m[32mDownload[0m https://registry.npmjs.org/node-releases/-/node-releases-2.0.23.tgz
+2025-10-11T00:34:57.765074Z	[0m[32mDownload[0m https://registry.npmjs.org/colord/-/colord-2.9.3.tgz
+2025-10-11T00:34:57.765128Z	[0m[32mDownload[0m https://registry.npmjs.org/svgo/-/svgo-3.3.2.tgz
+2025-10-11T00:34:57.76518Z	[0m[32mDownload[0m https://registry.npmjs.org/lodash.memoize/-/lodash.memoize-4.1.2.tgz
+2025-10-11T00:34:57.76524Z	[0m[32mDownload[0m https://registry.npmjs.org/lodash.uniq/-/lodash.uniq-4.5.0.tgz
+2025-10-11T00:34:57.765295Z	[0m[32mDownload[0m https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz
+2025-10-11T00:34:57.765361Z	[0m[32mDownload[0m https://registry.npmjs.org/css-tree/-/css-tree-2.3.1.tgz
+2025-10-11T00:34:57.76542Z	[0m[32mDownload[0m https://registry.npmjs.org/css-select/-/css-select-5.2.2.tgz
+2025-10-11T00:34:57.765485Z	[0m[32mDownload[0m https://registry.npmjs.org/css-what/-/css-what-6.2.2.tgz
+2025-10-11T00:34:57.765539Z	[0m[32mDownload[0m https://registry.npmjs.org/@trysound/sax/-/sax-0.2.0.tgz
+2025-10-11T00:34:57.765594Z	[0m[32mDownload[0m https://registry.npmjs.org/csso/-/csso-5.0.5.tgz
+2025-10-11T00:34:57.765649Z	[0m[32mDownload[0m https://registry.npmjs.org/commander/-/commander-7.2.0.tgz
+2025-10-11T00:34:57.765707Z	[0m[32mDownload[0m https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.30.tgz
+2025-10-11T00:34:57.765781Z	[0m[32mDownload[0m https://registry.npmjs.org/domhandler/-/domhandler-5.0.3.tgz
+2025-10-11T00:34:57.765844Z	[0m[32mDownload[0m https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz
+2025-10-11T00:34:57.765912Z	[0m[32mDownload[0m https://registry.npmjs.org/domutils/-/domutils-3.2.2.tgz
+2025-10-11T00:34:57.76597Z	[0m[32mDownload[0m https://registry.npmjs.org/nth-check/-/nth-check-2.1.1.tgz
+2025-10-11T00:34:57.766032Z	[0m[32mDownload[0m https://registry.npmjs.org/css-tree/-/css-tree-2.2.1.tgz
+2025-10-11T00:34:57.766092Z	[0m[32mDownload[0m https://registry.npmjs.org/domelementtype/-/domelementtype-2.3.0.tgz
+2025-10-11T00:34:57.766147Z	[0m[32mDownload[0m https://registry.npmjs.org/dom-serializer/-/dom-serializer-2.0.0.tgz
+2025-10-11T00:34:57.766215Z	[0m[32mDownload[0m https://registry.npmjs.org/mdn-data/-/mdn-data-2.0.28.tgz
+2025-10-11T00:34:57.766274Z	[0m[32mDownload[0m https://registry.npmjs.org/entities/-/entities-4.5.0.tgz
+2025-10-11T00:34:57.798977Z	[0m[32mInitialize[0m postcss-merge-longhand@6.0.5
+2025-10-11T00:34:57.811181Z	[0m[32mInitialize[0m cssnano@6.0.1
+2025-10-11T00:34:57.811893Z	[0m[32mInitialize[0m postcss-normalize-whitespace@6.0.2
+2025-10-11T00:34:57.812239Z	[0m[32mInitialize[0m postcss-unique-selectors@6.0.4
+2025-10-11T00:34:57.818904Z	[0m[32mInitialize[0m postcss-reduce-transforms@6.0.2
+2025-10-11T00:34:57.819083Z	[0m[32mInitialize[0m postcss-minify-params@6.1.0
+2025-10-11T00:34:57.819538Z	[0m[32mInitialize[0m postcss-svgo@6.0.3
+2025-10-11T00:34:57.819682Z	[0m[32mInitialize[0m domelementtype@2.3.0
+2025-10-11T00:34:57.819842Z	[0m[32mInitialize[0m postcss-minify-selectors@6.0.4
+2025-10-11T00:34:57.820779Z	[0m[32mInitialize[0m boolbase@1.0.0
+2025-10-11T00:34:57.822998Z	[0m[32mInitialize[0m css-declaration-sorter@7.3.0
+2025-10-11T00:34:57.828461Z	[0m[32mInitialize[0m postcss-discard-empty@6.0.3
+2025-10-11T00:34:57.833357Z	[0m[32mInitialize[0m update-browserslist-db@1.1.3
+2025-10-11T00:34:57.834891Z	[0m[32mInitialize[0m electron-to-chromium@1.5.234
+2025-10-11T00:34:57.836366Z	[0m[32mInitialize[0m cssnano-preset-default@6.1.2
+2025-10-11T00:34:57.836585Z	[0m[32mInitialize[0m postcss-discard-overridden@6.0.2
+2025-10-11T00:34:57.836777Z	[0m[32mInitialize[0m browserslist@4.26.3
+2025-10-11T00:34:57.836944Z	[0m[32mInitialize[0m postcss-normalize-timing-functions@6.0.2
+2025-10-11T00:34:57.839024Z	[0m[32mInitialize[0m postcss-normalize-display-values@6.0.2
+2025-10-11T00:34:57.839377Z	[0m[32mInitialize[0m postcss-minify-gradients@6.0.3
+2025-10-11T00:34:57.839523Z	[0m[32mInitialize[0m lodash.uniq@4.5.0
+2025-10-11T00:34:57.840524Z	[0m[32mInitialize[0m caniuse-api@3.0.0
+2025-10-11T00:34:57.842482Z	[0m[32mInitialize[0m domhandler@5.0.3
+2025-10-11T00:34:57.842979Z	[0m[32mInitialize[0m baseline-browser-mapping@2.8.16
+2025-10-11T00:34:57.844189Z	[0m[32mInitialize[0m postcss-normalize-unicode@6.1.0
+2025-10-11T00:34:57.845412Z	[0m[32mInitialize[0m postcss-normalize-charset@6.0.2
+2025-10-11T00:34:57.84665Z	[0m[32mInitialize[0m postcss-discard-duplicates@6.0.3
+2025-10-11T00:34:57.847214Z	[0m[32mInitialize[0m postcss-discard-comments@6.0.2
+2025-10-11T00:34:57.848994Z	[0m[32mInitialize[0m postcss-normalize-repeat-style@6.0.2
+2025-10-11T00:34:57.849417Z	[0m[32mInitialize[0m cssnano-utils@4.0.2
+2025-10-11T00:34:57.851538Z	[0m[32mInitialize[0m postcss-normalize-url@6.0.2
+2025-10-11T00:34:57.853863Z	[0m[32mInitialize[0m lodash.memoize@4.1.2
+2025-10-11T00:34:57.856098Z	[0m[32mInitialize[0m dom-serializer@2.0.0
+2025-10-11T00:34:57.857867Z	[0m[32mInitialize[0m commander@7.2.0
+2025-10-11T00:34:57.859315Z	[0m[32mInitialize[0m postcss-minify-font-values@6.1.0
+2025-10-11T00:34:57.862953Z	[0m[32mInitialize[0m postcss-normalize-positions@6.0.2
+2025-10-11T00:34:57.864881Z	[0m[32mInitialize[0m postcss-calc@9.0.1
+2025-10-11T00:34:57.865311Z	[0m[32mInitialize[0m colord@2.9.3
+2025-10-11T00:34:57.866536Z	[0m[32mInitialize[0m postcss-reduce-initial@6.1.0
+2025-10-11T00:34:57.868077Z	[0m[32mInitialize[0m @trysound/sax@0.2.0
+2025-10-11T00:34:57.869685Z	[0m[32mInitialize[0m escalade@3.2.0
+2025-10-11T00:34:57.871449Z	[0m[32mInitialize[0m node-releases@2.0.23
+2025-10-11T00:34:57.87453Z	[0m[32mInitialize[0m postcss-colormin@6.1.0
+2025-10-11T00:34:57.876525Z	[0m[32mInitialize[0m postcss-convert-values@6.1.0
+2025-10-11T00:34:57.879109Z	[0m[32mInitialize[0m mdn-data@2.0.28
+2025-10-11T00:34:57.880832Z	[0m[32mInitialize[0m nth-check@2.1.1
+2025-10-11T00:34:57.883079Z	[0m[32mInitialize[0m postcss-merge-rules@6.1.1
+2025-10-11T00:34:57.883589Z	[0m[32mInitialize[0m mdn-data@2.0.30
+2025-10-11T00:34:57.887641Z	[0m[32mInitialize[0m postcss-normalize-string@6.0.2
+2025-10-11T00:34:57.888643Z	[0m[32mInitialize[0m css-what@6.2.2
+2025-10-11T00:34:57.891824Z	[0m[32mInitialize[0m domutils@3.2.2
+2025-10-11T00:34:57.895874Z	[0m[32mInitialize[0m entities@4.5.0
+2025-10-11T00:34:57.90033Z	[0m[32mInitialize[0m stylehacks@6.1.1
+2025-10-11T00:34:57.903564Z	[0m[32mInitialize[0m postcss-ordered-values@6.0.2
+2025-10-11T00:34:57.909533Z	[0m[32mInitialize[0m svgo@3.3.2
+2025-10-11T00:34:57.918181Z	[0m[32mInitialize[0m css-select@5.2.2
+2025-10-11T00:34:57.931131Z	[0m[32mInitialize[0m csso@5.0.5
+2025-10-11T00:34:57.961915Z	[0m[32mInitialize[0m css-tree@2.2.1
+2025-10-11T00:34:57.967298Z	[0m[32mInitialize[0m css-tree@2.3.1
+2025-10-11T00:34:57.996124Z	[0m[32mInitialize[0m caniuse-lite@1.0.30001749
+2025-10-11T00:34:58.014209Z	[0m[32mDownload[0m https://registry.npmjs.org/fraction.js
+2025-10-11T00:34:58.014635Z	[0m[32mDownload[0m https://registry.npmjs.org/normalize-range
+2025-10-11T00:34:58.208339Z	[0m[32mDownload[0m https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.4.16.tgz
+2025-10-11T00:34:58.208539Z	[0m[32mDownload[0m https://registry.npmjs.org/normalize-range/-/normalize-range-0.1.2.tgz
+2025-10-11T00:34:58.208658Z	[0m[32mDownload[0m https://registry.npmjs.org/fraction.js/-/fraction.js-4.3.7.tgz
+2025-10-11T00:34:58.232463Z	[0m[32mInitialize[0m normalize-range@0.1.2
+2025-10-11T00:34:58.236213Z	[0m[32mInitialize[0m fraction.js@4.3.7
+2025-10-11T00:34:58.248209Z	[0m[32mInitialize[0m autoprefixer@10.4.16
+2025-10-11T00:34:58.401309Z	The manifest has been generated for 16 routes and 1 islands.
+2025-10-11T00:34:58.512227Z	
+2025-10-11T00:34:58.512478Z	🔨 构建 Fresh 应用...
+2025-10-11T00:34:58.653971Z	[0m[32mTask[0m [0m[36mbuild[0m deno run -A dev.ts build
+2025-10-11T00:34:58.819854Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/dev.ts
+2025-10-11T00:34:58.820137Z	[0m[32mDownload[0m https://deno.land/std@0.216.0/dotenv/load.ts
+2025-10-11T00:34:59.126773Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/dev_command.ts
+2025-10-11T00:34:59.127173Z	[0m[32mDownload[0m https://deno.land/std@0.216.0/dotenv/mod.ts
+2025-10-11T00:34:59.447382Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/update_check.ts
+2025-10-11T00:34:59.447751Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/dev/build.ts
+2025-10-11T00:34:59.448398Z	[0m[32mDownload[0m https://deno.land/std@0.216.0/dotenv/parse.ts
+2025-10-11T00:34:59.44858Z	[0m[32mDownload[0m https://deno.land/std@0.216.0/dotenv/stringify.ts
+2025-10-11T00:34:59.924849Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/versions.json
+2025-10-11T00:35:00.958308Z	The manifest has been generated for 16 routes and 1 islands.
+2025-10-11T00:35:00.963329Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/runtime.ts
+2025-10-11T00:35:03.459034Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2
+2025-10-11T00:35:03.459612Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/jsx-runtime/src/index.d.ts
+2025-10-11T00:35:03.466697Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/entrypoints/signals.ts
+2025-10-11T00:35:03.498976Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/entrypoints/main.ts
+2025-10-11T00:35:03.503934Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/entrypoints/deserializer.ts
+2025-10-11T00:35:03.566452Z	[0m[32mDownload[0m https://deno.land/x/fresh@1.6.1/src/runtime/polyfills.ts
+2025-10-11T00:35:03.567023Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2
+2025-10-11T00:35:03.600135Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/src/index.d.ts
+2025-10-11T00:35:03.621794Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2
+2025-10-11T00:35:03.631428Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals@1.2.2/denonext/signals.mjs
+2025-10-11T00:35:03.631701Z	[0m[32mDownload[0m https://esm.sh/@preact/signals@1.2.2/dist/signals.d.ts
+2025-10-11T00:35:03.631899Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/src/index.d.ts
+2025-10-11T00:35:03.632009Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/src/jsx.d.ts
+2025-10-11T00:35:03.647558Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1
+2025-10-11T00:35:03.648062Z	[0m[32mDownload[0m https://esm.sh/@preact/signals-core@1.8.0/dist/signals-core.d.ts
+2025-10-11T00:35:03.655034Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/hooks/src/index.d.ts
+2025-10-11T00:35:03.709099Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1
+2025-10-11T00:35:03.718262Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1/denonext/signals-core.mjs
+2025-10-11T00:35:03.718528Z	[0m[32mDownload[0m https://esm.sh/@preact/signals-core@1.5.1/dist/signals-core.d.ts
+2025-10-11T00:35:03.726228Z	[0m[32mDownload[0m https://esm.sh/*@preact/signals-core@1.5.1/denonext/signals-core.mjs
+2025-10-11T00:35:03.726419Z	[0m[32mDownload[0m https://esm.sh/@preact/signals-core@1.5.1/dist/signals-core.d.ts
+2025-10-11T00:35:03.740661Z	[0m[32mDownload[0m https://esm.sh/preact-render-to-string@6.3.1/src/index.d.ts
+2025-10-11T00:35:03.742543Z	[0m[32mDownload[0m https://esm.sh/@types/babel__helper-validator-identifier@~7.15.2/index.d.ts
+2025-10-11T00:35:03.745577Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/json/common.ts
+2025-10-11T00:35:03.757728Z	[0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/index.d.ts
+2025-10-11T00:35:03.791728Z	[0m[32mDownload[0m https://esm.sh/@types/babel__helper-validator-identifier@~7.15.2/index.d.ts
+2025-10-11T00:35:03.795575Z	[0m[32mDownload[0m https://deno.land/std@0.208.0/json/common.ts
+2025-10-11T00:35:03.795862Z	[0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/index.d.ts
+2025-10-11T00:35:03.832632Z	[0m[32mDownload[0m https://esm.sh/@types/babel__helper-validator-identifier@7.15.2/index.d.ts
+2025-10-11T00:35:04.078838Z	[0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/jsx.d.ts
+2025-10-11T00:35:04.079342Z	[0m[32mDownload[0m https://deno.land/x/esbuild@v0.19.4/mod.d.ts
+2025-10-11T00:35:04.079673Z	[0m[32mDownload[0m https://esm.sh/preact@10.25.4/src/jsx.d.ts
+2025-10-11T00:35:04.17042Z	[0m[32mDownload[0m https://deno.land/x/esbuild@v0.19.2/mod.d.ts
+2025-10-11T00:35:04.215041Z	[0m[32mDownload[0m https://deno.land/std@0.201.0/json/common.ts
+2025-10-11T00:35:04.215814Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/mod.ts
+2025-10-11T00:35:04.299576Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/lib/deno_graph.generated.js
+2025-10-11T00:35:04.299898Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/lib/loader.ts
+2025-10-11T00:35:04.300191Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/lib/types.d.ts
+2025-10-11T00:35:04.300287Z	[0m[32mDownload[0m https://deno.land/std@0.140.0/io/types.d.ts
+2025-10-11T00:35:04.344498Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/lib/snippets/deno_graph-de651bc9c240ed8d/src/deno_apis.js
+2025-10-11T00:35:04.344709Z	[0m[32mDownload[0m https://deno.land/x/deno_graph@0.26.0/lib/media_type.ts
+2025-10-11T00:35:04.434789Z	[0m[32mDownload[0m https://esm.sh/preact@10.22.0/debug/src/index.d.ts
+2025-10-11T00:35:04.435074Z	[0m[32mDownload[0m https://deno.land/x/esbuild@v0.19.4/wasm.d.ts
+2025-10-11T00:35:04.832538Z	Assets written to: [32m/opt/buildhome/repo/_fresh[39m
+2025-10-11T00:35:04.903491Z	
+2025-10-11T00:35:04.903773Z	📦 _fresh 目录内容:
+2025-10-11T00:35:04.908792Z	total 43K
+2025-10-11T00:35:04.908988Z	drwxrwxr-x 2 buildbot buildbot  240 Oct 11 00:35 .
+2025-10-11T00:35:04.909111Z	drwxrwxr-x 2 buildbot buildbot  920 Oct 11 00:35 ..
+2025-10-11T00:35:04.909216Z	-rw-rw-r-- 1 buildbot buildbot 1.8K Oct 11 00:35 chunk-5TIVV7D3.js
+2025-10-11T00:35:04.909344Z	-rw-rw-r-- 1 buildbot buildbot  11K Oct 11 00:35 chunk-7KZRW4CE.js
+2025-10-11T00:35:04.90945Z	-rw-rw-r-- 1 buildbot buildbot  970 Oct 11 00:35 chunk-TVD2C3BW.js
+2025-10-11T00:35:04.909548Z	-rw-rw-r-- 1 buildbot buildbot  653 Oct 11 00:35 deserializer.js
+2025-10-11T00:35:04.909641Z	-rw-rw-r-- 1 buildbot buildbot  987 Oct 11 00:35 island-counter.js
+2025-10-11T00:35:04.909731Z	-rw-rw-r-- 1 buildbot buildbot 9.9K Oct 11 00:35 main.js
+2025-10-11T00:35:04.909857Z	-rw-rw-r-- 1 buildbot buildbot  10K Oct 11 00:35 metafile.json
+2025-10-11T00:35:04.909955Z	-rw-rw-r-- 1 buildbot buildbot 6.1K Oct 11 00:35 signals.js
+2025-10-11T00:35:04.910067Z	-rw-rw-r-- 1 buildbot buildbot  518 Oct 11 00:35 snapshot.json
+2025-10-11T00:35:04.910157Z	drwxrwxr-x 2 buildbot buildbot   60 Oct 11 00:35 static
+2025-10-11T00:35:04.910274Z	
+2025-10-11T00:35:04.910381Z	📁 复制静态资源...
+2025-10-11T00:35:04.917661Z	✅ 静态文件已复制
+2025-10-11T00:35:04.920703Z	✅ _headers 文件已复制
+2025-10-11T00:35:04.924081Z	✅ _worker.js 已复制
+2025-10-11T00:35:04.924235Z	
+2025-10-11T00:35:04.924354Z	✅ Fresh 1.7+ 使用内置 Cloudflare Pages 支持
+2025-10-11T00:35:04.924464Z	
+2025-10-11T00:35:04.924568Z	🔍 验证构建结果...
+2025-10-11T00:35:04.924691Z	==================================================
+2025-10-11T00:35:04.924826Z	✅ 构建目录存在: _fresh/
+2025-10-11T00:35:04.92495Z	
+2025-10-11T00:35:04.925076Z	📊 构建输出统计:
+2025-10-11T00:35:04.931273Z	   文件总数: 16
+2025-10-11T00:35:04.935849Z	   目录总数: 2
+2025-10-11T00:35:04.936022Z	   ✅ main.js 存在 (Fresh 主文件)
+2025-10-11T00:35:04.941514Z	   大小: 10K
+2025-10-11T00:35:04.941673Z	
+2025-10-11T00:35:04.941824Z	📁 _fresh 目录结构:
+2025-10-11T00:35:04.944923Z	total 49K
+2025-10-11T00:35:04.945122Z	drwxrwxr-x 2 buildbot buildbot  280 Oct 11 00:35 .
+2025-10-11T00:35:04.945267Z	drwxrwxr-x 2 buildbot buildbot  920 Oct 11 00:35 ..
+2025-10-11T00:35:04.945472Z	-rw-rw-r-- 1 buildbot buildbot  680 Oct 11 00:35 _headers
+2025-10-11T00:35:04.945616Z	-rw-rw-r-- 1 buildbot buildbot 4.2K Oct 11 00:35 _worker.js
+2025-10-11T00:35:04.945928Z	-rw-rw-r-- 1 buildbot buildbot 1.8K Oct 11 00:35 chunk-5TIVV7D3.js
+2025-10-11T00:35:04.946136Z	-rw-rw-r-- 1 buildbot buildbot  11K Oct 11 00:35 chunk-7KZRW4CE.js
+2025-10-11T00:35:04.946278Z	-rw-rw-r-- 1 buildbot buildbot  970 Oct 11 00:35 chunk-TVD2C3BW.js
+2025-10-11T00:35:04.94663Z	-rw-rw-r-- 1 buildbot buildbot  653 Oct 11 00:35 deserializer.js
+2025-10-11T00:35:04.946846Z	-rw-rw-r-- 1 buildbot buildbot  987 Oct 11 00:35 island-counter.js
+2025-10-11T00:35:04.94694Z	-rw-rw-r-- 1 buildbot buildbot 9.9K Oct 11 00:35 main.js
+2025-10-11T00:35:04.947234Z	-rw-rw-r-- 1 buildbot buildbot  10K Oct 11 00:35 metafile.json
+2025-10-11T00:35:04.947349Z	-rw-rw-r-- 1 buildbot buildbot 6.1K Oct 11 00:35 signals.js
+2025-10-11T00:35:04.947416Z	-rw-rw-r-- 1 buildbot buildbot  518 Oct 11 00:35 snapshot.json
+2025-10-11T00:35:04.947502Z	drwxrwxr-x 2 buildbot buildbot  140 Oct 11 00:35 static
+2025-10-11T00:35:04.947614Z	
+2025-10-11T00:35:04.947723Z	✅ 构建完成！
+2025-10-11T00:35:04.947857Z	==================================================
+2025-10-11T00:35:04.947982Z	📤 输出目录: _fresh/
+2025-10-11T00:35:04.948091Z	🌐 可以部署到 Cloudflare Pages 了
+2025-10-11T00:35:04.960216Z	Finished
+2025-10-11T00:35:05.903634Z	Checking for configuration in a Wrangler configuration file (BETA)
+2025-10-11T00:35:05.904195Z	
+2025-10-11T00:35:05.905326Z	Found wrangler.toml file. Reading build configuration...
+2025-10-11T00:35:07.019634Z	A wrangler.toml file was found but it does not appear to be valid. Did you mean to use wrangler.toml to configure Pages? If so, then make sure the file is valid and contains the `pages_build_output_dir` property. Skipping file and continuing.
+2025-10-11T00:35:07.020522Z	Found _worker.js in output directory. Uploading.
+2025-10-11T00:35:07.026661Z	 ⛅️ wrangler 3.101.0
+2025-10-11T00:35:07.026966Z	-------------------
+2025-10-11T00:35:08.040829Z	[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 6 errors:[0m
+2025-10-11T00:35:08.04165Z	
+2025-10-11T00:35:08.041803Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.041928Z	  
+2025-10-11T00:35:08.042119Z	      ../components/Button.tsx:2:27:
+2025-10-11T00:35:08.042236Z	  [37m      2 │ import { IS_BROWSER } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.042338Z	          ╵                            [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.042434Z	  
+2025-10-11T00:35:08.04255Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.042636Z	  
+2025-10-11T00:35:08.04272Z	  
+2025-10-11T00:35:08.042842Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.042974Z	  
+2025-10-11T00:35:08.043094Z	      ../routes/_404.tsx:1:21:
+2025-10-11T00:35:08.043196Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.043268Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.043398Z	  
+2025-10-11T00:35:08.043476Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.043571Z	  
+2025-10-11T00:35:08.043668Z	  
+2025-10-11T00:35:08.043791Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.043899Z	  
+2025-10-11T00:35:08.043999Z	      ../routes/en/index.tsx:1:21:
+2025-10-11T00:35:08.044095Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.044192Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.044289Z	  
+2025-10-11T00:35:08.044381Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.044462Z	  
+2025-10-11T00:35:08.044546Z	  
+2025-10-11T00:35:08.044627Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.0447Z	  
+2025-10-11T00:35:08.044897Z	      ../routes/en/login.tsx:1:21:
+2025-10-11T00:35:08.045014Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.045275Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.045448Z	  
+2025-10-11T00:35:08.045546Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.045624Z	  
+2025-10-11T00:35:08.045692Z	  
+2025-10-11T00:35:08.045797Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.045877Z	  
+2025-10-11T00:35:08.045941Z	      ../routes/login.tsx:1:21:
+2025-10-11T00:35:08.046004Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.046064Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.046122Z	  
+2025-10-11T00:35:08.046181Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.04625Z	  
+2025-10-11T00:35:08.04631Z	  
+2025-10-11T00:35:08.046371Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.04643Z	  
+2025-10-11T00:35:08.046487Z	      ../routes/register.tsx:1:21:
+2025-10-11T00:35:08.046545Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.046608Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.046669Z	  
+2025-10-11T00:35:08.046728Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.046826Z	  
+2025-10-11T00:35:08.046894Z	  
+2025-10-11T00:35:08.046958Z	
+2025-10-11T00:35:08.047017Z	
+2025-10-11T00:35:08.047079Z	
+2025-10-11T00:35:08.048955Z	[31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mBuild failed with 6 errors:[0m
+2025-10-11T00:35:08.049145Z	
+2025-10-11T00:35:08.049256Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.049498Z	  
+2025-10-11T00:35:08.049597Z	      ../components/Button.tsx:2:27:
+2025-10-11T00:35:08.049776Z	  [37m      2 │ import { IS_BROWSER } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.049873Z	          ╵                            [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.050107Z	  
+2025-10-11T00:35:08.050259Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.0504Z	  
+2025-10-11T00:35:08.050535Z	  
+2025-10-11T00:35:08.050638Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.050811Z	  
+2025-10-11T00:35:08.050921Z	      ../routes/_404.tsx:1:21:
+2025-10-11T00:35:08.051019Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.051117Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.051231Z	  
+2025-10-11T00:35:08.051349Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.051463Z	  
+2025-10-11T00:35:08.051572Z	  
+2025-10-11T00:35:08.051672Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.051797Z	  
+2025-10-11T00:35:08.05191Z	      ../routes/en/index.tsx:1:21:
+2025-10-11T00:35:08.052002Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.052134Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.052271Z	  
+2025-10-11T00:35:08.052353Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.052415Z	  
+2025-10-11T00:35:08.052473Z	  
+2025-10-11T00:35:08.052532Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.052605Z	  
+2025-10-11T00:35:08.052663Z	      ../routes/en/login.tsx:1:21:
+2025-10-11T00:35:08.052747Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.05284Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.05291Z	  
+2025-10-11T00:35:08.052966Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.053025Z	  
+2025-10-11T00:35:08.05308Z	  
+2025-10-11T00:35:08.053142Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.053213Z	  
+2025-10-11T00:35:08.053283Z	      ../routes/login.tsx:1:21:
+2025-10-11T00:35:08.053342Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.0534Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.053466Z	  
+2025-10-11T00:35:08.053529Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.053588Z	  
+2025-10-11T00:35:08.053691Z	  
+2025-10-11T00:35:08.053805Z	  [31m✘ [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "$fresh/runtime.ts"[0m
+2025-10-11T00:35:08.053902Z	  
+2025-10-11T00:35:08.054002Z	      ../routes/register.tsx:1:21:
+2025-10-11T00:35:08.054133Z	  [37m      1 │ import { Head } from [32m"$fresh/runtime.ts"[37m;
+2025-10-11T00:35:08.054278Z	          ╵                      [32m~~~~~~~~~~~~~~~~~~~[0m
+2025-10-11T00:35:08.05434Z	  
+2025-10-11T00:35:08.054396Z	    You can mark the path "$fresh/runtime.ts" as external to exclude it from the bundle, which will remove this error.
+2025-10-11T00:35:08.05445Z	  
+2025-10-11T00:35:08.054503Z	  
+2025-10-11T00:35:08.054559Z	
+2025-10-11T00:35:08.05462Z	
+2025-10-11T00:35:08.112829Z	🪵  Logs were written to "/root/.config/.wrangler/logs/wrangler-2025-10-11_00-35-07_646.log"
+2025-10-11T00:35:08.124075Z	Failed building Pages Functions.
+2025-10-11T00:35:09.872083Z	Failed: generating Pages Functions failed. Check the logs above for more information. If this continues for an unknown reason, contact support: https://cfl.re/3WgEyrH

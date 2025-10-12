@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "https://deno.land/x/fresh@1.6.1/runtime.ts";
 import LocaleNav from "../components/LocaleNav.tsx";
 
 export default function Login() {
@@ -11,7 +11,7 @@ export default function Login() {
         <meta property="og:description" content="登录后继续探索你的专属命盘与 AI 行运建议。" />
         <meta property="og:url" content="https://ooo.oliyo.com/login" />
       </Head>
-      <main class="relative min-h-screen bg-[#04040d] text-slate-100">
+      <main class="relative min-h-[100vh] bg-[#04040d] text-slate-100">
         <LocaleNav locale="zh" />
         <div class="absolute inset-0 -z-10">
           <img src="/login-bg.svg" alt="登录背景" class="w-full h-full object-cover" />

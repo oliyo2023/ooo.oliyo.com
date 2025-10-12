@@ -1,4 +1,4 @@
-import { Head } from "$fresh/runtime.ts";
+import { Head } from "https://deno.land/x/fresh@1.6.1/runtime.ts";
 import LocaleNav from "../../components/LocaleNav.tsx";
 
 export default function LoginEn() {
@@ -11,7 +11,7 @@ export default function LoginEn() {
         <meta property="og:description" content="Access your AI-generated natal charts and multi-dimensional guidance." />
         <meta property="og:url" content="https://ooo.oliyo.com/en/login" />
       </Head>
-      <main class="relative min-h-screen bg-[#04040d] text-slate-100">
+      <main class="relative min-h-[100vh] bg-[#04040d] text-slate-100">
         <LocaleNav locale="en" />
         <div class="absolute inset-0 -z-10">
           <img src="/login-bg.svg" alt="Login background" class="h-full w-full object-cover" />

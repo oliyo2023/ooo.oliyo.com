@@ -2,7 +2,7 @@ import LocaleNav from "../../components/LocaleNav.tsx";
 
 export default function PrivacyPolicyEn() {
   return (
-    <main class="relative min-h-screen bg-[#04040d] text-slate-100">
+    <main class="relative min-h-[100vh] bg-[#04040d] text-slate-100">
       <LocaleNav locale="en" />
       <div class="absolute inset-0 -z-10">
         <div class="h-full w-full bg-gradient-to-br from-[#050515] via-[#0d1a3a] to-[#b8860b] opacity-90" />

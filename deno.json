@@ -11,7 +11,10 @@
     "build-workers": "deno run -A dev.ts build --output=workers",
     "deploy-staging": "wrangler deploy --env staging",
     "deploy-production": "wrangler deploy --env production",
-    "workers-dev": "wrangler dev"
+    "workers-dev": "wrangler dev",
+    "build-for-workers": "./build-workers.sh",
+    "deploy-workers-staging": "./build-workers.sh && wrangler deploy --env staging",
+    "deploy-workers-production": "./build-workers.sh && wrangler deploy --env production"
   },
   "lint": {
     "rules": {
@@ -25,7 +28,7 @@
     "**/_fresh/*"
   ],
   "imports": {
-    "$fresh/": "https://deno.land/x/fresh@1.6.1/",
+    "$fresh/": "https://deno.land/x/fresh@1.7.3/",
     "preact": "https://esm.sh/preact@10.22.0",
     "preact/": "https://esm.sh/preact@10.22.0/",
     "@preact/signals": "https://esm.sh/*@preact/signals@1.2.2",
