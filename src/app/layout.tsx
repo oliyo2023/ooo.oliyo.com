@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "东方命理 · AI 八字算命平台",
@@ -55,7 +56,23 @@ export default function RootLayout({
     <html lang="zh-CN">
       <body className="min-h-screen bg-[#0a0515] text-slate-100 antialiased font-sans">
         {children}
-      </body>
+      
+      {/* WUUNU SNIPPET - DON'T CHANGE THIS (START) */}
+      {process.env.NODE_ENV !== "production" && (
+        <>
+          <Script id="wuunu-ws" strategy="afterInteractive">
+            { `window.__WUUNU_WS__ = "http://127.0.0.1:41817/";` }
+          </Script>
+          <Script
+            id="wuunu-widget"
+            src="https://cdn.jsdelivr.net/npm/@wuunu/widget@0.1?cacheParam=730"
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        </>
+      )}
+      {/* WUUNU SNIPPET - DON'T CHANGE THIS (END) */}
+</body>
     </html>
   );
 }

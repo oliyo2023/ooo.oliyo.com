@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="545ebfdd-93cf-4a08-ac1a-c1d66b1895b6" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.pages.example" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deploy.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/deploy.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/extensions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CLAUDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/CLAUDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QUICKSTART_PAGES.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/STORAGE_EVALUATION.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/chunk-5TIVV7D3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/chunk-7KZRW4CE.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/deserializer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/island-counter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/metafile.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/signals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/snapshot.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_fresh/static/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build-workers.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/deno.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dev.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/FRESH_ARCHITECTURE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/WORKERS_DEPLOYMENT.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/WORKERS_DEPLOYMENT.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fresh.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fresh.gen.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/_middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/_worker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/api/_middleware.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/fresh.gen.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/islands/Counter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/ooo-oliyo-com.146a991e-d73e-48aa-a506-927fe97cc9a0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/_404.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/_middleware.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/joke.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/_app.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/login.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/privacy.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/register.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/en/terms.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/greet/[name].tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/login.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/privacy.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/register.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/terms.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/deploy-workers.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/checklists/requirements.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/contracts/api.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/contracts/blog-api.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/data-model.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/plan.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/quickstart.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/research.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/spec.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/specs/001-fresh-blog/tasks.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test-build.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker-entry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker-entry.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/worker.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wrangler.toml" beforeDir="false" afterPath="$PROJECT_DIR$/wrangler.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="33yOyj5wKBdlm2Ydb7Ul1s8Au5f" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;001-fresh-blog&quot;,
+    &quot;js.debugger.nextJs.config.created.client&quot;: &quot;true&quot;,
+    &quot;js.debugger.nextJs.config.created.server&quot;: &quot;true&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="npm.Next.js: 服务器端">
+    <configuration name="Next.js: 调试客户端" type="JavascriptDebugType" uri="http://localhost:3000/">
+      <method v="2" />
+    </configuration>
+    <configuration name="Next.js: 服务器端" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="545ebfdd-93cf-4a08-ac1a-c1d66b1895b6" name="更改" comment="" />
+      <created>1760286102670</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760286102670</updated>
+      <workItem from="1760286105643" duration="40000" />
+      <workItem from="1760286158926" duration="130000" />
+    </task>
+    <servers />
+  </component>
+</project>

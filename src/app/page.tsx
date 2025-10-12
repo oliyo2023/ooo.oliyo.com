@@ -1,163 +1,289 @@
-import LocaleNav from "@/components/LocaleNav";
+
+import Link from "next/link";
+import Image from "next/image";
+import React from "react";
+
+// I will define the icons as components for better readability
+const Icon = ({ path, className = "w-6 h-6" }: { path: string; className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    strokeWidth="1.5"
+    stroke="currentColor"
+    fill="none"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d={path} />
+  </svg>
+);
+
+const Header = () => (
+  <header className="sticky top-0 z-50 border-b border-dark-border" style={{ backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)' }}>
+    <div className="container mx-auto px-6 py-4 flex justify-between items-center">
+      <Link href="/" className="flex items-center gap-3">
+        <Image src="/logo.svg" alt="东方命理 Logo" width={36} height={36} />
+        <span className="text-xl font-bold text-white">东方命理</span>
+      </Link>
+      <nav className="hidden md:flex items-center gap-x-8">
+        <Link href="/" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">首页</Link>
+        <Link href="#bazi" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">八字算命</Link>
+        <Link href="#marriage" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">八字合婚</Link>
+        <Link href="#divination" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">卜卦预测</Link>
+        <Link href="#credit" className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-white transition-colors">
+          积分充值 <Icon path="M12 6v12m-6-6h12" className="w-4 h-4 opacity-80" />
+        </Link>
+        <Link href="#contact" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">联系我们</Link>
+      </nav>
+      <div className="flex items-center gap-4">
+        <Link href="/login" className="text-sm font-medium text-gray-300 hover:text-white transition-colors flex items-center gap-1.5">
+          <Icon path="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" className="w-5 h-5" />
+          登录
+        </Link>
+        <Link href="/register" className="text-sm font-semibold text-white bg-brand-primary rounded-full px-5 py-2 flex items-center gap-1.5 transition-all hover:-translate-y-0.5 hover:shadow-button">
+          <Icon path="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0 M16 19h6 M19 16v6 M6 21v-2a4 4 0 0 1 4 -4h4" className="w-5 h-5" />
+          注册
+        </Link>
+      </div>
+    </div>
+  </header>
+);
+
+const Hero = () => (
+  <section className="relative text-center py-28 md:py-40 overflow-hidden">
+    <div className="container mx-auto px-6 relative z-10">
+      <h1 className="text-5xl md:text-6xl font-bold text-white">AI算命</h1>
+      <h2 className="text-2xl md:text-3xl font-light mt-5 mb-8 text-gray-200">探索命运奥秘, 掌握人生方向</h2>
+      <p className="max-w-3xl mx-auto text-gray-400 leading-relaxed text-lg">
+        我们融合传统命理学与现代人工智能技术, 通过精准的算法分析您的生辰八字, 为您提供全面、深入的命运解析, 帮助您更好地了解自己, 把握人生方向。
+      </p>
+        <div className="mt-12 flex flex-col md:flex-row justify-center items-center gap-8">
+        <div className="flex flex-col items-center gap-3">
+          <Link href="#bazi" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+            <Icon path="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+            <span className="ml-2">八字算命</span>
+          </Link>
+          <span className="text-sm text-gray-400">适合分析人生整体运势</span>
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <Link href="#marriage" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+            <Icon path="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+            <span className="ml-2">八字合婚</span>
+          </Link>
+          <span className="text-sm text-gray-400">适合婚恋合婚分析</span>
+        </div>
+        <div className="flex flex-col items-center gap-3">
+          <Link href="#divination" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+            <Icon path="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+            <span className="ml-2">卜卦预测</span>
+          </Link>
+          <span className="text-sm text-gray-400">适合解答具体问题</span>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const Choice = () => {
+  const baziPoints = [
+    "您的整体人生运势",
+    "性格特点和天赋潜能",
+    "事业、财运、感情等长期发展",
+    "适合的职业方向和人生规划",
+  ];
+  const divinationPoints = [
+    "特定问题的解答和指引",
+    "近期事件的发展趋势",
+    "某个决策的吉凶和建议",
+    "具体事项的时间和结果预测",
+  ];
+
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-6">
+        <div className="card max-w-5xl mx-auto p-10 md:p-14">
+          <h3 className="text-center text-3xl font-semibold mb-10 text-white">不知道选择哪种测算方式?</h3>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-8">
+            <div>
+              <h4 className="font-semibold text-lg mb-5 flex items-center gap-2 text-gray-100">
+                <Icon path="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" className="text-brand-primary" />
+                选择八字测算, 如果您想了解:
+              </h4>
+              <ul className="space-y-4 text-gray-300">
+                {baziPoints.map(point => (
+                  <li key={point} className="flex items-start gap-3">
+                    <Icon path="M5 12l5 5l10 -10" className="w-5 h-5 text-brand-accent mt-1 flex-shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold text-lg mb-5 flex items-center gap-2 text-gray-100">
+                <Icon path="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" className="text-brand-primary" />
+                选择卜卦预测, 如果您想了解:
+              </h4>
+              <ul className="space-y-4 text-gray-300">
+                {divinationPoints.map(point => (
+                  <li key={point} className="flex items-start gap-3">
+                    <Icon path="M5 12l5 5l10 -10" className="w-5 h-5 text-brand-accent mt-1 flex-shrink-0" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Relations = () => {
+  const items = [
+    { icon: "M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572", title: "八字合婚", desc: "全面分析双方八字契合度, 预测婚姻质量, 助您找到真爱良缘" },
+    { icon: "M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2", title: "事业合盘", desc: "分析商业伙伴关系, 预测合作前景, 助您把握商机" },
+    { icon: "M5 12l-2 0l9 -9l9 9l-2 0l0 8a2 2 0 0 1 -2 2l-10 0a2 2 0 0 1 -2 -2l0 -8", title: "婆媳合盘", desc: "解析婆媳缘分, 预测相处模式, 助您营造和谐家庭关系" },
+    { icon: "M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2 M16 3.13a4 4 0 0 1 0 7.75 M21 21v-2a4 4 0 0 0 -3 -3.85", title: "闺蜜合盘", desc: "分析闺蜜缘分, 预测友情质量, 助您找到知心好友" },
+    { icon: "M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2", title: "父子关系", desc: "解析父子缘分, 指导教育方式, 助您建立良好亲子关系" },
+    { icon: "M10 14a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M6 21v-2a4 4 0 0 1 4 -4h4", title: "母子关系", desc: "分析母子缘分, 优化教育方式, 助您培养健康亲子关系" },
+    { icon: "M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0 M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2 M16 3.13a4 4 0 0 1 0 7.75 M21 21v-2a4 4 0 0 0 -3 -3.85", title: "朋友关系", desc: "分析朋友缘分, 预测友谊发展, 助您建立真诚友谊" },
+    { icon: "M12 5m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M5 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M19 19m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0 M6.5 17.5l3.5 -4.5v-5l-4 -3l4 -3 M17.5 17.5l-3.5 -4.5v-5l4 -3l-4 -3", title: "领导下属", desc: "分析职场关系, 优化管理方式, 助您提升工作效率" },
+  ];
+
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-semibold text-center mb-4 text-white">八字关系预测</h2>
+        <p className="text-center text-gray-400 mb-12 text-lg">专业解读各类人际关系, 助您把握人生机遇</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {items.map(item => (
+            <div key={item.title} className="card text-center p-8 flex flex-col items-center transform hover:-translate-y-2">
+              <div className="w-20 h-20 mb-5 rounded-full bg-brand-primary-light flex items-center justify-center border border-dark-border">
+                <Icon path={item.icon} className="w-10 h-10 text-brand-accent" />
+              </div>
+              <h4 className="font-semibold text-xl mb-2 text-white">{item.title}</h4>
+              <p className="text-sm text-gray-400 flex-grow mb-6">{item.desc}</p>
+              <Link href="/register" className="w-full mt-auto text-white font-semibold bg-brand-primary/80 hover:bg-brand-primary rounded-full py-3 transition-colors inline-block text-center">
+                立即测算
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const Advantages = () => {
+  const items = [
+    { icon: "M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2zm-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6z", title: "精准算法", desc: "融合传统命理与现代大数据, AI深度学习技术分析命盘, 提供更精准的命运解读。" },
+    { icon: "M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0 M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0 M3 6l0 13 M12 6l0 13 M21 6l0 13", title: "专业解读", desc: "提供深度命运分析报告, 涵盖事业、财运、感情等多个方面, 助您全面了解自己。" },
+    { icon: "M5 11h14a2 2 0 0 1 2 2v4a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-4a2 2 0 0 1 2 -2z M12 16m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0 M8 11v-4a4 4 0 1 1 8 0v4", title: "隐私保护", desc: "采用银行级加密技术, 确保您的个人信息安全无忧, 让您放心使用我们的服务。" },
+  ];
+
+  return (
+    <section className="py-20">
+      <div className="container mx-auto px-6">
+        <h2 className="text-3xl font-semibold text-center mb-12 text-white">我们的优势</h2>
+        <div className="grid md:grid-cols-3 gap-8">
+          {items.map(item => (
+            <div key={item.title} className="card p-8 text-center flex flex-col items-center">
+              <div className="w-24 h-24 mb-6 rounded-full bg-brand-primary-light flex items-center justify-center border-2 border-dark-border">
+                <Icon path={item.icon} className="w-12 h-12 text-brand-accent" />
+              </div>
+              <h4 className="font-semibold text-xl mb-3 text-white">{item.title}</h4>
+              <p className="text-gray-400 leading-relaxed">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const StartJourney = () => (
+  <section className="py-20">
+    <div className="container mx-auto px-6 text-center">
+      <h2 className="text-3xl font-semibold text-white mb-4">开启您的命运之旅</h2>
+      <p className="max-w-3xl mx-auto text-gray-400 mb-8 text-lg">
+        无论您是想了解自己的性格特点, 还是寻求事业、财运、感情方面的指引, AI命运测算都能为您提供专业的解读和建议。
+      </p>
+      <div className="flex justify-center items-center gap-8">
+        <Link href="#bazi" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+          <Icon path="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+          <span className="ml-2">八字测算</span>
+        </Link>
+        <Link href="#marriage" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+          <Icon path="M19.5 12.572l-7.5 7.428l-7.5 -7.428a5 5 0 1 1 7.5 -6.566a5 5 0 1 1 7.5 6.572" />
+          <span className="ml-2">八字合婚</span>
+        </Link>
+        <Link href="#divination" className="btn-primary w-52 h-16 text-lg inline-flex items-center justify-center">
+          <Icon path="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+          <span className="ml-2">卜卦预测</span>
+        </Link>
+      </div>
+    </div>
+  </section>
+);
+
+const Footer = () => {
+  const topics = [
+    "危机处理", "兄弟姐妹缘分", "疾病预防", "行为模式", "人格优势", "共同成长", "内在驱动力", "小人运", "缘分发展过程", "智慧发展"
+  ];
+  return (
+    <footer className="text-gray-400 pt-16 pb-8 border-t border-dark-border">
+      <div className="container mx-auto px-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="lg:col-span-2">
+             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+              {topics.map(topic => <div key={topic} className="text-gray-400 hover:text-white transition-colors cursor-pointer">{topic}</div>)}
+            </div>
+          </div>
+          <div className="text-sm">
+            <h4 className="font-semibold text-white mb-4">快速链接</h4>
+            <ul className="space-y-3">
+              <li><Link href="/" className="hover:text-white transition-colors">首页</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">关于我们</Link></li>
+              <li><Link href="/services" className="hover:text-white transition-colors">服务项目</Link></li>
+            </ul>
+          </div>
+          <div className="text-sm">
+            <h4 className="font-semibold text-white mb-4">联系我们</h4>
+            <div className="flex items-center gap-2">
+              <Icon path="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" className="w-5 h-5 text-brand-primary" />
+              <span>400-888-8888</span>
+            </div>
+          </div>
+        </div>
+        <div className="mt-16 pt-8 border-t border-dark-border flex flex-col md:flex-row justify-between items-center text-sm">
+          <div className="flex items-center gap-3 mb-4 md:mb-0">
+            <Image src="/logo.svg" alt="AI算命 Logo" width={28} height={28} />
+            <span className="text-white font-semibold">AI算命</span>
+            <p className="ml-4 text-gray-500">传统命理智慧与现代科技的完美结合, 为您揭示命运的奥秘。</p>
+          </div>
+          <p className="text-gray-500">© {new Date().getFullYear()} AI算命 - 科技解读命理 | 版权所有</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-gradient-to-br from-[#0a0515] via-[#1a0b2e] to-[#2d1b69] text-slate-100 overflow-hidden">
-      <LocaleNav locale="zh" />
-      
-      {/* 背景装饰层 */}
-      <div className="absolute inset-0 -z-10">
-        {/* 主渐变背景 */}
-        <div className="h-full w-full bg-gradient-to-br from-[#1a0b2e] via-[#241f42] to-[#4a148c] opacity-95" />
-        
-        {/* 顶部光晕 */}
-        <div className="absolute inset-x-0 top-0 h-1/2 bg-[radial-gradient(ellipse_at_top,_rgba(126,59,255,0.25),_transparent_70%)]" />
-        
-        {/* 底部光晕 */}
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-[radial-gradient(ellipse_at_bottom,_rgba(74,20,140,0.2),_transparent_60%)]" />
-        
-        {/* 神秘圆形装饰 */}
-        <div className="absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-500/10" />
-        <div className="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-400/15" />
-        <div className="absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-purple-300/20" />
-        
-        {/* 东方神秘符文装饰 */}
-        <div className="absolute top-20 left-10 text-6xl text-purple-600/20 font-serif">八卦</div>
-        <div className="absolute top-40 right-20 text-5xl text-purple-500/15 font-serif">阴阳</div>
-        <div className="absolute bottom-32 left-16 text-4xl text-purple-600/10 font-serif">五行</div>
-        <div className="absolute bottom-20 right-10 text-5xl text-purple-500/15 font-serif">天干</div>
-        
-        {/* 星光点缀 */}
-        <div className="absolute top-32 left-1/4 h-1 w-1 rounded-full bg-purple-300/60 animate-pulse" />
-        <div className="absolute top-52 right-1/3 h-1 w-1 rounded-full bg-purple-200/50 animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 left-1/3 h-1 w-1 rounded-full bg-purple-300/40 animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/3 right-1/4 h-1 w-1 rounded-full bg-purple-200/60 animate-pulse" style={{ animationDelay: '0.5s' }} />
-        <div className="absolute bottom-1/4 left-1/2 h-1 w-1 rounded-full bg-purple-300/50 animate-pulse" style={{ animationDelay: '1.5s' }} />
-      </div>
-      {/* 主标题区域 */}
-      <section className="relative px-6 pt-32 pb-20 sm:px-10">
-        <div className="mx-auto max-w-5xl text-center">
-          {/* 东方神秘装饰线 */}
-          <div className="mx-auto mb-8 flex items-center justify-center gap-4">
-            <div className="h-px w-20 bg-gradient-to-r from-transparent via-purple-400/50 to-transparent" />
-            <span className="inline-flex items-center justify-center rounded-full border border-purple-400/50 bg-gradient-to-r from-purple-900/30 to-purple-800/30 px-6 py-2 text-xs font-medium tracking-[0.35em] text-purple-200 uppercase shadow-lg shadow-purple-500/20">
-              ✦ AI 八字算命 ✦
-            </span>
-            <div className="h-px w-20 bg-gradient-to-l from-transparent via-purple-400/50 to-transparent" />
-          </div>
-          
-          {/* 主标题 */}
-          <h1 className="mt-6 bg-gradient-to-r from-purple-100 via-purple-50 to-purple-100 bg-clip-text text-5xl font-extralight leading-tight text-transparent sm:text-6xl lg:text-7xl tracking-wide">
-            数字化的紫微星光
-          </h1>
-          <h2 className="mt-2 text-3xl font-light leading-tight text-purple-200 sm:text-4xl lg:text-5xl tracking-wide">
-            洞悉八字乾坤
-          </h2>
-          
-          {/* 副标题 */}
-          <p className="mt-8 mx-auto max-w-3xl text-base text-purple-100/80 sm:text-lg leading-relaxed">
-            结合云端大模型与传统命理，瞬间生成个人命盘、好运周期与专属指引。国风与科技交织，为新世代打造可信赖的八字顾问。
-          </p>
-          
-          {/* 行动按钮 */}
-          <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
-            <a className="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#7e3bff] via-[#6a26d9] to-[#5220a3] px-10 py-4 text-sm font-semibold text-slate-900 shadow-xl shadow-purple-500/40 transition-all hover:scale-105 hover:shadow-purple-400/60" href="/register">
-              <span className="relative z-10">开启智能排盘</span>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </a>
-            <a className="group inline-flex items-center justify-center rounded-full border border-purple-300/40 bg-gradient-to-r from-purple-900/20 to-purple-800/20 px-10 py-4 text-sm font-semibold text-purple-200 transition-all hover:bg-purple-800/30 hover:border-purple-300/60 hover:shadow-lg hover:shadow-purple-500/20" href="/login">
-              会员登录
-            </a>
-            <a className="group inline-flex items-center justify-center rounded-full border border-purple-300/40 bg-gradient-to-r from-purple-900/20 to-purple-800/20 px-10 py-4 text-sm font-semibold text-purple-200 transition-all hover:bg-purple-800/30 hover:border-purple-300/60 hover:shadow-lg hover:shadow-purple-500/20" href="/demo">
-              体验示例命盘
-            </a>
-          </div>
-        </div>
-      </section>
-      {/* 特色功能区域 */}
-      <section className="relative px-6 pb-20 sm:px-10">
-        <div className="mx-auto max-w-6xl">
-          {/* 区域标题 */}
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-light text-purple-100 sm:text-4xl tracking-wide">神秘功能</h2>
-            <div className="mt-4 mx-auto h-px w-24 bg-gradient-to-r from-transparent via-purple-400/60 to-transparent" />
-          </div>
-          
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {/* 全息命盘卡片 */}
-            <div className="group relative rounded-3xl border border-purple-400/20 bg-gradient-to-br from-purple-900/20 via-purple-800/15 to-purple-900/20 p-8 shadow-2xl shadow-purple-500/10 transition-all hover:border-purple-400/40 hover:shadow-purple-500/25">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="mb-4 text-2xl text-purple-300">✧</div>
-                <h3 className="text-xl font-light text-purple-100">全息命盘</h3>
-                <p className="mt-4 text-sm text-purple-200/80 leading-relaxed">
-                  输入生辰八字，AI 即时计算命宫、十神、运势走势，并绘制专属命盘视觉。
-                </p>
-                <div className="mt-6 text-xs text-purple-300/80 font-medium">涵盖六十甲子与大运流年</div>
-              </div>
-            </div>
-            
-            {/* 国风解读卡片 */}
-            <div className="group relative rounded-3xl border border-purple-400/20 bg-gradient-to-br from-purple-900/20 via-purple-800/15 to-purple-900/20 p-8 shadow-2xl shadow-purple-500/10 transition-all hover:border-purple-400/40 hover:shadow-purple-500/25">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="mb-4 text-2xl text-purple-300">✦</div>
-                <h3 className="text-xl font-light text-purple-100">国风解读</h3>
-                <p className="mt-4 text-sm text-purple-200/80 leading-relaxed">
-                  使用文心风格提示词，输出诗意化中文解读，兼具易经术语与现代语感。
-                </p>
-                <div className="mt-6 text-xs text-purple-300/80 font-medium">支持自定义语气与篇幅</div>
-              </div>
-            </div>
-            
-            {/* 智能建议卡片 */}
-            <div className="group relative rounded-3xl border border-purple-400/20 bg-gradient-to-br from-purple-900/20 via-purple-800/15 to-purple-900/20 p-8 shadow-2xl shadow-purple-500/10 transition-all hover:border-purple-400/40 hover:shadow-purple-500/25">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="relative">
-                <div className="mb-4 text-2xl text-purple-300">✧</div>
-                <h3 className="text-xl font-light text-purple-100">智能建议</h3>
-                <p className="mt-4 text-sm text-purple-200/80 leading-relaxed">
-                  结合职业、情感与财富等主题，生成多维行动方案，内置时辰吉凶提醒。
-                </p>
-                <div className="mt-6 text-xs text-purple-300/80 font-medium">配套日历与提醒服务</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="px-6 pb-24 sm:px-10">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-white/10 bg-white/5 p-10 shadow-inner shadow-purple-500/20">
-          <h2 className="text-2xl font-semibold text-white sm:text-3xl">三步走，焕新你的命理体验</h2>
-          <div className="mt-8 grid gap-6 sm:grid-cols-3">
-            <div className="rounded-2xl bg-black/20 p-6">
-              <div className="text-4xl font-bold text-purple-200">1</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">输入生辰</h3>
-              <p className="mt-3 text-sm text-slate-300">支持阴历阳历自动换算，智能校验出生地时区。</p>
-            </div>
-            <div className="rounded-2xl bg-black/20 p-6">
-              <div className="text-4xl font-bold text-purple-200">2</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">生成命盘</h3>
-              <p className="mt-3 text-sm text-slate-300">云端大模型推演紫微斗数、四柱八字、十神能量图谱。</p>
-            </div>
-            <div className="rounded-2xl bg-black/20 p-6">
-              <div className="text-4xl font-bold text-purple-200">3</div>
-              <h3 className="mt-4 text-lg font-semibold text-white">获取指引</h3>
-              <p className="mt-3 text-sm text-slate-300">获得个性化行运策略，并同步至移动端提醒服务。</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <footer className="px-6 pb-12 sm:px-10">
-        <div className="mx-auto max-w-4xl rounded-3xl border border-white/10 bg-gradient-to-r from-purple-500/10 via-transparent to-purple-500/10 p-8 text-center">
-          <h3 className="text-xl font-semibold text-white">东方智慧，量子洞见</h3>
-          <p className="mt-4 text-sm text-slate-200">
-            已有 12,680+ 用户通过 AI 八字算命制定人生规划，现在轮到你书写下一段佳话。
-          </p>
-          <a className="mt-6 inline-flex items-center justify-center rounded-full border border-purple-300/60 px-6 py-3 text-sm font-semibold text-purple-100 transition hover:bg-white/10" href="/stories">
-            查看真实故事
-          </a>
-        </div>
-      </footer>
-    </main>
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <Hero />
+        <Choice />
+        <Relations />
+        <Advantages />
+        <StartJourney />
+      </main>
+      <Footer />
+    </div>
   );
 }

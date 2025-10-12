@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 interface LocaleNavProps {
@@ -8,9 +9,12 @@ interface LocaleNavProps {
 }
 
 export default function LocaleNav({ locale }: LocaleNavProps) {
+  // locale 参数可用于未来的国际化功能
+  console.log('Current locale:', locale);
   const pathname = usePathname();
   
   const isActive = (path: string) => {
+    if (!pathname) return false;
     if (path === "/" && pathname === "/") return true;
     if (path !== "/" && pathname.startsWith(path)) return true;
     return false;
@@ -22,9 +26,7 @@ export default function LocaleNav({ locale }: LocaleNavProps) {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-8">
             <Link href="/" className="group flex items-center space-x-3 transition-all">
-              <div className="relative h-9 w-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg shadow-purple-500/30 group-hover:shadow-purple-400/50 transition-shadow">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-purple-300/50 to-purple-500/50 blur-sm animate-pulse-slow" />
-              </div>
+              <Image src="/logo.svg" alt="东方命理 Logo" width={36} height={36} />
               <span className="text-xl font-light tracking-wide text-gradient-purple">东方命理</span>
             </Link>
             

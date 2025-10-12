@@ -55,11 +55,14 @@ ooo-oliyo.com/
 - 字体风格：轻盈字体、宽字间距、渐变文字效果
 
 ## 开发环境
+- Shell 环境：zsh + Oh My Zsh
 - Node.js 路径：/home/gemini/.config/nvm/versions/node/v22.20.0/bin/node
 - Deno 路径：/home/gemini/.deno/bin/deno
-- 开发服务器：`npm run dev`
-- 构建命令：`npm run build`
-- 部署命令：`npm run deploy`
+- 包管理器：pnpm (更快更高效)
+- 开发服务器：`pnpm dev`
+- 构建命令：`pnpm build`
+- 部署命令：`pnpm deploy`
+- 安装依赖：`pnpm install`
 
 ## 部署配置
 - 部署平台：Cloudflare Workers

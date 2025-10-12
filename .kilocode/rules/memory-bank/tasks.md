@@ -1,16 +1,17 @@
 # 项目常用任务
 
 ## 开发任务
-- 启动开发服务器：`npm run dev`
-- 构建项目：`npm run build`
+- 启动开发服务器：`pnpm dev`
+- 构建项目：`pnpm build`
+- 安装依赖：`pnpm install`
 - 初始化数据库：`deno run -A scripts/init-db.ts`
 - 创建管理员账户：`deno run -A scripts/create-admin.ts`
 
 ## 部署任务
-- 构建 Workers：`npm run build`
-- 部署到 Workers 测试环境：`npm run preview`
-- 部署到 Workers 生产环境：`npm run deploy`
-- 本地 Workers 开发：`npm run dev`
+- 构建 Workers：`pnpm build`
+- 部署到 Workers 测试环境：`pnpm preview`
+- 部署到 Workers 生产环境：`pnpm deploy`
+- 本地 Workers 开发：`pnpm dev`
 
 ## 框架迁移任务（已完成）
 - 从 Fresh + Deno 迁移到 Next.js + Node.js

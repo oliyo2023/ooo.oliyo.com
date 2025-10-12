@@ -14,7 +14,7 @@
 
 - **前端框架**：Next.js 15.3.3
 - **开发语言**：TypeScript 5.8.3
-- **样式方案**：Tailwind CSS 4.1.1
+- **样式方案**：Tailwind CSS 3.4.1
 - **部署平台**：Cloudflare Workers
 - **数据库**：Cloudflare D1 (SQLite)
 - **运行时**：Node.js 兼容环境
@@ -39,11 +39,15 @@ ooo-oliyo-com/
 │   ├── lib/                 # 工具库
 │   └── styles/              # 样式文件
 ├── public/                  # 静态资源
+├── services/                # 业务服务层
+├── types/                   # TypeScript 类型定义
+├── scripts/                 # 构建脚本
+├── migrations/              # 数据库迁移
 ├── docs/                    # 项目文档
 ├── .env.example             # 环境变量示例
 ├── next.config.ts           # Next.js 配置
-├── tailwind.config.ts       # Tailwind CSS 配置
-├── wrangler.jsonc           # Cloudflare Workers 配置
+├── tailwind.config.mjs      # Tailwind CSS 配置
+├── wrangler.toml            # Cloudflare Workers 配置
 └── package.json             # 项目依赖
 ```
 

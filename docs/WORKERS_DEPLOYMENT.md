@@ -1,10 +1,10 @@
 # Cloudflare Workers 部署指南
 
-本指南详细说明如何将 Fresh 博客应用部署到 Cloudflare Workers。
+本指南详细说明如何将 Next.js 东方命理平台部署到 Cloudflare Workers。
 
 ## 前置条件
 
-- 安装 [Deno](https://deno.land/manual/getting_started/installation)
+- 安装 [Node.js](https://nodejs.org/) (版本 18+)
 - 安装 [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/install-and-update/)
 - Cloudflare 账户
 
@@ -88,8 +88,8 @@ DATABASE_PATH=d1
 SESSION_SECRET=your-secure-random-string-here
 
 # 应用配置
-APP_NAME=Fresh Blog
-APP_URL=https://ooo.oliyo.com
+NEXT_PUBLIC_APP_NAME=东方命理 AI 平台
+NEXT_PUBLIC_APP_URL=https://ooo.oliyo.com
 DEV_MODE=false
 
 # 安全配置
@@ -110,27 +110,28 @@ SEARCH_RESULTS_PER_PAGE=20
 
 ```bash
 # 启动本地开发服务器
-deno task start
+npm run dev
 
-# 本地运行 Workers 开发服务器
-deno task workers-dev
+# 构建并预览
+npm run build
+npm run start
 ```
 
 #### 3.2 构建项目
 
 ```bash
-# 构建 Workers 版本
-deno task build-for-workers
+# 构建生产版本
+npm run build
 ```
 
 #### 3.3 部署到 Cloudflare Workers
 
 ```bash
-# 部署到测试环境
-deno task deploy-workers-staging
+# 部署到 Cloudflare Workers
+npm run deploy
 
-# 部署到生产环境
-deno task deploy-workers-production
+# 预览部署
+npm run preview
 ```
 
 ### 4. 自定义域名配置
@@ -158,22 +159,20 @@ routes = [
 ### 5. 常用命令
 
 ```bash
-# 构建并部署到测试环境
-deno task deploy-workers-staging
+# 开发
+npm run dev                # 启动开发服务器
+npm run build             # 构建生产版本
+npm run start             # 启动生产服务器
+npm run lint              # 代码检查
+npm run check             # 类型检查
 
-# 构建并部署到生产环境
-deno task deploy-workers-production
+# Cloudflare Workers
+npm run deploy            # 部署到 Cloudflare Workers
+npm run preview           # 预览部署
+npm run cf-typegen        # 生成 Cloudflare 类型
 
-# 仅构建
-deno task build-for-workers
-
-# 本地 Workers 开发
-deno task workers-dev
-
-# 查看 Workers 日志
-wrangler tail
-
-# 查看 D1 数据库
+# 数据库
+wrangler tail             # 查看 Workers 日志
 wrangler d1 execute blog-db --command="SELECT * FROM posts LIMIT 10" --remote
 ```
 
@@ -182,9 +181,9 @@ wrangler d1 execute blog-db --command="SELECT * FROM posts LIMIT 10" --remote
 ### 常见问题
 
 1. **构建失败**
-   - 检查 Deno 版本是否为最新
-   - 确保所有依赖已正确安装
-   - 检查 `fresh.gen.ts` 是否已生成
+   - 检查 Node.js 版本是否为 18+
+   - 确保所有依赖已正确安装 (`npm install`)
+   - 检查 TypeScript 编译是否通过 (`npm run check`)
 
 2. **部署失败**
    - 检查 `wrangler.toml` 配置是否正确
@@ -201,7 +200,7 @@ wrangler d1 execute blog-db --command="SELECT * FROM posts LIMIT 10" --remote
 1. **本地调试**
    ```bash
    # 启用详细日志
-   deno task start --log-level debug
+   DEBUG=* npm run dev
    ```
 
 2. **远程调试**
